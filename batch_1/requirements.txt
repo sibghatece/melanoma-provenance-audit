@@ -1,0 +1,10 @@
+numpy
+pandas
+scikit-learn
+torch
+torchvision
+xgboost
+shap
+ImageHash
+Pillow
+matplotlib
