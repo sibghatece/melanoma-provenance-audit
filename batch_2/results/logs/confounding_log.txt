@@ -1,0 +1,28 @@
+[Data folder] $MELANOMA_ROOT
+HAM10000: 10015 images, 1113 melanomas, 7470 lesions | ISIC 2020: 32701 images, 581 melanomas, 2056 patients
+Extracting ImageNet features (cached after the first run)...
+    features_ham10000: 0/10015
+    features_ham10000: 6400/10015
+    features_isic2020: 0/32701
+    features_isic2020: 6400/32701
+    features_isic2020: 12800/32701
+    features_isic2020: 19200/32701
+    features_isic2020: 25600/32701
+    features_isic2020: 32000/32701
+  repeat 0: CONF T_confounded 0.994 | CONF T_ISIC 0.739 | CONF T_HAM 0.811 | CONT T_confounded 0.848 | CONT T_ISIC 0.856 | CONT T_HAM 0.851 | SOUR T_source 0.991
+  repeat 1: CONF T_confounded 0.992 | CONF T_ISIC 0.711 | CONF T_HAM 0.785 | CONT T_confounded 0.906 | CONT T_ISIC 0.844 | CONT T_HAM 0.862 | SOUR T_source 0.992
+  repeat 2: CONF T_confounded 0.996 | CONF T_ISIC 0.727 | CONF T_HAM 0.820 | CONT T_confounded 0.906 | CONT T_ISIC 0.859 | CONT T_HAM 0.863 | SOUR T_source 0.991
+  repeat 3: CONF T_confounded 0.994 | CONF T_ISIC 0.740 | CONF T_HAM 0.813 | CONT T_confounded 0.903 | CONT T_ISIC 0.866 | CONT T_HAM 0.875 | SOUR T_source 0.991
+  repeat 4: CONF T_confounded 0.996 | CONF T_ISIC 0.746 | CONF T_HAM 0.834 | CONT T_confounded 0.898 | CONT T_ISIC 0.853 | CONT T_HAM 0.866 | SOUR T_source 0.992
+
+=== Controlled confounding, mean over 5 lesion- and patient-disjoint repetitions ===
+     model         test      n  n_melanoma  auroc_mean  auroc_sd  auroc_min  auroc_max
+CONFOUNDED        T_HAM 3030.6       339.0      0.8126    0.0181     0.7846     0.8344
+CONFOUNDED       T_ISIC 9720.0       173.0      0.7327    0.0139     0.7110     0.7460
+CONFOUNDED T_confounded  678.0       339.0      0.9945    0.0018     0.9918     0.9964
+   CONTROL        T_HAM 3030.6       339.0      0.8635    0.0083     0.8515     0.8748
+   CONTROL       T_ISIC 9720.0       173.0      0.8555    0.0082     0.8435     0.8660
+   CONTROL T_confounded  678.0       339.0      0.8923    0.0251     0.8477     0.9064
+    SOURCE     T_source 6061.2         NaN      0.9911    0.0009     0.9905     0.9923
+
+All outputs in $MELANOMA_ROOT/results_confounding

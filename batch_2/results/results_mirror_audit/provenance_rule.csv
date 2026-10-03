@@ -1,0 +1,4 @@
+mirror,n_test,rule,test_accuracy_from_provenance_only,test_majority_class_accuracy
+Fanconi_3297,660,HAM10000->benign; ISIC2020->malignant; unmatched->malignant,0.7818181818181819,0.5454545454545454
+Javid_10605,1000,HAM10000->malignant; ISIC2020->benign; unmatched->malignant,0.914,0.5
+ISIC19_20_malig_benign_11400,1100,HAM10000->malignant; ISIC2020->benign; unmatched->malignant,0.9936363636363637,0.5

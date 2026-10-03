@@ -1,0 +1,334 @@
+[Data folder] $MELANOMA_ROOT
+
+=== lesion, seed 7: already complete ===
+
+=== image, seed 7 ===
+  fold 1: done, skipped
+  fold 2: done, skipped
+  fold 3: done, skipped
+  fold 4: done, skipped
+  fold 5: train 6810, val 1202, test 2003, test images whose lesion is in train 684 (34.1%)
+    [fold 5] epoch 1/30 val_auc=0.8786 (146s)
+    [fold 5] epoch 2/30 val_auc=0.8915 (169s)
+    [fold 5] epoch 3/30 val_auc=0.9113 (186s)
+    [fold 5] epoch 4/30 val_auc=0.9176 (192s)
+    [fold 5] epoch 5/30 val_auc=0.9262 (198s)
+    [fold 5] epoch 6/30 val_auc=0.9308 (203s)
+    [fold 5] epoch 7/30 val_auc=0.9315 (205s)
+    [fold 5] epoch 8/30 val_auc=0.9362 (206s)
+    [fold 5] epoch 9/30 val_auc=0.9405 (212s)
+    [fold 5] epoch 10/30 val_auc=0.9280 (214s)
+    [fold 5] epoch 11/30 val_auc=0.9374 (215s)
+    [fold 5] epoch 12/30 val_auc=0.9285 (216s)
+    [fold 5] epoch 13/30 val_auc=0.9285 (218s)
+    [fold 5] epoch 14/30 val_auc=0.9167 (221s)
+    [fold 5] epoch 15/30 val_auc=0.9331 (219s)
+    [fold 5] early stop at 15 (best 0.9405)
+      [train] 0/6810
+      [train] 6400/6810
+      [val] 0/1202
+      [test] 0/2003
+      [isic] 0/32701
+      [isic] 6400/32701
+      [isic] 12800/32701
+      [isic] 19200/32701
+      [isic] 25600/32701
+      [isic] 32000/32701
+  fold 5: HAM AUROC 0.9376 | ISIC AUROC 0.7201 | 62 min
+
+=== lesion, seed 123 ===
+  fold 1: train 6811, val 1201, test 2003, test images whose lesion is in train 0 (0.0%)
+    [fold 1] epoch 1/30 val_auc=0.8855 (231s)
+    [fold 1] epoch 2/30 val_auc=0.8948 (234s)
+    [fold 1] epoch 3/30 val_auc=0.9023 (235s)
+    [fold 1] epoch 4/30 val_auc=0.9162 (233s)
+    [fold 1] epoch 5/30 val_auc=0.9026 (228s)
+    [fold 1] epoch 6/30 val_auc=0.9045 (226s)
+    [fold 1] epoch 7/30 val_auc=0.8996 (230s)
+    [fold 1] epoch 8/30 val_auc=0.9127 (233s)
+    [fold 1] epoch 9/30 val_auc=0.9032 (236s)
+    [fold 1] epoch 10/30 val_auc=0.9035 (237s)
+    [fold 1] early stop at 10 (best 0.9162)
+      [train] 0/6811
+      [train] 6400/6811
+      [val] 0/1201
+      [test] 0/2003
+      [isic] 0/32701
+      [isic] 6400/32701
+      [isic] 12800/32701
+      [isic] 19200/32701
+      [isic] 25600/32701
+      [isic] 32000/32701
+  fold 1: HAM AUROC 0.9221 | ISIC AUROC 0.6628 | 50 min
+  fold 2: train 6782, val 1230, test 2003, test images whose lesion is in train 0 (0.0%)
+    [fold 2] epoch 1/30 val_auc=0.8794 (227s)
+    [fold 2] epoch 2/30 val_auc=0.9125 (224s)
+    [fold 2] epoch 3/30 val_auc=0.9173 (231s)
+    [fold 2] epoch 4/30 val_auc=0.9295 (229s)
+    [fold 2] epoch 5/30 val_auc=0.9349 (229s)
+    [fold 2] epoch 6/30 val_auc=0.9298 (227s)
+    [fold 2] epoch 7/30 val_auc=0.9214 (233s)
+    [fold 2] epoch 8/30 val_auc=0.9286 (238s)
+    [fold 2] epoch 9/30 val_auc=0.9452 (216s)
+    [fold 2] epoch 10/30 val_auc=0.9487 (195s)
+    [fold 2] epoch 11/30 val_auc=0.9396 (184s)
+    [fold 2] epoch 12/30 val_auc=0.9257 (179s)
+    [fold 2] epoch 13/30 val_auc=0.9426 (177s)
+    [fold 2] epoch 14/30 val_auc=0.9314 (173s)
+    [fold 2] epoch 15/30 val_auc=0.9208 (176s)
+    [fold 2] epoch 16/30 val_auc=0.9280 (176s)
+    [fold 2] early stop at 16 (best 0.9487)
+      [train] 0/6782
+      [train] 6400/6782
+      [val] 0/1230
+      [test] 0/2003
+      [isic] 0/32701
+      [isic] 6400/32701
+      [isic] 12800/32701
+      [isic] 19200/32701
+      [isic] 25600/32701
+      [isic] 32000/32701
+  fold 2: HAM AUROC 0.9031 | ISIC AUROC 0.7144 | 64 min
+  fold 3: train 6795, val 1217, test 2003, test images whose lesion is in train 0 (0.0%)
+    [fold 3] epoch 1/30 val_auc=0.8806 (173s)
+    [fold 3] epoch 2/30 val_auc=0.9028 (174s)
+    [fold 3] epoch 3/30 val_auc=0.9013 (175s)
+    [fold 3] epoch 4/30 val_auc=0.8725 (177s)
+    [fold 3] epoch 5/30 val_auc=0.9046 (176s)
+    [fold 3] epoch 6/30 val_auc=0.9031 (176s)
+    [fold 3] epoch 7/30 val_auc=0.9231 (177s)
+    [fold 3] epoch 8/30 val_auc=0.9194 (180s)
+    [fold 3] epoch 9/30 val_auc=0.9146 (182s)
+    [fold 3] epoch 10/30 val_auc=0.9106 (182s)
+    [fold 3] epoch 11/30 val_auc=0.9154 (179s)
+    [fold 3] epoch 12/30 val_auc=0.9107 (171s)
+    [fold 3] epoch 13/30 val_auc=0.8985 (165s)
+    [fold 3] early stop at 13 (best 0.9231)
+      [train] 0/6795
+      [train] 6400/6795
+      [val] 0/1217
+      [test] 0/2003
+      [isic] 0/32701
+      [isic] 6400/32701
+      [isic] 12800/32701
+      [isic] 19200/32701
+      [isic] 25600/32701
+      [isic] 32000/32701
+  fold 3: HAM AUROC 0.9185 | ISIC AUROC 0.6384 | 46 min
+  fold 4: train 6819, val 1193, test 2003, test images whose lesion is in train 0 (0.0%)
+    [fold 4] epoch 1/30 val_auc=0.8770 (162s)
+    [fold 4] epoch 2/30 val_auc=0.8764 (161s)
+    [fold 4] epoch 3/30 val_auc=0.8749 (159s)
+    [fold 4] epoch 4/30 val_auc=0.8787 (158s)
+    [fold 4] epoch 5/30 val_auc=0.8921 (157s)
+    [fold 4] epoch 6/30 val_auc=0.8688 (157s)
+    [fold 4] epoch 7/30 val_auc=0.9009 (157s)
+    [fold 4] epoch 8/30 val_auc=0.8645 (157s)
+    [fold 4] epoch 9/30 val_auc=0.8867 (156s)
+    [fold 4] epoch 10/30 val_auc=0.8756 (158s)
+    [fold 4] epoch 11/30 val_auc=0.8980 (157s)
+    [fold 4] epoch 12/30 val_auc=0.8618 (159s)
+    [fold 4] epoch 13/30 val_auc=0.8755 (159s)
+    [fold 4] early stop at 13 (best 0.9009)
+      [train] 0/6819
+      [train] 6400/6819
+      [val] 0/1193
+      [test] 0/2003
+      [isic] 0/32701
+      [isic] 6400/32701
+      [isic] 12800/32701
+      [isic] 19200/32701
+      [isic] 25600/32701
+      [isic] 32000/32701
+  fold 4: HAM AUROC 0.9081 | ISIC AUROC 0.7175 | 42 min
+  fold 5: train 6821, val 1191, test 2003, test images whose lesion is in train 0 (0.0%)
+    [fold 5] epoch 1/30 val_auc=0.8922 (162s)
+    [fold 5] epoch 2/30 val_auc=0.9061 (162s)
+    [fold 5] epoch 3/30 val_auc=0.9226 (161s)
+    [fold 5] epoch 4/30 val_auc=0.9176 (161s)
+    [fold 5] epoch 5/30 val_auc=0.9215 (160s)
+    [fold 5] epoch 6/30 val_auc=0.8980 (159s)
+    [fold 5] epoch 7/30 val_auc=0.8922 (160s)
+    [fold 5] epoch 8/30 val_auc=0.9044 (158s)
+    [fold 5] epoch 9/30 val_auc=0.9196 (159s)
+    [fold 5] early stop at 9 (best 0.9226)
+      [train] 0/6821
+      [train] 6400/6821
+      [val] 0/1191
+      [test] 0/2003
+      [isic] 0/32701
+      [isic] 6400/32701
+      [isic] 12800/32701
+      [isic] 19200/32701
+      [isic] 25600/32701
+      [isic] 32000/32701
+  fold 5: HAM AUROC 0.9181 | ISIC AUROC 0.6727 | 32 min
+
+=== image, seed 123 ===
+  fold 1: train 6810, val 1202, test 2003, test images whose lesion is in train 716 (35.7%)
+    [fold 1] epoch 1/30 val_auc=0.8730 (156s)
+    [fold 1] epoch 2/30 val_auc=0.9156 (156s)
+    [fold 1] epoch 3/30 val_auc=0.9242 (155s)
+    [fold 1] epoch 4/30 val_auc=0.9294 (168s)
+    [fold 1] epoch 5/30 val_auc=0.9139 (185s)
+    [fold 1] epoch 6/30 val_auc=0.9366 (196s)
+    [fold 1] epoch 7/30 val_auc=0.9459 (204s)
+    [fold 1] epoch 8/30 val_auc=0.9308 (209s)
+    [fold 1] epoch 9/30 val_auc=0.9504 (214s)
+    [fold 1] epoch 10/30 val_auc=0.9370 (220s)
+    [fold 1] epoch 11/30 val_auc=0.9396 (224s)
+    [fold 1] epoch 12/30 val_auc=0.9306 (227s)
+    [fold 1] epoch 13/30 val_auc=0.9326 (230s)
+    [fold 1] epoch 14/30 val_auc=0.9442 (232s)
+    [fold 1] epoch 15/30 val_auc=0.9353 (232s)
+    [fold 1] early stop at 15 (best 0.9504)
+      [train] 0/6810
+      [train] 6400/6810
+      [val] 0/1202
+      [test] 0/2003
+      [isic] 0/32701
+      [isic] 6400/32701
+      [isic] 12800/32701
+      [isic] 19200/32701
+      [isic] 25600/32701
+      [isic] 32000/32701
+  fold 1: HAM AUROC 0.9502 | ISIC AUROC 0.6727 | 64 min
+  fold 2: train 6810, val 1202, test 2003, test images whose lesion is in train 706 (35.2%)
+    [fold 2] epoch 1/30 val_auc=0.8838 (407s)
+    [fold 2] epoch 2/30 val_auc=0.9011 (407s)
+    [fold 2] epoch 3/30 val_auc=0.9253 (9378s)
+    [fold 2] epoch 4/30 val_auc=0.9206 (400s)
+    [fold 2] epoch 5/30 val_auc=0.9324 (154s)
+    [fold 2] epoch 6/30 val_auc=0.9230 (176s)
+    [fold 2] epoch 7/30 val_auc=0.9265 (189s)
+    [fold 2] epoch 8/30 val_auc=0.9418 (184s)
+    [fold 2] epoch 9/30 val_auc=0.9493 (184s)
+    [fold 2] epoch 10/30 val_auc=0.9463 (181s)
+    [fold 2] epoch 11/30 val_auc=0.9486 (179s)
+    [fold 2] epoch 12/30 val_auc=0.9381 (178s)
+    [fold 2] epoch 13/30 val_auc=0.9446 (184s)
+    [fold 2] epoch 14/30 val_auc=0.9413 (193s)
+    [fold 2] epoch 15/30 val_auc=0.9483 (195s)
+    [fold 2] early stop at 15 (best 0.9493)
+      [train] 0/6810
+      [train] 6400/6810
+      [val] 0/1202
+      [test] 0/2003
+      [isic] 0/32701
+      [isic] 6400/32701
+      [isic] 12800/32701
+      [isic] 19200/32701
+      [isic] 25600/32701
+      [isic] 32000/32701
+  fold 2: HAM AUROC 0.9566 | ISIC AUROC 0.6915 | 219 min
+  fold 3: train 6810, val 1202, test 2003, test images whose lesion is in train 728 (36.3%)
+    [fold 3] epoch 1/30 val_auc=0.8914 (173s)
+    [fold 3] epoch 2/30 val_auc=0.9142 (172s)
+    [fold 3] epoch 3/30 val_auc=0.9147 (170s)
+    [fold 3] epoch 4/30 val_auc=0.9264 (169s)
+    [fold 3] epoch 5/30 val_auc=0.9394 (172s)
+    [fold 3] epoch 6/30 val_auc=0.9216 (177s)
+    [fold 3] epoch 7/30 val_auc=0.9309 (179s)
+    [fold 3] epoch 8/30 val_auc=0.9448 (181s)
+    [fold 3] epoch 9/30 val_auc=0.9433 (182s)
+    [fold 3] epoch 10/30 val_auc=0.9467 (183s)
+    [fold 3] epoch 11/30 val_auc=0.9438 (183s)
+    [fold 3] epoch 12/30 val_auc=0.9449 (184s)
+    [fold 3] epoch 13/30 val_auc=0.9369 (185s)
+    [fold 3] epoch 14/30 val_auc=0.9326 (185s)
+    [fold 3] epoch 15/30 val_auc=0.9341 (184s)
+    [fold 3] epoch 16/30 val_auc=0.9282 (185s)
+    [fold 3] early stop at 16 (best 0.9467)
+      [train] 0/6810
+      [train] 6400/6810
+      [val] 0/1202
+      [test] 0/2003
+      [isic] 0/32701
+      [isic] 6400/32701
+      [isic] 12800/32701
+      [isic] 19200/32701
+      [isic] 25600/32701
+      [isic] 32000/32701
+  fold 3: HAM AUROC 0.9423 | ISIC AUROC 0.6693 | 57 min
+  fold 4: train 6810, val 1202, test 2003, test images whose lesion is in train 665 (33.2%)
+    [fold 4] epoch 1/30 val_auc=0.8598 (192s)
+    [fold 4] epoch 2/30 val_auc=0.8868 (190s)
+    [fold 4] epoch 3/30 val_auc=0.9001 (191s)
+    [fold 4] epoch 4/30 val_auc=0.9136 (190s)
+    [fold 4] epoch 5/30 val_auc=0.9165 (189s)
+    [fold 4] epoch 6/30 val_auc=0.9188 (188s)
+    [fold 4] epoch 7/30 val_auc=0.9129 (189s)
+    [fold 4] epoch 8/30 val_auc=0.9273 (188s)
+    [fold 4] epoch 9/30 val_auc=0.9161 (188s)
+    [fold 4] epoch 10/30 val_auc=0.9303 (188s)
+    [fold 4] epoch 11/30 val_auc=0.9380 (188s)
+    [fold 4] epoch 12/30 val_auc=0.9388 (188s)
+    [fold 4] epoch 13/30 val_auc=0.9383 (188s)
+    [fold 4] epoch 14/30 val_auc=0.9380 (187s)
+    [fold 4] epoch 15/30 val_auc=0.9340 (187s)
+    [fold 4] epoch 16/30 val_auc=0.9406 (186s)
+    [fold 4] epoch 17/30 val_auc=0.9381 (185s)
+    [fold 4] epoch 18/30 val_auc=0.9356 (185s)
+    [fold 4] epoch 19/30 val_auc=0.9346 (187s)
+    [fold 4] epoch 20/30 val_auc=0.9377 (185s)
+    [fold 4] epoch 21/30 val_auc=0.9405 (183s)
+    [fold 4] epoch 22/30 val_auc=0.9381 (183s)
+    [fold 4] early stop at 22 (best 0.9406)
+      [train] 0/6810
+      [train] 6400/6810
+      [val] 0/1202
+      [test] 0/2003
+      [isic] 0/32701
+      [isic] 6400/32701
+      [isic] 12800/32701
+      [isic] 19200/32701
+      [isic] 25600/32701
+      [isic] 32000/32701
+  fold 4: HAM AUROC 0.9590 | ISIC AUROC 0.7014 | 78 min
+  fold 5: train 6810, val 1202, test 2003, test images whose lesion is in train 698 (34.8%)
+    [fold 5] epoch 1/30 val_auc=0.8818 (183s)
+    [fold 5] epoch 2/30 val_auc=0.8987 (181s)
+    [fold 5] epoch 3/30 val_auc=0.9200 (180s)
+    [fold 5] epoch 4/30 val_auc=0.9311 (179s)
+    [fold 5] epoch 5/30 val_auc=0.9364 (180s)
+    [fold 5] epoch 6/30 val_auc=0.9408 (180s)
+    [fold 5] epoch 7/30 val_auc=0.9435 (180s)
+    [fold 5] epoch 8/30 val_auc=0.9526 (180s)
+    [fold 5] epoch 9/30 val_auc=0.9534 (180s)
+    [fold 5] epoch 10/30 val_auc=0.9531 (178s)
+    [fold 5] epoch 11/30 val_auc=0.9413 (181s)
+    [fold 5] epoch 12/30 val_auc=0.9515 (179s)
+    [fold 5] epoch 13/30 val_auc=0.9550 (180s)
+    [fold 5] epoch 14/30 val_auc=0.9553 (181s)
+    [fold 5] epoch 15/30 val_auc=0.9591 (180s)
+    [fold 5] epoch 16/30 val_auc=0.9594 (182s)
+    [fold 5] epoch 17/30 val_auc=0.9589 (184s)
+    [fold 5] epoch 18/30 val_auc=0.9621 (184s)
+    [fold 5] epoch 19/30 val_auc=0.9649 (184s)
+    [fold 5] epoch 20/30 val_auc=0.9635 (184s)
+    [fold 5] epoch 21/30 val_auc=0.9547 (185s)
+    [fold 5] epoch 22/30 val_auc=0.9550 (186s)
+    [fold 5] epoch 23/30 val_auc=0.9623 (185s)
+    [fold 5] epoch 24/30 val_auc=0.9634 (185s)
+    [fold 5] epoch 25/30 val_auc=0.9577 (184s)
+    [fold 5] early stop at 25 (best 0.9649)
+      [train] 0/6810
+      [train] 6400/6810
+      [val] 0/1202
+      [test] 0/2003
+      [isic] 0/32701
+      [isic] 6400/32701
+      [isic] 12800/32701
+      [isic] 19200/32701
+      [isic] 25600/32701
+      [isic] 32000/32701
+  fold 5: HAM AUROC 0.9528 | ISIC AUROC 0.6989 | 85 min
+
+=== AGGREGATION (XGBoost, all features) ===
+  seed 42: internal 0.9177 -> 0.9509 (d +0.0332 [+0.0248, +0.0412]) | external 0.7199 -> 0.7297 (d +0.0098 [-0.0026, +0.0228]) | melanoma leaked 61.5%
+  seed 7: internal 0.9213 -> 0.9451 (d +0.0238 [+0.0163, +0.0318]) | external 0.7149 -> 0.7377 (d +0.0228 [+0.0115, +0.0339]) | melanoma leaked 58.8%
+  seed 123: internal 0.9048 -> 0.9497 (d +0.0449 [+0.0354, +0.0553]) | external 0.7043 -> 0.7047 (d +0.0004 [-0.0120, +0.0119]) | melanoma leaked 60.2%
+
+  Over 3 seeds: internal delta 0.0340 +/- 0.0106; external delta 0.0110 +/- 0.0113; gap widening 0.0229 +/- 0.0218; sensitivity at 90% specificity delta 0.119 +/- 0.024
+
+Saved $MELANOMA_ROOT/results_seeds/seed_summary.csv

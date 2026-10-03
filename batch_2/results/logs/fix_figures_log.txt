@@ -1,0 +1,13 @@
+[fig04]
+  saved Fig04_cross_dataset_contamination
+[fig10]
+  saved Fig10_confusion_matrices
+[fig15]
+  fold-1 test split: n = 2003; threshold at 90% specificity = 0.0250
+    True positive: 148
+    False negative: 75
+    True negative: 1636
+    False positive: 144
+  saved Fig15_gradcam_explainability
+
+Done. $MELANOMA_ROOT/figures

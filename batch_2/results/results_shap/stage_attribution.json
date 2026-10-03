@@ -1,0 +1,237 @@
+{
+  "fold1": {
+    "shap": {
+      "stage_5": {
+        "dims": 112,
+        "importance_share": 0.014523659832775593,
+        "mean_per_feature": 0.0023857844062149525
+      },
+      "stage_6": {
+        "dims": 192,
+        "importance_share": 0.04163418710231781,
+        "mean_per_feature": 0.0039895325899124146
+      },
+      "stage_7": {
+        "dims": 320,
+        "importance_share": 0.17655949294567108,
+        "mean_per_feature": 0.010151127353310585
+      },
+      "stage_8": {
+        "dims": 1280,
+        "importance_share": 0.7672826647758484,
+        "mean_per_feature": 0.011028553359210491
+      }
+    },
+    "gain": {
+      "stage_5": {
+        "dims": 112,
+        "importance_share": 0.05498334392905235,
+        "mean_per_feature": 0.0004909227136522532
+      },
+      "stage_6": {
+        "dims": 192,
+        "importance_share": 0.08098091930150986,
+        "mean_per_feature": 0.0004217756213620305
+      },
+      "stage_7": {
+        "dims": 320,
+        "importance_share": 0.1332448273897171,
+        "mean_per_feature": 0.00041639007395133376
+      },
+      "stage_8": {
+        "dims": 1280,
+        "importance_share": 0.7307909727096558,
+        "mean_per_feature": 0.0005709304241463542
+      }
+    },
+    "rank_agreement_top256": 0.27734375
+  },
+  "fold2": {
+    "shap": {
+      "stage_5": {
+        "dims": 112,
+        "importance_share": 0.01423254981637001,
+        "mean_per_feature": 0.0023620054125785828
+      },
+      "stage_6": {
+        "dims": 192,
+        "importance_share": 0.03523814678192139,
+        "mean_per_feature": 0.003411363810300827
+      },
+      "stage_7": {
+        "dims": 320,
+        "importance_share": 0.14556142687797546,
+        "mean_per_feature": 0.00845497939735651
+      },
+      "stage_8": {
+        "dims": 1280,
+        "importance_share": 0.8049678802490234,
+        "mean_per_feature": 0.011689200066030025
+      }
+    },
+    "gain": {
+      "stage_5": {
+        "dims": 112,
+        "importance_share": 0.031690046191215515,
+        "mean_per_feature": 0.0002829468285199255
+      },
+      "stage_6": {
+        "dims": 192,
+        "importance_share": 0.05123579502105713,
+        "mean_per_feature": 0.0002668531087692827
+      },
+      "stage_7": {
+        "dims": 320,
+        "importance_share": 0.12989437580108643,
+        "mean_per_feature": 0.0004059199127368629
+      },
+      "stage_8": {
+        "dims": 1280,
+        "importance_share": 0.7871797680854797,
+        "mean_per_feature": 0.000614984193816781
+      }
+    },
+    "rank_agreement_top256": 0.30078125
+  },
+  "fold3": {
+    "shap": {
+      "stage_5": {
+        "dims": 112,
+        "importance_share": 0.021815838292241096,
+        "mean_per_feature": 0.003873028326779604
+      },
+      "stage_6": {
+        "dims": 192,
+        "importance_share": 0.04901959002017975,
+        "mean_per_feature": 0.005076510366052389
+      },
+      "stage_7": {
+        "dims": 320,
+        "importance_share": 0.11911897361278534,
+        "mean_per_feature": 0.007401636801660061
+      },
+      "stage_8": {
+        "dims": 1280,
+        "importance_share": 0.810045599937439,
+        "mean_per_feature": 0.012583350762724876
+      }
+    },
+    "gain": {
+      "stage_5": {
+        "dims": 112,
+        "importance_share": 0.03591113165020943,
+        "mean_per_feature": 0.0003206350957043469
+      },
+      "stage_6": {
+        "dims": 192,
+        "importance_share": 0.055295757949352264,
+        "mean_per_feature": 0.0002879987296182662
+      },
+      "stage_7": {
+        "dims": 320,
+        "importance_share": 0.14729294180870056,
+        "mean_per_feature": 0.00046029043733142316
+      },
+      "stage_8": {
+        "dims": 1280,
+        "importance_share": 0.7615001201629639,
+        "mean_per_feature": 0.0005949219921603799
+      }
+    },
+    "rank_agreement_top256": 0.3046875
+  },
+  "fold4": {
+    "shap": {
+      "stage_5": {
+        "dims": 112,
+        "importance_share": 0.013994459062814713,
+        "mean_per_feature": 0.0022924807853996754
+      },
+      "stage_6": {
+        "dims": 192,
+        "importance_share": 0.033462367951869965,
+        "mean_per_feature": 0.0031975924503058195
+      },
+      "stage_7": {
+        "dims": 320,
+        "importance_share": 0.13142023980617523,
+        "mean_per_feature": 0.007534942124038935
+      },
+      "stage_8": {
+        "dims": 1280,
+        "importance_share": 0.821122944355011,
+        "mean_per_feature": 0.011769712902605534
+      }
+    },
+    "gain": {
+      "stage_5": {
+        "dims": 112,
+        "importance_share": 0.045103009790182114,
+        "mean_per_feature": 0.0004027054237667471
+      },
+      "stage_6": {
+        "dims": 192,
+        "importance_share": 0.06275036185979843,
+        "mean_per_feature": 0.00032682475284673274
+      },
+      "stage_7": {
+        "dims": 320,
+        "importance_share": 0.13442759215831757,
+        "mean_per_feature": 0.00042008617310784757
+      },
+      "stage_8": {
+        "dims": 1280,
+        "importance_share": 0.7577190399169922,
+        "mean_per_feature": 0.0005919679533690214
+      }
+    },
+    "rank_agreement_top256": 0.33203125
+  },
+  "fold5": {
+    "shap": {
+      "stage_5": {
+        "dims": 112,
+        "importance_share": 0.03759739547967911,
+        "mean_per_feature": 0.0066132927313447
+      },
+      "stage_6": {
+        "dims": 192,
+        "importance_share": 0.05331091210246086,
+        "mean_per_feature": 0.005470070522278547
+      },
+      "stage_7": {
+        "dims": 320,
+        "importance_share": 0.18617935478687286,
+        "mean_per_feature": 0.01146197784692049
+      },
+      "stage_8": {
+        "dims": 1280,
+        "importance_share": 0.7229123711585999,
+        "mean_per_feature": 0.011126374825835228
+      }
+    },
+    "gain": {
+      "stage_5": {
+        "dims": 112,
+        "importance_share": 0.04630829393863678,
+        "mean_per_feature": 0.0004134669143240899
+      },
+      "stage_6": {
+        "dims": 192,
+        "importance_share": 0.06853660941123962,
+        "mean_per_feature": 0.0003569615073502064
+      },
+      "stage_7": {
+        "dims": 320,
+        "importance_share": 0.17187753319740295,
+        "mean_per_feature": 0.0005371173028834164
+      },
+      "stage_8": {
+        "dims": 1280,
+        "importance_share": 0.7132775783538818,
+        "mean_per_feature": 0.0005572481313720345
+      }
+    },
+    "rank_agreement_top256": 0.30859375
+  }
+}

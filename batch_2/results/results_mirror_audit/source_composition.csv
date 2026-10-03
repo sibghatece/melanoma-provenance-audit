@@ -1,0 +1,47 @@
+mirror,split,class,HAM10000,ISIC2020,unmatched
+Fanconi_3297,test,benign,360,0.0,0
+Fanconi_3297,test,malignant,144,2.0,154
+Fanconi_3297,train,benign,1440,0.0,0
+Fanconi_3297,train,malignant,544,4.0,649
+Javid_10605,test,benign,0,498.0,2
+Javid_10605,test,malignant,0,84.0,416
+Javid_10605,train,benign,0,4974.0,26
+Javid_10605,train,malignant,1113,507.0,2985
+SkinCancerISIC_2357,test,actinic keratosis,14,0.0,2
+SkinCancerISIC_2357,test,basal cell carcinoma,16,0.0,0
+SkinCancerISIC_2357,test,dermatofibroma,9,0.0,7
+SkinCancerISIC_2357,test,melanoma,0,0.0,16
+SkinCancerISIC_2357,test,nevus,0,0.0,16
+SkinCancerISIC_2357,test,pigmented benign keratosis,16,0.0,0
+SkinCancerISIC_2357,test,seborrheic keratosis,0,0.0,3
+SkinCancerISIC_2357,test,squamous cell carcinoma,11,0.0,5
+SkinCancerISIC_2357,test,vascular lesion,3,0.0,0
+SkinCancerISIC_2357,train,actinic keratosis,114,0.0,0
+SkinCancerISIC_2357,train,basal cell carcinoma,376,0.0,0
+SkinCancerISIC_2357,train,dermatofibroma,95,0.0,0
+SkinCancerISIC_2357,train,melanoma,0,0.0,438
+SkinCancerISIC_2357,train,nevus,76,0.0,281
+SkinCancerISIC_2357,train,pigmented benign keratosis,462,0.0,0
+SkinCancerISIC_2357,train,seborrheic keratosis,0,0.0,77
+SkinCancerISIC_2357,train,squamous cell carcinoma,181,0.0,0
+SkinCancerISIC_2357,train,vascular lesion,139,0.0,0
+ISIC19_20_malig_benign_11400,test,benign,0,550.0,0
+ISIC19_20_malig_benign_11400,test,malignant,0,7.0,543
+ISIC19_20_malig_benign_11400,train,benign,0,5198.0,2
+ISIC19_20_malig_benign_11400,train,malignant,559,584.0,2857
+ISIC19_20_malig_benign_11400,val,benign,0,550.0,0
+ISIC19_20_malig_benign_11400,val,malignant,544,0.0,6
+HAM_augmented_balanced,train,akiec,301,0.0,4916
+HAM_augmented_balanced,train,bcc,484,0.0,5374
+HAM_augmented_balanced,train,bkl,1024,0.0,4896
+HAM_augmented_balanced,train,df,109,0.0,4301
+HAM_augmented_balanced,train,mel,1074,0.0,4846
+HAM_augmented_balanced,train,nv,5954,0.0,0
+HAM_augmented_balanced,train,vasc,131,0.0,5159
+HAM_augmented_balanced,val,akiec,26,0.0,0
+HAM_augmented_balanced,val,bcc,30,0.0,0
+HAM_augmented_balanced,val,bkl,75,0.0,0
+HAM_augmented_balanced,val,df,6,0.0,0
+HAM_augmented_balanced,val,mel,39,0.0,0
+HAM_augmented_balanced,val,nv,751,0.0,0
+HAM_augmented_balanced,val,vasc,11,0.0,0

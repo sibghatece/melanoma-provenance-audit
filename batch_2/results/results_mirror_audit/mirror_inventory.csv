@@ -1,0 +1,47 @@
+mirror,split,class,n_images
+Fanconi_3297,test,benign,360
+Fanconi_3297,test,malignant,300
+Fanconi_3297,train,benign,1440
+Fanconi_3297,train,malignant,1197
+Javid_10605,test,benign,500
+Javid_10605,test,malignant,500
+Javid_10605,train,benign,5000
+Javid_10605,train,malignant,4605
+SkinCancerISIC_2357,test,actinic keratosis,16
+SkinCancerISIC_2357,test,basal cell carcinoma,16
+SkinCancerISIC_2357,test,dermatofibroma,16
+SkinCancerISIC_2357,test,melanoma,16
+SkinCancerISIC_2357,test,nevus,16
+SkinCancerISIC_2357,test,pigmented benign keratosis,16
+SkinCancerISIC_2357,test,seborrheic keratosis,3
+SkinCancerISIC_2357,test,squamous cell carcinoma,16
+SkinCancerISIC_2357,test,vascular lesion,3
+SkinCancerISIC_2357,train,actinic keratosis,114
+SkinCancerISIC_2357,train,basal cell carcinoma,376
+SkinCancerISIC_2357,train,dermatofibroma,95
+SkinCancerISIC_2357,train,melanoma,438
+SkinCancerISIC_2357,train,nevus,357
+SkinCancerISIC_2357,train,pigmented benign keratosis,462
+SkinCancerISIC_2357,train,seborrheic keratosis,77
+SkinCancerISIC_2357,train,squamous cell carcinoma,181
+SkinCancerISIC_2357,train,vascular lesion,139
+ISIC19_20_malig_benign_11400,test,benign,550
+ISIC19_20_malig_benign_11400,test,malignant,550
+ISIC19_20_malig_benign_11400,train,benign,5200
+ISIC19_20_malig_benign_11400,train,malignant,4000
+ISIC19_20_malig_benign_11400,val,benign,550
+ISIC19_20_malig_benign_11400,val,malignant,550
+HAM_augmented_balanced,train,akiec,5217
+HAM_augmented_balanced,train,bcc,5858
+HAM_augmented_balanced,train,bkl,5920
+HAM_augmented_balanced,train,df,4410
+HAM_augmented_balanced,train,mel,5920
+HAM_augmented_balanced,train,nv,5954
+HAM_augmented_balanced,train,vasc,5290
+HAM_augmented_balanced,val,akiec,26
+HAM_augmented_balanced,val,bcc,30
+HAM_augmented_balanced,val,bkl,75
+HAM_augmented_balanced,val,df,6
+HAM_augmented_balanced,val,mel,39
+HAM_augmented_balanced,val,nv,751
+HAM_augmented_balanced,val,vasc,11

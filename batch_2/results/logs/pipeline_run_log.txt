@@ -1,0 +1,241 @@
+[Device] mps
+Loading Kaggle training pool...
+  2637 training images, 660 held-out test images
+Loading external validation sets...
+  HAM10000: 10015 images | ISIC 2020: 32701 images
+
+=== FOLD 1/5 ===
+  [Fold 1] Epoch 1/30  val_loss=0.4295
+  [Fold 1] Epoch 2/30  val_loss=0.4416
+  [Fold 1] Epoch 3/30  val_loss=0.4046
+  [Fold 1] Epoch 4/30  val_loss=0.4002
+  [Fold 1] Epoch 5/30  val_loss=0.3949
+  [Fold 1] Epoch 6/30  val_loss=0.3913
+  [Fold 1] Epoch 7/30  val_loss=0.3953
+  [Fold 1] Epoch 8/30  val_loss=0.3910
+  [Fold 1] Epoch 9/30  val_loss=0.3970
+  [Fold 1] Epoch 10/30  val_loss=0.4016
+  [Fold 1] Epoch 11/30  val_loss=0.4136
+  [Fold 1] Epoch 12/30  val_loss=0.4050
+  [Fold 1] Epoch 13/30  val_loss=0.4065
+  [Fold 1] Early stopping at epoch 13
+  Extracting features for shallow classifier tuning...
+  Tuning shallow classifiers (grid search, 3-fold inner CV)...
+    Tuned SVM-RBF: best params = {'C': 10, 'gamma': 0.001}
+    Tuned XGBoost: best params = {'learning_rate': 0.03, 'max_depth': 6, 'n_estimators': 150}
+    Tuned RandomForest: best params = {'max_depth': None, 'n_estimators': 200}
+    Tuned KNN: best params = {'n_neighbors': 11, 'weights': 'distance'}
+  Evaluating on held-out Kaggle test set...
+    [Kaggle_test fold1] SVM-RBF: acc=0.8833 bal_acc=0.8844 sens=0.8967 spec=0.8722 auc=0.9555
+    [Kaggle_test fold1] XGBoost: acc=0.8788 bal_acc=0.8778 sens=0.8667 spec=0.8889 auc=0.9564
+    [Kaggle_test fold1] RandomForest: acc=0.8697 bal_acc=0.8697 sens=0.8700 spec=0.8694 auc=0.9538
+    [Kaggle_test fold1] KNN: acc=0.8939 bal_acc=0.8947 sens=0.9033 spec=0.8861 auc=0.9566
+    [Kaggle_test fold1] Stacking_Ensemble: acc=0.8848 bal_acc=0.8853 sens=0.8900 spec=0.8806 auc=0.9609
+    [HAM10000 fold1] SVM-RBF: acc=0.7835 bal_acc=0.8256 sens=0.8796 spec=0.7715 auc=0.8934
+    [HAM10000 fold1] XGBoost: acc=0.7547 bal_acc=0.7932 sens=0.8428 spec=0.7437 auc=0.8659
+    [HAM10000 fold1] RandomForest: acc=0.7484 bal_acc=0.7853 sens=0.8329 spec=0.7378 auc=0.8666
+    [HAM10000 fold1] KNN: acc=0.7572 bal_acc=0.7915 sens=0.8356 spec=0.7474 auc=0.8706
+    [HAM10000 fold1] Stacking_Ensemble: acc=0.7781 bal_acc=0.8158 sens=0.8643 spec=0.7674 auc=0.8839
+    [ISIC2020 fold1] SVM-RBF: acc=0.7323 bal_acc=0.6762 sens=0.6179 spec=0.7344 auc=0.7285
+    [ISIC2020 fold1] XGBoost: acc=0.7020 bal_acc=0.6641 sens=0.6248 spec=0.7034 auc=0.7230
+    [ISIC2020 fold1] RandomForest: acc=0.7044 bal_acc=0.6662 sens=0.6265 spec=0.7058 auc=0.7193
+    [ISIC2020 fold1] KNN: acc=0.7312 bal_acc=0.6477 sens=0.5611 spec=0.7342 auc=0.6771
+    [ISIC2020 fold1] Stacking_Ensemble: acc=0.7482 bal_acc=0.6724 sens=0.5938 spec=0.7510 auc=0.7144
+  Latency: 3.35 ms/image, 2,226,434 params
+  [Checkpoint] Fold 1 results appended to $MELANOMA_ROOT/pipeline_results/all_fold_results.csv and marked complete.
+
+=== FOLD 2/5 ===
+  [Fold 2] Epoch 1/30  val_loss=0.4140
+  [Fold 2] Epoch 2/30  val_loss=0.3983
+  [Fold 2] Epoch 3/30  val_loss=0.3854
+  [Fold 2] Epoch 4/30  val_loss=0.3895
+  [Fold 2] Epoch 5/30  val_loss=0.3872
+  [Fold 2] Epoch 6/30  val_loss=0.3858
+  [Fold 2] Epoch 7/30  val_loss=0.3844
+  [Fold 2] Epoch 8/30  val_loss=0.3948
+  [Fold 2] Epoch 9/30  val_loss=0.3900
+  [Fold 2] Epoch 10/30  val_loss=0.3947
+  [Fold 2] Epoch 11/30  val_loss=0.3969
+  [Fold 2] Epoch 12/30  val_loss=0.3833
+  [Fold 2] Epoch 13/30  val_loss=0.3769
+  [Fold 2] Epoch 14/30  val_loss=0.3836
+  [Fold 2] Epoch 15/30  val_loss=0.3821
+  [Fold 2] Epoch 16/30  val_loss=0.3839
+  [Fold 2] Epoch 17/30  val_loss=0.4012
+  [Fold 2] Epoch 18/30  val_loss=0.3936
+  [Fold 2] Early stopping at epoch 18
+  Extracting features for shallow classifier tuning...
+  Tuning shallow classifiers (grid search, 3-fold inner CV)...
+    Tuned SVM-RBF: best params = {'C': 10, 'gamma': 0.001}
+    Tuned XGBoost: best params = {'learning_rate': 0.05, 'max_depth': 4, 'n_estimators': 300}
+    Tuned RandomForest: best params = {'max_depth': 10, 'n_estimators': 150}
+    Tuned KNN: best params = {'n_neighbors': 11, 'weights': 'distance'}
+  Evaluating on held-out Kaggle test set...
+    [Kaggle_test fold2] SVM-RBF: acc=0.8864 bal_acc=0.8867 sens=0.8900 spec=0.8833 auc=0.9617
+    [Kaggle_test fold2] XGBoost: acc=0.8879 bal_acc=0.8878 sens=0.8867 spec=0.8889 auc=0.9598
+    [Kaggle_test fold2] RandomForest: acc=0.8924 bal_acc=0.8936 sens=0.9067 spec=0.8806 auc=0.9594
+    [Kaggle_test fold2] KNN: acc=0.8758 bal_acc=0.8781 sens=0.9033 spec=0.8528 auc=0.9579
+    [Kaggle_test fold2] Stacking_Ensemble: acc=0.8939 bal_acc=0.8939 sens=0.8933 spec=0.8944 auc=0.9653
+    [HAM10000 fold2] SVM-RBF: acc=0.7919 bal_acc=0.8224 sens=0.8616 spec=0.7832 auc=0.8957
+    [HAM10000 fold2] XGBoost: acc=0.7774 bal_acc=0.8092 sens=0.8500 spec=0.7684 auc=0.8857
+    [HAM10000 fold2] RandomForest: acc=0.7616 bal_acc=0.8065 sens=0.8643 spec=0.7487 auc=0.8759
+    [HAM10000 fold2] KNN: acc=0.7689 bal_acc=0.8083 sens=0.8589 spec=0.7577 auc=0.8812
+    [HAM10000 fold2] Stacking_Ensemble: acc=0.7924 bal_acc=0.8215 sens=0.8589 spec=0.7841 auc=0.8939
+    [ISIC2020 fold2] SVM-RBF: acc=0.7125 bal_acc=0.6669 sens=0.6196 spec=0.7142 auc=0.7210
+    [ISIC2020 fold2] XGBoost: acc=0.7168 bal_acc=0.6733 sens=0.6282 spec=0.7184 auc=0.7253
+    [ISIC2020 fold2] RandomForest: acc=0.6495 bal_acc=0.6602 sens=0.6713 spec=0.6491 auc=0.7074
+    [ISIC2020 fold2] KNN: acc=0.6439 bal_acc=0.6531 sens=0.6627 spec=0.6436 auc=0.6824
+    [ISIC2020 fold2] Stacking_Ensemble: acc=0.7113 bal_acc=0.6731 sens=0.6334 spec=0.7127 auc=0.7124
+  [Checkpoint] Fold 2 results appended to $MELANOMA_ROOT/pipeline_results/all_fold_results.csv and marked complete.
+
+=== FOLD 3/5 ===
+  [Fold 3] Epoch 1/30  val_loss=0.4574
+  [Fold 3] Epoch 2/30  val_loss=0.4260
+  [Fold 3] Epoch 3/30  val_loss=0.4137
+  [Fold 3] Epoch 4/30  val_loss=0.4145
+  [Fold 3] Epoch 5/30  val_loss=0.4130
+  [Fold 3] Epoch 6/30  val_loss=0.4121
+  [Fold 3] Epoch 7/30  val_loss=0.4071
+  [Fold 3] Epoch 8/30  val_loss=0.4200
+  [Fold 3] Epoch 9/30  val_loss=0.4162
+  [Fold 3] Epoch 10/30  val_loss=0.4031
+  [Fold 3] Epoch 11/30  val_loss=0.4219
+  [Fold 3] Epoch 12/30  val_loss=0.4096
+  [Fold 3] Epoch 13/30  val_loss=0.4061
+  [Fold 3] Epoch 14/30  val_loss=0.4031
+  [Fold 3] Epoch 15/30  val_loss=0.4136
+  [Fold 3] Epoch 16/30  val_loss=0.4314
+  [Fold 3] Epoch 17/30  val_loss=0.4082
+  [Fold 3] Epoch 18/30  val_loss=0.4187
+  [Fold 3] Epoch 19/30  val_loss=0.4100
+  [Fold 3] Early stopping at epoch 19
+  Extracting features for shallow classifier tuning...
+  Tuning shallow classifiers (grid search, 3-fold inner CV)...
+    Tuned SVM-RBF: best params = {'C': 1, 'gamma': 0.001}
+    Tuned XGBoost: best params = {'learning_rate': 0.1, 'max_depth': 4, 'n_estimators': 300}
+    Tuned RandomForest: best params = {'max_depth': 10, 'n_estimators': 300}
+    Tuned KNN: best params = {'n_neighbors': 11, 'weights': 'uniform'}
+  Evaluating on held-out Kaggle test set...
+    [Kaggle_test fold3] SVM-RBF: acc=0.8924 bal_acc=0.8939 sens=0.9100 spec=0.8778 auc=0.9553
+    [Kaggle_test fold3] XGBoost: acc=0.8803 bal_acc=0.8811 sens=0.8900 spec=0.8722 auc=0.9560
+    [Kaggle_test fold3] RandomForest: acc=0.8788 bal_acc=0.8797 sens=0.8900 spec=0.8694 auc=0.9544
+    [Kaggle_test fold3] KNN: acc=0.8848 bal_acc=0.8858 sens=0.8967 spec=0.8750 auc=0.9594
+    [Kaggle_test fold3] Stacking_Ensemble: acc=0.8864 bal_acc=0.8869 sens=0.8933 spec=0.8806 auc=0.9627
+    [HAM10000 fold3] SVM-RBF: acc=0.7907 bal_acc=0.8194 sens=0.8562 spec=0.7825 auc=0.8923
+    [HAM10000 fold3] XGBoost: acc=0.7804 bal_acc=0.8085 sens=0.8446 spec=0.7724 auc=0.8843
+    [HAM10000 fold3] RandomForest: acc=0.7637 bal_acc=0.7935 sens=0.8320 spec=0.7551 auc=0.8775
+    [HAM10000 fold3] KNN: acc=0.7664 bal_acc=0.7943 sens=0.8302 spec=0.7584 auc=0.8718
+    [HAM10000 fold3] Stacking_Ensemble: acc=0.7938 bal_acc=0.8168 sens=0.8464 spec=0.7872 auc=0.8900
+    [ISIC2020 fold3] SVM-RBF: acc=0.6663 bal_acc=0.6814 sens=0.6971 spec=0.6658 auc=0.7304
+    [ISIC2020 fold3] XGBoost: acc=0.6748 bal_acc=0.6782 sens=0.6816 spec=0.6747 auc=0.7272
+    [ISIC2020 fold3] RandomForest: acc=0.6588 bal_acc=0.6776 sens=0.6971 spec=0.6581 auc=0.7317
+    [ISIC2020 fold3] KNN: acc=0.6127 bal_acc=0.6550 sens=0.6988 spec=0.6111 auc=0.6873
+    [ISIC2020 fold3] Stacking_Ensemble: acc=0.6752 bal_acc=0.6767 sens=0.6781 spec=0.6752 auc=0.7221
+  [Checkpoint] Fold 3 results appended to $MELANOMA_ROOT/pipeline_results/all_fold_results.csv and marked complete.
+
+=== FOLD 4/5 ===
+  [Fold 4] Epoch 1/30  val_loss=0.4174
+  [Fold 4] Epoch 2/30  val_loss=0.4062
+  [Fold 4] Epoch 3/30  val_loss=0.3979
+  [Fold 4] Epoch 4/30  val_loss=0.3837
+  [Fold 4] Epoch 5/30  val_loss=0.3832
+  [Fold 4] Epoch 6/30  val_loss=0.3769
+  [Fold 4] Epoch 7/30  val_loss=0.3793
+  [Fold 4] Epoch 8/30  val_loss=0.3663
+  [Fold 4] Epoch 9/30  val_loss=0.3661
+  [Fold 4] Epoch 10/30  val_loss=0.3707
+  [Fold 4] Epoch 11/30  val_loss=0.3647
+  [Fold 4] Epoch 12/30  val_loss=0.3800
+  [Fold 4] Epoch 13/30  val_loss=0.3658
+  [Fold 4] Epoch 14/30  val_loss=0.3702
+  [Fold 4] Epoch 15/30  val_loss=0.3742
+  [Fold 4] Epoch 16/30  val_loss=0.3717
+  [Fold 4] Early stopping at epoch 16
+  Extracting features for shallow classifier tuning...
+  Tuning shallow classifiers (grid search, 3-fold inner CV)...
+    Tuned SVM-RBF: best params = {'C': 1, 'gamma': 0.001}
+    Tuned XGBoost: best params = {'learning_rate': 0.05, 'max_depth': 6, 'n_estimators': 300}
+    Tuned RandomForest: best params = {'max_depth': 10, 'n_estimators': 150}
+    Tuned KNN: best params = {'n_neighbors': 11, 'weights': 'uniform'}
+  Evaluating on held-out Kaggle test set...
+    [Kaggle_test fold4] SVM-RBF: acc=0.8970 bal_acc=0.8975 sens=0.9033 spec=0.8917 auc=0.9550
+    [Kaggle_test fold4] XGBoost: acc=0.8818 bal_acc=0.8817 sens=0.8800 spec=0.8833 auc=0.9585
+    [Kaggle_test fold4] RandomForest: acc=0.8894 bal_acc=0.8897 sens=0.8933 spec=0.8861 auc=0.9580
+    [Kaggle_test fold4] KNN: acc=0.8848 bal_acc=0.8828 sens=0.8600 spec=0.9056 auc=0.9492
+    [Kaggle_test fold4] Stacking_Ensemble: acc=0.8939 bal_acc=0.8939 sens=0.8933 spec=0.8944 auc=0.9622
+    [HAM10000 fold4] SVM-RBF: acc=0.7954 bal_acc=0.8087 sens=0.8257 spec=0.7916 auc=0.8854
+    [HAM10000 fold4] XGBoost: acc=0.7833 bal_acc=0.8058 sens=0.8347 spec=0.7769 auc=0.8787
+    [HAM10000 fold4] RandomForest: acc=0.7731 bal_acc=0.7942 sens=0.8212 spec=0.7671 auc=0.8729
+    [HAM10000 fold4] KNN: acc=0.7709 bal_acc=0.7780 sens=0.7871 spec=0.7689 auc=0.8583
+    [HAM10000 fold4] Stacking_Ensemble: acc=0.7898 bal_acc=0.8063 sens=0.8275 spec=0.7851 auc=0.8826
+    [ISIC2020 fold4] SVM-RBF: acc=0.7351 bal_acc=0.6657 sens=0.5938 spec=0.7377 auc=0.7264
+    [ISIC2020 fold4] XGBoost: acc=0.7230 bal_acc=0.6722 sens=0.6196 spec=0.7248 auc=0.7230
+    [ISIC2020 fold4] RandomForest: acc=0.7028 bal_acc=0.6738 sens=0.6437 spec=0.7039 auc=0.7205
+    [ISIC2020 fold4] KNN: acc=0.6779 bal_acc=0.6070 sens=0.5336 spec=0.6805 auc=0.6443
+    [ISIC2020 fold4] Stacking_Ensemble: acc=0.7325 bal_acc=0.6661 sens=0.5972 spec=0.7350 auc=0.7106
+  [Checkpoint] Fold 4 results appended to $MELANOMA_ROOT/pipeline_results/all_fold_results.csv and marked complete.
+
+=== FOLD 5/5 ===
+  [Fold 5] Epoch 1/30  val_loss=0.4651
+  [Fold 5] Epoch 2/30  val_loss=0.4420
+  [Fold 5] Epoch 3/30  val_loss=0.4363
+  [Fold 5] Epoch 4/30  val_loss=0.4245
+  [Fold 5] Epoch 5/30  val_loss=0.4347
+  [Fold 5] Epoch 6/30  val_loss=0.4205
+  [Fold 5] Epoch 7/30  val_loss=0.4341
+  [Fold 5] Epoch 8/30  val_loss=0.4215
+  [Fold 5] Epoch 9/30  val_loss=0.4195
+  [Fold 5] Epoch 10/30  val_loss=0.4136
+  [Fold 5] Epoch 11/30  val_loss=0.4215
+  [Fold 5] Epoch 12/30  val_loss=0.4192
+  [Fold 5] Epoch 13/30  val_loss=0.4251
+  [Fold 5] Epoch 14/30  val_loss=0.4177
+  [Fold 5] Epoch 15/30  val_loss=0.4430
+  [Fold 5] Early stopping at epoch 15
+  Extracting features for shallow classifier tuning...
+  Tuning shallow classifiers (grid search, 3-fold inner CV)...
+    Tuned SVM-RBF: best params = {'C': 1, 'gamma': 0.001}
+    Tuned XGBoost: best params = {'learning_rate': 0.1, 'max_depth': 4, 'n_estimators': 300}
+    Tuned RandomForest: best params = {'max_depth': None, 'n_estimators': 200}
+    Tuned KNN: best params = {'n_neighbors': 11, 'weights': 'distance'}
+  Evaluating on held-out Kaggle test set...
+    [Kaggle_test fold5] SVM-RBF: acc=0.8773 bal_acc=0.8783 sens=0.8900 spec=0.8667 auc=0.9528
+    [Kaggle_test fold5] XGBoost: acc=0.8667 bal_acc=0.8675 sens=0.8767 spec=0.8583 auc=0.9521
+    [Kaggle_test fold5] RandomForest: acc=0.8727 bal_acc=0.8744 sens=0.8933 spec=0.8556 auc=0.9524
+    [Kaggle_test fold5] KNN: acc=0.8773 bal_acc=0.8786 sens=0.8933 spec=0.8639 auc=0.9506
+    [Kaggle_test fold5] Stacking_Ensemble: acc=0.8803 bal_acc=0.8817 sens=0.8967 spec=0.8667 auc=0.9584
+    [HAM10000 fold5] SVM-RBF: acc=0.7787 bal_acc=0.8032 sens=0.8347 spec=0.7717 auc=0.8795
+    [HAM10000 fold5] XGBoost: acc=0.7692 bal_acc=0.8002 sens=0.8401 spec=0.7604 auc=0.8750
+    [HAM10000 fold5] RandomForest: acc=0.7654 bal_acc=0.7886 sens=0.8185 spec=0.7587 auc=0.8670
+    [HAM10000 fold5] KNN: acc=0.7533 bal_acc=0.7948 sens=0.8482 spec=0.7414 auc=0.8671
+    [HAM10000 fold5] Stacking_Ensemble: acc=0.7759 bal_acc=0.8032 sens=0.8383 spec=0.7681 auc=0.8777
+    [ISIC2020 fold5] SVM-RBF: acc=0.7150 bal_acc=0.6572 sens=0.5972 spec=0.7172 auc=0.7168
+    [ISIC2020 fold5] XGBoost: acc=0.7083 bal_acc=0.6614 sens=0.6127 spec=0.7100 auc=0.7159
+    [ISIC2020 fold5] RandomForest: acc=0.7015 bal_acc=0.6672 sens=0.6317 spec=0.7028 auc=0.7161
+    [ISIC2020 fold5] KNN: acc=0.6565 bal_acc=0.6189 sens=0.5800 spec=0.6578 auc=0.6549
+    [ISIC2020 fold5] Stacking_Ensemble: acc=0.7161 bal_acc=0.6552 sens=0.5921 spec=0.7184 auc=0.7037
+  [Checkpoint] Fold 5 results appended to $MELANOMA_ROOT/pipeline_results/all_fold_results.csv and marked complete.
+
+=== SUMMARY (mean ± std across folds, per classifier per dataset) ===
+                               accuracy            ...       auc          
+                                   mean       std  ...      mean       std
+dataset     classifier                             ...                    
+HAM10000    KNN                0.763335  0.007711  ...  0.869815  0.008268
+            RandomForest       0.762416  0.008986  ...  0.872003  0.005011
+            SVM-RBF            0.788058  0.006772  ...  0.889272  0.006670
+            Stacking_Ensemble  0.786021  0.008364  ...  0.885632  0.006346
+            XGBoost            0.773020  0.011528  ...  0.877894  0.007985
+ISIC2020    KNN                0.664420  0.044152  ...  0.669189  0.018627
+            RandomForest       0.683416  0.026932  ...  0.718986  0.008765
+            SVM-RBF            0.712266  0.027588  ...  0.724609  0.005609
+            Stacking_Ensemble  0.716694  0.027357  ...  0.712627  0.006652
+            XGBoost            0.704975  0.018651  ...  0.722866  0.004268
+Kaggle_test KNN                0.883333  0.007266  ...  0.954738  0.004546
+            RandomForest       0.880606  0.010016  ...  0.955615  0.002985
+            SVM-RBF            0.887273  0.007696  ...  0.956061  0.003325
+            Stacking_Ensemble  0.887879  0.005965  ...  0.961880  0.002534
+            XGBoost            0.879091  0.007755  ...  0.956548  0.002939
+
+[15 rows x 10 columns]
+
+All results saved to: $MELANOMA_ROOT/pipeline_results

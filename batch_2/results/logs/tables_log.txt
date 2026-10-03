@@ -1,0 +1,195 @@
+
+=== Table 1. Characteristics of the two dermoscopic corpora ===
+         Characteristic                             HAM10000                                         ISIC 2020
+     Role in this study Primary (training and internal test)                          External validation only
+        Images analysed                               10,015                                            32,701
+Unique lesions / groups                                7,470                                            32,693
+ Mean images per lesion                                 1.34                                              1.00
+  Lesions with >1 image                        1,956 (26.2%)                                    not applicable
+               Melanoma                                1,113                                               581
+           Non-melanoma                                8,902                                            32,120
+    Melanoma prevalence                               11.11%                                             1.78%
+      Native resolution                  600 x 450 (uniform)                   640x480 to 6000x4000 (variable)
+        Preprocessed to     384 x 384 cache, 320 x 320 input                  384 x 384 cache, 320 x 320 input
+     Exclusions applied                                 none 425 duplicate pairs removed via the official list
+  -> $MELANOMA_ROOT/tables/Table01_dataset_characteristics.csv
+
+=== Table 2. Perceptual-hash provenance audit of the Kaggle melanoma benchmark (256-bit pHash). A bimodal distance distribution with a large mass at d<=5 indicates re-hosted images rather than visual similarity ===
+              Comparison Kaggle images  Exact match (d=0)  d <= 5  d <= 10 % near-duplicate (d<=10) Median NN distance
+ Kaggle TEST vs HAM10000           660                170     486      504                    76.4%                  2
+ Kaggle TEST vs ISIC2020           660                  1       2        2                     0.3%                 86
+Kaggle TRAIN vs HAM10000         2,637                641    1918     1984                    75.2%                  2
+Kaggle TRAIN vs ISIC2020         2,637                  3       4        4                     0.2%                 88
+  -> $MELANOMA_ROOT/tables/Table02_provenance_audit.csv
+
+=== Table 3. Implementation and training configuration ===
+               Setting                                                                Value
+              Backbone                          EfficientNet-B0, ImageNet-1k initialisation
+      Input resolution                                      320 x 320 (cached at 384 x 384)
+           Fine-tuning                          Full network, discriminative learning rates
+        Learning rates                     1e-5 early blocks / 5e-5 late blocks / 5e-4 head
+             Optimiser                                             AdamW, weight decay 1e-4
+              Schedule                                         Cosine annealing, T_max = 30
+                  Loss                   Class-weighted cross-entropy, label smoothing 0.05
+            Batch size                                                                   16
+                Epochs              Max 30, early stopping on validation AUROC (patience 6)
+          Augmentation RandomResizedCrop(0.7-1.0), h/v flip, rotation 25 deg, colour jitter
+Test-time augmentation               2 views (identity, horizontal flip), feature averaging
+      Cross-validation                  StratifiedGroupKFold, 5 folds, grouped on lesion_id
+      Inner validation                          GroupShuffleSplit, 15% of the training fold
+    Feature extraction                         Global average pooling of stages 5-8, 1904-D
+       Feature scaling                            Z-score, fitted on the training fold only
+          Distillation           TreeSHAP ranking from an XGBoost surrogate; top-k retained
+   Shallow classifiers                  SVM-RBF, XGBoost, Random Forest, KNN, Stacking (LR)
+       Operating point                          Youden J on the inner validation split only
+           Random seed                                                                   42
+              Hardware                                  Apple M-series, PyTorch MPS backend
+  -> $MELANOMA_ROOT/tables/Table03_implementation_details.csv
+
+=== Table 4. Internal performance on HAM10000, out-of-fold aggregation over all 10,015 images with lesion-grouped splits (SHAP-guided selection) ===
+  Classifier   k  AUROC  AUPRC  Balanced acc.  Sensitivity  Specificity  Accuracy  Sens@Sp80  Sens@Sp90  Sens@Sp95
+     XGBoost 512 0.9181 0.6809         0.8409       0.8742       0.8076    0.8150     0.8787     0.7448     0.6190
+     XGBoost all 0.9181 0.6801         0.8402       0.8293       0.8512    0.8487     0.8670     0.7466     0.6199
+RandomForest all 0.9162 0.6564         0.8389       0.8509       0.8270    0.8297     0.8670     0.7367     0.6119
+     XGBoost 256 0.9157 0.6793         0.8365       0.8616       0.8113    0.8169     0.8679     0.7520     0.6181
+RandomForest 512 0.9156 0.6581         0.8374       0.8482       0.8266    0.8290     0.8688     0.7394     0.6038
+RandomForest 256 0.9149 0.6604         0.8367       0.8176       0.8559    0.8516     0.8634     0.7484     0.6128
+     SVM-RBF all 0.8998 0.6727         0.8309       0.8122       0.8496    0.8454     0.8509     0.7412     0.6244
+     SVM-RBF 512 0.8954 0.6547         0.8285       0.7942       0.8628    0.8552     0.8347     0.7305     0.6155
+    Stacking all 0.8935 0.6582         0.8344       0.8158       0.8531    0.8489     0.8518     0.7502     0.6226
+    Stacking 512 0.8907 0.6565         0.8314       0.7898       0.8729    0.8637     0.8464     0.7511     0.6190
+     SVM-RBF 256 0.8905 0.6466         0.8260       0.7700       0.8820    0.8696     0.8347     0.7332     0.6110
+    Stacking 256 0.8846 0.6567         0.8301       0.7772       0.8829    0.8712     0.8392     0.7538     0.6164
+         KNN all 0.8492 0.6032         0.8160       0.7754       0.8565    0.8475     0.7853     0.6990     0.5894
+         KNN 512 0.8431 0.6076         0.8162       0.7574       0.8751    0.8620     0.7574     0.7152     0.5912
+         KNN 256 0.8392 0.6036         0.8154       0.7439       0.8868    0.8709     0.7439     0.7161     0.6029
+  -> $MELANOMA_ROOT/tables/Table04_ham10000_oof_performance.csv
+
+=== Table 5. External performance on ISIC 2020 (n = 32,701, 1.78% melanoma), fold-ensembled. Accuracy is reported for completeness only; at this prevalence AUROC, AUPRC and sensitivity at fixed specificity are the informative measures ===
+  Classifier   k  AUROC  AUPRC  Balanced acc.  Sensitivity  Specificity  Accuracy  Sens@Sp80  Sens@Sp90  Sens@Sp95
+     XGBoost 256 0.7251 0.0911         0.6736       0.6145       0.7328    0.7307     0.5301     0.3821     0.2633
+     XGBoost 512 0.7244 0.0895         0.6708       0.6024       0.7393    0.7369     0.5267     0.3701     0.2616
+     XGBoost all 0.7222 0.0901         0.6685       0.5301       0.8069    0.8020     0.5336     0.3787     0.2668
+    Stacking all 0.7206 0.0886         0.6699       0.5852       0.7546    0.7516     0.5198     0.3873     0.2616
+RandomForest 512 0.7197 0.0913         0.6652       0.5697       0.7607    0.7573     0.5164     0.3890     0.2754
+RandomForest 256 0.7181 0.0912         0.6688       0.4905       0.8471    0.8408     0.5250     0.3838     0.2806
+RandomForest all 0.7170 0.0889         0.6625       0.5473       0.7777    0.7736     0.5232     0.3804     0.2754
+    Stacking 512 0.7149 0.0902         0.6637       0.5181       0.8093    0.8041     0.5232     0.3769     0.2737
+    Stacking 256 0.7115 0.0903         0.6681       0.5404       0.7958    0.7913     0.5301     0.3752     0.2719
+     SVM-RBF all 0.6947 0.0853         0.6497       0.5439       0.7556    0.7518     0.4940     0.3494     0.2547
+     SVM-RBF 256 0.6857 0.0808         0.6378       0.4286       0.8471    0.8396     0.4630     0.3477     0.2565
+     SVM-RBF 512 0.6835 0.0815         0.6387       0.4923       0.7851    0.7799     0.4716     0.3546     0.2530
+         KNN 256 0.6357 0.0748         0.6191       0.3752       0.8630    0.8543     0.4165     0.3253     0.2341
+         KNN 512 0.6262 0.0727         0.6097       0.3253       0.8942    0.8841     0.3959     0.3133     0.2324
+         KNN all 0.6069 0.0655         0.5958       0.3356       0.8560    0.8467     0.3752     0.2719     0.1910
+  -> $MELANOMA_ROOT/tables/Table05_isic2020_external_performance.csv
+
+=== Table 6. Feature-count ablation. Values are the mean and standard deviation of per-fold AUROC ===
+  Classifier   k Feature reduction HAM10000 internal ISIC 2020 external
+         KNN 256             86.6% 0.8396 +/- 0.0367  0.5908 +/- 0.0089
+         KNN 512             73.1% 0.8438 +/- 0.0391  0.5873 +/- 0.0069
+         KNN all              0.0% 0.8506 +/- 0.0401  0.5783 +/- 0.0126
+RandomForest 256             86.6% 0.9163 +/- 0.0107  0.6871 +/- 0.0254
+RandomForest 512             73.1%  0.917 +/- 0.0115  0.6898 +/- 0.0289
+RandomForest all              0.0% 0.9176 +/- 0.0122  0.6895 +/- 0.0204
+     SVM-RBF 256             86.6% 0.8966 +/- 0.0227   0.661 +/- 0.0138
+     SVM-RBF 512             73.1% 0.9008 +/- 0.0177  0.6611 +/- 0.0187
+     SVM-RBF all              0.0% 0.9059 +/- 0.0162   0.6706 +/- 0.013
+    Stacking 256             86.6% 0.9181 +/- 0.0108  0.6865 +/- 0.0208
+    Stacking 512             73.1% 0.9184 +/- 0.0111  0.6903 +/- 0.0255
+    Stacking all              0.0% 0.9185 +/- 0.0105  0.6958 +/- 0.0148
+     XGBoost 256             86.6% 0.9184 +/- 0.0074  0.6954 +/- 0.0134
+     XGBoost 512             73.1% 0.9212 +/- 0.0079  0.6967 +/- 0.0162
+     XGBoost all              0.0% 0.9212 +/- 0.0083  0.6945 +/- 0.0117
+  -> $MELANOMA_ROOT/tables/Table06_feature_distillation_ablation.csv
+
+=== Table 7. Backbone-stage ablation on HAM10000 internal test (per-fold AUROC, mean +/- s.d.) ===
+Stage configuration  Dimensions               KNN      RandomForest           SVM-RBF           XGBoost  Delta vs full (most extreme classifier)  p (paired t)
+     early_only_5_6         304 0.8884 +/- 0.0173 0.9081 +/- 0.0069  0.9076 +/- 0.015  0.9143 +/- 0.009                                 0.037803      0.024009
+        stage7_only         320 0.8672 +/- 0.0315 0.9154 +/- 0.0088 0.9029 +/- 0.0145 0.9169 +/- 0.0109                                 0.016649      0.017689
+        stage8_only        1280 0.8381 +/- 0.0382  0.9166 +/- 0.011  0.9065 +/- 0.017 0.9193 +/- 0.0085                                -0.012525      0.023601
+           stage7_8        1600   0.847 +/- 0.039 0.9172 +/- 0.0114 0.9069 +/- 0.0157 0.9205 +/- 0.0089                                 0.000956      0.166501
+         stage6_7_8        1792 0.8495 +/- 0.0378 0.9176 +/- 0.0116 0.9058 +/- 0.0164 0.9192 +/- 0.0099                                -0.001178      0.120552
+    all_four_stages        1904 0.8506 +/- 0.0401 0.9169 +/- 0.0113 0.9059 +/- 0.0162 0.9204 +/- 0.0095                                      NaN           NaN
+  -> $MELANOMA_ROOT/tables/Table07_stage_ablation.csv
+
+=== Table 8. SHAP-guided vs gain-guided feature selection, paired across the five folds. Holm correction is applied within each evaluation set. With n = 5 these tests have low power; effect size and fold consistency should be read alongside the p-values ===
+   Evaluation set   Classifier   k  SHAP AUROC  Gain AUROC   Delta Folds favouring SHAP  p (paired t)  p (Holm)  p (sign test)
+    HAM10000_test      SVM-RBF 256      0.8966      0.8940  0.0026                  3/5        0.3014    1.0000         1.0000
+    HAM10000_test      SVM-RBF 512      0.9008      0.8994  0.0014                  3/5        0.5325    1.0000         1.0000
+    HAM10000_test      XGBoost 256      0.9184      0.9159  0.0024                  4/5        0.4167    1.0000         0.3750
+    HAM10000_test      XGBoost 512      0.9212      0.9191  0.0021                  3/5        0.1663    1.0000         1.0000
+    HAM10000_test RandomForest 256      0.9163      0.9143  0.0020                  4/5        0.2578    1.0000         0.3750
+    HAM10000_test RandomForest 512      0.9170      0.9173 -0.0003                  3/5        0.8768    1.0000         1.0000
+    HAM10000_test          KNN 256      0.8396      0.8410 -0.0014                  3/5        0.7761    1.0000         1.0000
+    HAM10000_test          KNN 512      0.8438      0.8409  0.0028                  4/5        0.5215    1.0000         0.3750
+    HAM10000_test     Stacking 256      0.9181      0.9162  0.0019                  3/5        0.3375    1.0000         1.0000
+    HAM10000_test     Stacking 512      0.9184      0.9191 -0.0006                  3/5        0.5536    1.0000         1.0000
+ISIC2020_external      SVM-RBF 256      0.6610      0.6310  0.0299                  4/5        0.0561    0.3364         0.3750
+ISIC2020_external      SVM-RBF 512      0.6611      0.6500  0.0110                  4/5        0.1230    0.6149         0.3750
+ISIC2020_external      XGBoost 256      0.6954      0.6855  0.0099                  5/5        0.0188    0.1507         0.0625
+ISIC2020_external      XGBoost 512      0.6967      0.6905  0.0062                  5/5        0.0073    0.0735         0.0625
+ISIC2020_external RandomForest 256      0.6871      0.6784  0.0087                  4/5        0.0191    0.1507         0.3750
+ISIC2020_external RandomForest 512      0.6898      0.6879  0.0018                  3/5        0.6423    1.0000         1.0000
+ISIC2020_external          KNN 256      0.5908      0.5892  0.0016                  3/5        0.8056    1.0000         1.0000
+ISIC2020_external          KNN 512      0.5873      0.5881 -0.0008                  2/5        0.8807    1.0000         1.0000
+ISIC2020_external     Stacking 256      0.6865      0.6774  0.0092                  5/5        0.0159    0.1431         0.0625
+ISIC2020_external     Stacking 512      0.6903      0.6873  0.0030                  3/5        0.3735    1.0000         1.0000
+  -> $MELANOMA_ROOT/tables/Table08_shap_vs_gain_statistics.csv
+
+=== Table 9. Computational characteristics of the proposed pipeline ===
+                          Property                              Value
+                          Backbone                    EfficientNet-B0
+               Backbone parameters                          4,007,548
+                  Input resolution                          320 x 320
+       Full feature dimensionality                              1,904
+Distilled dimensionality (k = 256)                                256
+      Feature reduction at k = 256                              86.6%
+        Backbone latency per image                           10.20 ms
+                  Inference device Apple M-series GPU via PyTorch MPS
+   Models in the deployed ensemble                   5 (one per fold)
+  -> $MELANOMA_ROOT/tables/Table09_computational_efficiency.csv
+
+=== Table 10. Comparison with reported methods. The evaluation-protocol column is essential: accuracies obtained without lesion-level grouping are not directly comparable with the grouped results reported here ===
+                                                         Study                                  Dataset                                                     Method                                                              Reported performance                                       Evaluation protocol                                                                                                  source_note
+                 Bechelli & Delhommelle (2022), Bioengineering Kaggle/ISIC subset, 3,297 images, binary            Classical ML ensemble (LR, LDA, KNN, CART, GNB)                                                                      Accuracy 73%                         Not lesion-grouped (not reported)                Reported in a survey of skin-lesion methods; verify against the original Bioengineering paper
+                 Bechelli & Delhommelle (2022), Bioengineering                                 HAM10000                          ResNet50 (deep transfer learning)                                                                      Accuracy 88%                         Not lesion-grouped (not reported)                                              Same survey; ResNet50 stated as best of Xception/VGG16/ResNet50
+                                                    Ali et al.                      HAM10000, 7 classes                                            EfficientNet-B4                                                           Accuracy 87.91%, F1 87%                         Not lesion-grouped (not reported)                                                              Cited consistently across two retrieved surveys
+                                              Duraes & Vestias                      HAM10000, 7 classes                            Dual ResNet18 + ResNet50 (FPGA)                                                                      Accuracy 87%                         Not lesion-grouped (not reported)                                                     Retrieved survey; emphasis on speed rather than accuracy
+                                           Qasim Gilani et al.          ISIC 2019, 6,993 images, binary                                             Spiking VGG-13                                                                   Accuracy 89.57%                         Not lesion-grouped (not reported)                                                                                             Retrieved survey
+                                                 Yilmaz et al.          ISIC 2017, 2,750 images, binary                                               NASNetMobile                                                                      Accuracy 82%                                           Challenge split                                                                                             Retrieved survey
+                  Two-stage ResNet50 melanoma study (preprint)             HAM10000, melanoma vs benign               ResNet50, two-stage fine-tuning, oversampled                                AUROC 0.9559, Acc 88.34%, Sens 87.56%, Spec 89.13%                  Image-level split, minority oversampling                                                                              PREPRINT - verify before citing
+                    Fine-tuning strategy comparison (preprint)                    ISIC 2020 (in-domain)                                ResNet-50, full fine-tuning                                                      AUROC 73.54, Accuracy 97.98%                     In-domain train and test on ISIC 2020                                   PREPRINT - key comparator: an in-domain AUROC close to our external result
+                    Fine-tuning strategy comparison (preprint)                    ISIC 2020 (in-domain)                             DenseNet-121, full fine-tuning                                                      AUROC 71.27, Accuracy 97.56%                     In-domain train and test on ISIC 2020                                                                   PREPRINT - same table as the ResNet-50 row
+                    Fine-tuning strategy comparison (preprint)                    ISIC 2020 (in-domain)                                   VGG-19, full fine-tuning                                                      AUROC 83.24, Accuracy 96.63%                     In-domain train and test on ISIC 2020                                                                                        PREPRINT - same table
+SIIM-ISIC 2020 challenge winner (Kurtansky et al., JEADV 2025)             ISIC 2020 challenge test set                  Ensemble of 18 CNNs x 5 folds (90 models)                                                                       AUROC 0.930                             Challenge private leaderboard                 Upper bound for this task; not a like-for-like comparison with a single lightweight backbone
+                     Tschandl et al. / DermaMNIST audit (2024)                                 HAM10000                                      Dataset quality audit                 10,015 images from 7,470 lesions; 26.18% of lesions have >1 image      Documents lesion-level leakage in image-level splits Prior art for the lesion-grouping requirement - MUST be cited; this work replicates rather than discovers it
+                 Leakage audit of HAM10000 (IEEE Access, 2026)                                 HAM10000                    Leakage audit + lesion-level correction Reported accuracies above 90% associated with undisclosed or leakage-prone splits                           Lesion-level corrected protocol                                              Closest prior work in framing - MUST be cited and distinguished
+                                                     This work       HAM10000, melanoma vs non-melanoma EfficientNet-B0 @320px + SHAP-distilled features + XGBoost                                         AUROC 0.918, AUPRC 0.680, Sens@Sp90 74.7% Lesion-grouped 5-fold, out-of-fold over all 10,015 images                                                                                                Present study
+                                                     This work   ISIC 2020 (external, never trained on)                               Fold-ensembled, SHAP k = 256                                         AUROC 0.725, AUPRC 0.091, Sens@Sp90 38.2%       Fully external; no ISIC 2020 image used in training                                                                                                Present study
+  -> $MELANOMA_ROOT/tables/Table10_literature_comparison.csv
+
+
+All tables written to $MELANOMA_ROOT/tables
+Combined markdown: $MELANOMA_ROOT/tables/all_tables.md
+
+==========================================================================
+CAVEAT ON TABLE 10 -- READ BEFORE SUBMITTING
+==========================================================================
+Rows were compiled from sources that were retrieved and read, but:
+
+  * Several are PREPRINTS (flagged in source_note). Check whether a
+    peer-reviewed version exists and cite that instead.
+  * Some rows (Ali et al., Duraes & Vestias, Qasim Gilani, Yilmaz,
+    Bechelli & Delhommelle) were read from SURVEY papers quoting those
+    results, not from the primary papers. Numbers quoted second-hand are
+    occasionally wrong. Open each primary paper, confirm the figure, and
+    record full bibliographic details before the table goes into the
+    manuscript.
+  * The two audit rows (DermaMNIST audit; IEEE Access 2026 leakage audit)
+    are prior art for lesion-level leakage. This study REPLICATES that
+    finding rather than discovering it, and the manuscript must say so.
+  * Do not mix accuracy figures across differing prevalence and split
+    protocols without the protocol column visible. That column is the
+    point of the table.
+==========================================================================

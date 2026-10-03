@@ -1,0 +1,8 @@
+,,width,width,width,height,height,height,mean_brightness,mean_brightness,mean_brightness
+,,median,min,max,median,min,max,median,min,max
+source,class,,,,,,,,,
+HAM10000,malignant,300.0,300.0,300.0,300.0,300.0,300.0,150.0,58.2,222.0
+ISIC2020,benign,300.0,300.0,300.0,300.0,300.0,300.0,176.0,28.2,241.3
+ISIC2020,malignant,300.0,300.0,300.0,300.0,300.0,300.0,148.2,38.4,220.1
+unmatched,benign,300.0,300.0,300.0,300.0,300.0,300.0,206.1,128.6,226.9
+unmatched,malignant,300.0,300.0,300.0,300.0,300.0,300.0,136.5,32.3,223.1

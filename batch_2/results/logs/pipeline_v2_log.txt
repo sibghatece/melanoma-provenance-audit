@@ -1,0 +1,506 @@
+[Device] mps
+HAM10000: 10015 images, 1113 melanoma, 7470 lesions
+ISIC2020 (external): 32701 images, 581 melanoma
+
+=== FOLD 1/5 ===
+  train=6795  val=1217  test=2003  (melanoma in test: 223)
+  [Fold 1] Epoch 1/30  val_auc=0.8404
+  [Fold 1] Epoch 2/30  val_auc=0.8559
+  [Fold 1] Epoch 3/30  val_auc=0.8674
+  [Fold 1] Epoch 4/30  val_auc=0.8623
+  [Fold 1] Epoch 5/30  val_auc=0.8560
+  [Fold 1] Epoch 6/30  val_auc=0.8732
+  [Fold 1] Epoch 7/30  val_auc=0.8754
+  [Fold 1] Epoch 8/30  val_auc=0.8817
+  [Fold 1] Epoch 9/30  val_auc=0.8759
+  [Fold 1] Epoch 10/30  val_auc=0.8632
+  [Fold 1] Epoch 11/30  val_auc=0.8884
+  [Fold 1] Epoch 12/30  val_auc=0.8822
+  [Fold 1] Epoch 13/30  val_auc=0.8720
+  [Fold 1] Epoch 14/30  val_auc=0.8654
+  [Fold 1] Epoch 15/30  val_auc=0.8821
+  [Fold 1] Epoch 16/30  val_auc=0.8761
+  [Fold 1] Epoch 17/30  val_auc=0.8756
+  [Fold 1] Early stopping at epoch 17 (best val_auc=0.8884)
+  Extracting multi-stage features (with TTA)...
+    [train] 0/6795 features extracted
+    [train] 6400/6795 features extracted
+    [val] 0/1217 features extracted
+    [test] 0/2003 features extracted
+  Feature dimensionality: 1904
+  Computing SHAP feature ranking...
+    SHAP unavailable or failed (No module named 'shap'); falling back to XGBoost gain importance.
+    ranking method: xgb_gain
+  Extracting ISIC 2020 external features...
+    [isic] 0/32701 features extracted
+    [isic] 6400/32701 features extracted
+    [isic] 12800/32701 features extracted
+    [isic] 19200/32701 features extracted
+    [isic] 25600/32701 features extracted
+    [isic] 32000/32701 features extracted
+  --- k = 64 features ---
+    [HAM10000_test] SVM-RBF: bal_acc=0.7767 sens=0.7085 spec=0.8449 auroc=0.8427 auprc=0.5032
+    [ISIC2020_external] SVM-RBF: bal_acc=0.5970 sens=0.3769 spec=0.8170 auroc=0.6319 auprc=0.0498
+    [HAM10000_test] XGBoost: bal_acc=0.8067 sens=0.8161 spec=0.7972 auroc=0.8939 auprc=0.5587
+    [ISIC2020_external] XGBoost: bal_acc=0.6236 sens=0.4234 spec=0.8238 auroc=0.6799 auprc=0.0649
+    [HAM10000_test] RandomForest: bal_acc=0.8033 sens=0.7892 spec=0.8174 auroc=0.8917 auprc=0.5384
+    [ISIC2020_external] RandomForest: bal_acc=0.6209 sens=0.3959 spec=0.8459 auroc=0.6772 auprc=0.0603
+    [HAM10000_test] KNN: bal_acc=0.7622 sens=0.6682 spec=0.8562 auroc=0.7826 auprc=0.4483
+    [ISIC2020_external] KNN: bal_acc=0.5852 sens=0.2995 spec=0.8708 auroc=0.5918 auprc=0.0467
+    [HAM10000_test] Stacking: bal_acc=0.8059 sens=0.7848 spec=0.8270 auroc=0.8927 auprc=0.5443
+    [ISIC2020_external] Stacking: bal_acc=0.6150 sens=0.3787 spec=0.8513 auroc=0.6775 auprc=0.0634
+  --- k = 128 features ---
+    [HAM10000_test] SVM-RBF: bal_acc=0.7868 sens=0.7534 spec=0.8202 auroc=0.8518 auprc=0.5126
+    [ISIC2020_external] SVM-RBF: bal_acc=0.6043 sens=0.4337 spec=0.7749 auroc=0.6392 auprc=0.0570
+    [HAM10000_test] XGBoost: bal_acc=0.8053 sens=0.7803 spec=0.8303 auroc=0.8955 auprc=0.5720
+    [ISIC2020_external] XGBoost: bal_acc=0.6126 sens=0.3580 spec=0.8672 auroc=0.6813 auprc=0.0640
+    [HAM10000_test] RandomForest: bal_acc=0.8101 sens=0.7803 spec=0.8399 auroc=0.8939 auprc=0.5594
+    [ISIC2020_external] RandomForest: bal_acc=0.6187 sens=0.3649 spec=0.8726 auroc=0.6753 auprc=0.0644
+    [HAM10000_test] KNN: bal_acc=0.7532 sens=0.6233 spec=0.8831 auroc=0.7866 auprc=0.4600
+    [ISIC2020_external] KNN: bal_acc=0.5795 sens=0.2857 spec=0.8733 auroc=0.5895 auprc=0.0466
+    [HAM10000_test] Stacking: bal_acc=0.8048 sens=0.7713 spec=0.8382 auroc=0.8954 auprc=0.5665
+    [ISIC2020_external] Stacking: bal_acc=0.6222 sens=0.3787 spec=0.8657 auroc=0.6753 auprc=0.0654
+  --- k = 256 features ---
+    [HAM10000_test] SVM-RBF: bal_acc=0.7960 sens=0.7892 spec=0.8028 auroc=0.8679 auprc=0.5336
+    [ISIC2020_external] SVM-RBF: bal_acc=0.6048 sens=0.4682 spec=0.7415 auroc=0.6566 auprc=0.0674
+    [HAM10000_test] XGBoost: bal_acc=0.8126 sens=0.7578 spec=0.8674 auroc=0.9000 auprc=0.5814
+    [ISIC2020_external] XGBoost: bal_acc=0.5974 sens=0.2892 spec=0.9056 auroc=0.6751 auprc=0.0688
+    [HAM10000_test] RandomForest: bal_acc=0.8095 sens=0.7713 spec=0.8478 auroc=0.8975 auprc=0.5651
+    [ISIC2020_external] RandomForest: bal_acc=0.6061 sens=0.3253 spec=0.8868 auroc=0.6710 auprc=0.0637
+    [HAM10000_test] KNN: bal_acc=0.7670 sens=0.6368 spec=0.8972 auroc=0.8098 auprc=0.4693
+    [ISIC2020_external] KNN: bal_acc=0.5855 sens=0.2651 spec=0.9059 auroc=0.5919 auprc=0.0488
+    [HAM10000_test] Stacking: bal_acc=0.8070 sens=0.7803 spec=0.8337 auroc=0.8988 auprc=0.5698
+    [ISIC2020_external] Stacking: bal_acc=0.6184 sens=0.3769 spec=0.8600 auroc=0.6721 auprc=0.0669
+  --- k = 512 features ---
+    [HAM10000_test] SVM-RBF: bal_acc=0.7936 sens=0.7399 spec=0.8472 auroc=0.8788 auprc=0.5492
+    [ISIC2020_external] SVM-RBF: bal_acc=0.6182 sens=0.3804 spec=0.8560 auroc=0.6805 auprc=0.0700
+    [HAM10000_test] XGBoost: bal_acc=0.8084 sens=0.7668 spec=0.8500 auroc=0.9010 auprc=0.5824
+    [ISIC2020_external] XGBoost: bal_acc=0.6104 sens=0.3115 spec=0.9093 auroc=0.7041 auprc=0.0726
+    [HAM10000_test] RandomForest: bal_acc=0.8168 sens=0.8296 spec=0.8039 auroc=0.9032 auprc=0.5734
+    [ISIC2020_external] RandomForest: bal_acc=0.6319 sens=0.4148 spec=0.8490 auroc=0.6858 auprc=0.0724
+    [HAM10000_test] KNN: bal_acc=0.7790 sens=0.6996 spec=0.8584 auroc=0.8177 auprc=0.4908
+    [ISIC2020_external] KNN: bal_acc=0.5985 sens=0.3064 spec=0.8905 auroc=0.6072 auprc=0.0550
+    [HAM10000_test] Stacking: bal_acc=0.8092 sens=0.8072 spec=0.8112 auroc=0.9040 auprc=0.5790
+    [ISIC2020_external] Stacking: bal_acc=0.6340 sens=0.4165 spec=0.8515 auroc=0.6885 auprc=0.0755
+  --- k = all features ---
+    [HAM10000_test] SVM-RBF: bal_acc=0.7960 sens=0.7848 spec=0.8073 auroc=0.8768 auprc=0.5558
+    [ISIC2020_external] SVM-RBF: bal_acc=0.6413 sens=0.4768 spec=0.8059 auroc=0.7070 auprc=0.0745
+    [HAM10000_test] XGBoost: bal_acc=0.8028 sens=0.7444 spec=0.8612 auroc=0.9006 auprc=0.5733
+    [ISIC2020_external] XGBoost: bal_acc=0.6133 sens=0.2978 spec=0.9289 auroc=0.7233 auprc=0.0771
+    [HAM10000_test] RandomForest: bal_acc=0.8003 sens=0.7265 spec=0.8742 auroc=0.8991 auprc=0.5624
+    [ISIC2020_external] RandomForest: bal_acc=0.5933 sens=0.2496 spec=0.9370 auroc=0.7001 auprc=0.0763
+    [HAM10000_test] KNN: bal_acc=0.7745 sens=0.6816 spec=0.8674 auroc=0.8346 auprc=0.4736
+    [ISIC2020_external] KNN: bal_acc=0.5825 sens=0.2633 spec=0.9017 auroc=0.6062 auprc=0.0554
+    [HAM10000_test] Stacking: bal_acc=0.7902 sens=0.7309 spec=0.8494 auroc=0.8847 auprc=0.5652
+    [ISIC2020_external] Stacking: bal_acc=0.6227 sens=0.3391 spec=0.9063 auroc=0.7075 auprc=0.0784
+  [Checkpoint] fold 1 saved.
+
+=== FOLD 2/5 ===
+  train=6807  val=1205  test=2003  (melanoma in test: 222)
+  [Fold 2] Epoch 1/30  val_auc=0.8571
+  [Fold 2] Epoch 2/30  val_auc=0.8836
+  [Fold 2] Epoch 3/30  val_auc=0.8946
+  [Fold 2] Epoch 4/30  val_auc=0.8962
+  [Fold 2] Epoch 5/30  val_auc=0.8960
+  [Fold 2] Epoch 6/30  val_auc=0.9145
+  [Fold 2] Epoch 7/30  val_auc=0.9046
+  [Fold 2] Epoch 8/30  val_auc=0.8974
+  [Fold 2] Epoch 9/30  val_auc=0.9031
+  [Fold 2] Epoch 10/30  val_auc=0.9056
+  [Fold 2] Epoch 11/30  val_auc=0.9049
+  [Fold 2] Epoch 12/30  val_auc=0.9139
+  [Fold 2] Early stopping at epoch 12 (best val_auc=0.9145)
+  Extracting multi-stage features (with TTA)...
+    [train] 0/6807 features extracted
+    [train] 6400/6807 features extracted
+    [val] 0/1205 features extracted
+    [test] 0/2003 features extracted
+  Feature dimensionality: 1904
+  Computing SHAP feature ranking...
+    SHAP unavailable or failed (No module named 'shap'); falling back to XGBoost gain importance.
+    ranking method: xgb_gain
+  Extracting ISIC 2020 external features...
+    [isic] 0/32701 features extracted
+    [isic] 6400/32701 features extracted
+    [isic] 12800/32701 features extracted
+    [isic] 19200/32701 features extracted
+    [isic] 25600/32701 features extracted
+    [isic] 32000/32701 features extracted
+  --- k = 64 features ---
+    [HAM10000_test] SVM-RBF: bal_acc=0.7844 sens=0.7793 spec=0.7894 auroc=0.8832 auprc=0.6187
+    [ISIC2020_external] SVM-RBF: bal_acc=0.5846 sens=0.3150 spec=0.8541 auroc=0.5836 auprc=0.0464
+    [HAM10000_test] XGBoost: bal_acc=0.8190 sens=0.8423 spec=0.7956 auroc=0.9084 auprc=0.6308
+    [ISIC2020_external] XGBoost: bal_acc=0.5974 sens=0.2651 spec=0.9297 auroc=0.6739 auprc=0.0698
+    [HAM10000_test] RandomForest: bal_acc=0.8081 sens=0.8829 spec=0.7333 auroc=0.9060 auprc=0.6101
+    [ISIC2020_external] RandomForest: bal_acc=0.6236 sens=0.3752 spec=0.8719 auroc=0.6550 auprc=0.0672
+    [HAM10000_test] KNN: bal_acc=0.7943 sens=0.8288 spec=0.7597 auroc=0.8539 auprc=0.5904
+    [ISIC2020_external] KNN: bal_acc=0.6005 sens=0.3821 spec=0.8188 auroc=0.6135 auprc=0.0537
+    [HAM10000_test] Stacking: bal_acc=0.8274 sens=0.8514 spec=0.8035 auroc=0.9083 auprc=0.6263
+    [ISIC2020_external] Stacking: bal_acc=0.6046 sens=0.2754 spec=0.9339 auroc=0.6602 auprc=0.0716
+  --- k = 128 features ---
+    [HAM10000_test] SVM-RBF: bal_acc=0.7931 sens=0.8243 spec=0.7619 auroc=0.8890 auprc=0.6233
+    [ISIC2020_external] SVM-RBF: bal_acc=0.5691 sens=0.3804 spec=0.7579 auroc=0.5754 auprc=0.0523
+    [HAM10000_test] XGBoost: bal_acc=0.8225 sens=0.9144 spec=0.7305 auroc=0.9126 auprc=0.6453
+    [ISIC2020_external] XGBoost: bal_acc=0.6363 sens=0.4234 spec=0.8491 auroc=0.6894 auprc=0.0750
+    [HAM10000_test] RandomForest: bal_acc=0.8237 sens=0.8378 spec=0.8097 auroc=0.9103 auprc=0.6094
+    [ISIC2020_external] RandomForest: bal_acc=0.6044 sens=0.2737 spec=0.9351 auroc=0.6706 auprc=0.0744
+    [HAM10000_test] KNN: bal_acc=0.8083 sens=0.8604 spec=0.7563 auroc=0.8689 auprc=0.6013
+    [ISIC2020_external] KNN: bal_acc=0.5954 sens=0.3890 spec=0.8018 auroc=0.6063 auprc=0.0509
+    [HAM10000_test] Stacking: bal_acc=0.8190 sens=0.8288 spec=0.8091 auroc=0.9125 auprc=0.6329
+    [ISIC2020_external] Stacking: bal_acc=0.6027 sens=0.2719 spec=0.9334 auroc=0.6627 auprc=0.0748
+  --- k = 256 features ---
+    [HAM10000_test] SVM-RBF: bal_acc=0.8100 sens=0.8243 spec=0.7956 auroc=0.8989 auprc=0.6476
+    [ISIC2020_external] SVM-RBF: bal_acc=0.5818 sens=0.3201 spec=0.8434 auroc=0.6014 auprc=0.0577
+    [HAM10000_test] XGBoost: bal_acc=0.8185 sens=0.8874 spec=0.7496 auroc=0.9099 auprc=0.6335
+    [ISIC2020_external] XGBoost: bal_acc=0.6230 sens=0.3614 spec=0.8847 auroc=0.6670 auprc=0.0699
+    [HAM10000_test] RandomForest: bal_acc=0.8156 sens=0.8333 spec=0.7979 auroc=0.9088 auprc=0.6118
+    [ISIC2020_external] RandomForest: bal_acc=0.6060 sens=0.2771 spec=0.9349 auroc=0.6816 auprc=0.0746
+    [HAM10000_test] KNN: bal_acc=0.8178 sens=0.8108 spec=0.8248 auroc=0.8662 auprc=0.5946
+    [ISIC2020_external] KNN: bal_acc=0.5617 sens=0.2513 spec=0.8721 auroc=0.5783 auprc=0.0457
+    [HAM10000_test] Stacking: bal_acc=0.8117 sens=0.8468 spec=0.7765 auroc=0.9110 auprc=0.6301
+    [ISIC2020_external] Stacking: bal_acc=0.6141 sens=0.3150 spec=0.9132 auroc=0.6709 auprc=0.0745
+  --- k = 512 features ---
+    [HAM10000_test] SVM-RBF: bal_acc=0.8032 sens=0.8333 spec=0.7732 auroc=0.8926 auprc=0.6375
+    [ISIC2020_external] SVM-RBF: bal_acc=0.5832 sens=0.3735 spec=0.7928 auroc=0.6100 auprc=0.0631
+    [HAM10000_test] XGBoost: bal_acc=0.8086 sens=0.8604 spec=0.7569 auroc=0.9076 auprc=0.6240
+    [ISIC2020_external] XGBoost: bal_acc=0.6236 sens=0.3563 spec=0.8908 auroc=0.6771 auprc=0.0719
+    [HAM10000_test] RandomForest: bal_acc=0.8210 sens=0.8514 spec=0.7906 auroc=0.9128 auprc=0.6232
+    [ISIC2020_external] RandomForest: bal_acc=0.6106 sens=0.2909 spec=0.9304 auroc=0.6699 auprc=0.0714
+    [HAM10000_test] KNN: bal_acc=0.8060 sens=0.7748 spec=0.8372 auroc=0.8724 auprc=0.6053
+    [ISIC2020_external] KNN: bal_acc=0.5487 sens=0.2151 spec=0.8823 auroc=0.5714 auprc=0.0421
+    [HAM10000_test] Stacking: bal_acc=0.8285 sens=0.8559 spec=0.8012 auroc=0.9139 auprc=0.6464
+    [ISIC2020_external] Stacking: bal_acc=0.6051 sens=0.2823 spec=0.9280 auroc=0.6584 auprc=0.0721
+  --- k = all features ---
+    [HAM10000_test] SVM-RBF: bal_acc=0.8236 sens=0.9144 spec=0.7327 auroc=0.9060 auprc=0.6404
+    [ISIC2020_external] SVM-RBF: bal_acc=0.5975 sens=0.4561 spec=0.7389 auroc=0.6271 auprc=0.0627
+    [HAM10000_test] XGBoost: bal_acc=0.8283 sens=0.8874 spec=0.7692 auroc=0.9105 auprc=0.6303
+    [ISIC2020_external] XGBoost: bal_acc=0.6213 sens=0.3442 spec=0.8984 auroc=0.6792 auprc=0.0707
+    [HAM10000_test] RandomForest: bal_acc=0.8227 sens=0.8604 spec=0.7850 auroc=0.9119 auprc=0.6344
+    [ISIC2020_external] RandomForest: bal_acc=0.5975 sens=0.2616 spec=0.9334 auroc=0.6771 auprc=0.0695
+    [HAM10000_test] KNN: bal_acc=0.8060 sens=0.8063 spec=0.8057 auroc=0.8772 auprc=0.5964
+    [ISIC2020_external] KNN: bal_acc=0.5575 sens=0.2392 spec=0.8758 auroc=0.5705 auprc=0.0416
+    [HAM10000_test] Stacking: bal_acc=0.8271 sens=0.8333 spec=0.8209 auroc=0.9155 auprc=0.6524
+    [ISIC2020_external] Stacking: bal_acc=0.5898 sens=0.2358 spec=0.9438 auroc=0.6775 auprc=0.0718
+  [Checkpoint] fold 2 saved.
+
+=== FOLD 3/5 ===
+  train=6793  val=1219  test=2003  (melanoma in test: 223)
+  [Fold 3] Epoch 1/30  val_auc=0.8697
+  [Fold 3] Epoch 2/30  val_auc=0.8880
+  [Fold 3] Epoch 3/30  val_auc=0.8978
+  [Fold 3] Epoch 4/30  val_auc=0.9075
+  [Fold 3] Epoch 5/30  val_auc=0.8981
+  [Fold 3] Epoch 6/30  val_auc=0.9049
+  [Fold 3] Epoch 7/30  val_auc=0.9022
+  [Fold 3] Epoch 8/30  val_auc=0.8981
+  [Fold 3] Epoch 9/30  val_auc=0.8732
+  [Fold 3] Epoch 10/30  val_auc=0.8816
+  [Fold 3] Early stopping at epoch 10 (best val_auc=0.9075)
+  Extracting multi-stage features (with TTA)...
+    [train] 0/6793 features extracted
+    [train] 6400/6793 features extracted
+    [val] 0/1219 features extracted
+    [test] 0/2003 features extracted
+  Feature dimensionality: 1904
+  Computing SHAP feature ranking...
+    SHAP unavailable or failed (No module named 'shap'); falling back to XGBoost gain importance.
+    ranking method: xgb_gain
+  Extracting ISIC 2020 external features...
+    [isic] 0/32701 features extracted
+    [isic] 6400/32701 features extracted
+    [isic] 12800/32701 features extracted
+    [isic] 19200/32701 features extracted
+    [isic] 25600/32701 features extracted
+    [isic] 32000/32701 features extracted
+  --- k = 64 features ---
+    [HAM10000_test] SVM-RBF: bal_acc=0.7786 sens=0.7758 spec=0.7815 auroc=0.8550 auprc=0.4708
+    [ISIC2020_external] SVM-RBF: bal_acc=0.5546 sens=0.3391 spec=0.7701 auroc=0.5884 auprc=0.0323
+    [HAM10000_test] XGBoost: bal_acc=0.7915 sens=0.8117 spec=0.7713 auroc=0.8844 auprc=0.5620
+    [ISIC2020_external] XGBoost: bal_acc=0.5706 sens=0.2788 spec=0.8625 auroc=0.6194 auprc=0.0493
+    [HAM10000_test] RandomForest: bal_acc=0.7929 sens=0.8386 spec=0.7472 auroc=0.8941 auprc=0.5561
+    [ISIC2020_external] RandomForest: bal_acc=0.5794 sens=0.2874 spec=0.8713 auroc=0.6051 auprc=0.0475
+    [HAM10000_test] KNN: bal_acc=0.7738 sens=0.8161 spec=0.7315 auroc=0.8375 auprc=0.5190
+    [ISIC2020_external] KNN: bal_acc=0.5478 sens=0.4079 spec=0.6878 auroc=0.5577 auprc=0.0413
+    [HAM10000_test] Stacking: bal_acc=0.7962 sens=0.8565 spec=0.7360 auroc=0.8928 auprc=0.5658
+    [ISIC2020_external] Stacking: bal_acc=0.5664 sens=0.2943 spec=0.8386 auroc=0.5890 auprc=0.0475
+  --- k = 128 features ---
+    [HAM10000_test] SVM-RBF: bal_acc=0.7896 sens=0.7534 spec=0.8258 auroc=0.8578 auprc=0.5500
+    [ISIC2020_external] SVM-RBF: bal_acc=0.5629 sens=0.3098 spec=0.8160 auroc=0.6024 auprc=0.0386
+    [HAM10000_test] XGBoost: bal_acc=0.7901 sens=0.7982 spec=0.7820 auroc=0.8885 auprc=0.5753
+    [ISIC2020_external] XGBoost: bal_acc=0.5668 sens=0.2719 spec=0.8616 auroc=0.6058 auprc=0.0511
+    [HAM10000_test] RandomForest: bal_acc=0.8008 sens=0.7713 spec=0.8303 auroc=0.8939 auprc=0.5585
+    [ISIC2020_external] RandomForest: bal_acc=0.5691 sens=0.1997 spec=0.9385 auroc=0.6166 auprc=0.0540
+    [HAM10000_test] KNN: bal_acc=0.7742 sens=0.7489 spec=0.7994 auroc=0.8450 auprc=0.5368
+    [ISIC2020_external] KNN: bal_acc=0.5399 sens=0.2909 spec=0.7889 auroc=0.5683 auprc=0.0365
+    [HAM10000_test] Stacking: bal_acc=0.7952 sens=0.7713 spec=0.8191 auroc=0.8924 auprc=0.5673
+    [ISIC2020_external] Stacking: bal_acc=0.5630 sens=0.2083 spec=0.9178 auroc=0.6024 auprc=0.0533
+  --- k = 256 features ---
+    [HAM10000_test] SVM-RBF: bal_acc=0.7999 sens=0.8251 spec=0.7747 auroc=0.8791 auprc=0.5818
+    [ISIC2020_external] SVM-RBF: bal_acc=0.5785 sens=0.3821 spec=0.7749 auroc=0.6345 auprc=0.0490
+    [HAM10000_test] XGBoost: bal_acc=0.8086 sens=0.8117 spec=0.8056 auroc=0.8991 auprc=0.6024
+    [ISIC2020_external] XGBoost: bal_acc=0.5793 sens=0.2410 spec=0.9177 auroc=0.6385 auprc=0.0562
+    [HAM10000_test] RandomForest: bal_acc=0.8014 sens=0.7713 spec=0.8315 auroc=0.8964 auprc=0.5607
+    [ISIC2020_external] RandomForest: bal_acc=0.5791 sens=0.2083 spec=0.9500 auroc=0.6373 auprc=0.0565
+    [HAM10000_test] KNN: bal_acc=0.7835 sens=0.6906 spec=0.8764 auroc=0.8727 auprc=0.5506
+    [ISIC2020_external] KNN: bal_acc=0.5417 sens=0.1532 spec=0.9301 auroc=0.5624 auprc=0.0442
+    [HAM10000_test] Stacking: bal_acc=0.8002 sens=0.8117 spec=0.7888 auroc=0.8989 auprc=0.5669
+    [ISIC2020_external] Stacking: bal_acc=0.5775 sens=0.2427 spec=0.9123 auroc=0.6180 auprc=0.0582
+  --- k = 512 features ---
+    [HAM10000_test] SVM-RBF: bal_acc=0.7979 sens=0.8341 spec=0.7618 auroc=0.8747 auprc=0.5962
+    [ISIC2020_external] SVM-RBF: bal_acc=0.6035 sens=0.4441 spec=0.7630 auroc=0.6643 auprc=0.0565
+    [HAM10000_test] XGBoost: bal_acc=0.8146 sens=0.7848 spec=0.8444 auroc=0.8976 auprc=0.5970
+    [ISIC2020_external] XGBoost: bal_acc=0.5789 sens=0.2083 spec=0.9494 auroc=0.6596 auprc=0.0604
+    [HAM10000_test] RandomForest: bal_acc=0.8173 sens=0.8565 spec=0.7781 auroc=0.9011 auprc=0.5715
+    [ISIC2020_external] RandomForest: bal_acc=0.5922 sens=0.2651 spec=0.9194 auroc=0.6560 auprc=0.0571
+    [HAM10000_test] KNN: bal_acc=0.8081 sens=0.8072 spec=0.8090 auroc=0.8680 auprc=0.5718
+    [ISIC2020_external] KNN: bal_acc=0.5370 sens=0.2306 spec=0.8434 auroc=0.5489 auprc=0.0458
+    [HAM10000_test] Stacking: bal_acc=0.8198 sens=0.8700 spec=0.7697 auroc=0.9035 auprc=0.5887
+    [ISIC2020_external] Stacking: bal_acc=0.5904 sens=0.2771 spec=0.9036 auroc=0.6424 auprc=0.0587
+  --- k = all features ---
+    [HAM10000_test] SVM-RBF: bal_acc=0.8081 sens=0.7578 spec=0.8584 auroc=0.8861 auprc=0.6130
+    [ISIC2020_external] SVM-RBF: bal_acc=0.5906 sens=0.2892 spec=0.8920 auroc=0.6466 auprc=0.0568
+    [HAM10000_test] XGBoost: bal_acc=0.8121 sens=0.7713 spec=0.8528 auroc=0.8996 auprc=0.6086
+    [ISIC2020_external] XGBoost: bal_acc=0.5749 sens=0.1997 spec=0.9501 auroc=0.6569 auprc=0.0595
+    [HAM10000_test] RandomForest: bal_acc=0.8111 sens=0.8520 spec=0.7702 auroc=0.9000 auprc=0.5621
+    [ISIC2020_external] RandomForest: bal_acc=0.5880 sens=0.2461 spec=0.9300 auroc=0.6567 auprc=0.0563
+    [HAM10000_test] KNN: bal_acc=0.8081 sens=0.8027 spec=0.8135 auroc=0.8667 auprc=0.5392
+    [ISIC2020_external] KNN: bal_acc=0.5296 sens=0.2375 spec=0.8216 auroc=0.5678 auprc=0.0402
+    [HAM10000_test] Stacking: bal_acc=0.8055 sens=0.8475 spec=0.7635 auroc=0.9011 auprc=0.5783
+    [ISIC2020_external] Stacking: bal_acc=0.5961 sens=0.2737 spec=0.9185 auroc=0.6697 auprc=0.0603
+  [Checkpoint] fold 3 saved.
+
+=== FOLD 4/5 ===
+  train=6816  val=1196  test=2003  (melanoma in test: 222)
+  [Fold 4] Epoch 1/30  val_auc=0.8422
+  [Fold 4] Epoch 2/30  val_auc=0.8460
+  [Fold 4] Epoch 3/30  val_auc=0.8672
+  [Fold 4] Epoch 4/30  val_auc=0.8739
+  [Fold 4] Epoch 5/30  val_auc=0.8461
+  [Fold 4] Epoch 6/30  val_auc=0.8706
+  [Fold 4] Epoch 7/30  val_auc=0.8695
+  [Fold 4] Epoch 8/30  val_auc=0.8605
+  [Fold 4] Epoch 9/30  val_auc=0.8701
+  [Fold 4] Epoch 10/30  val_auc=0.8717
+  [Fold 4] Early stopping at epoch 10 (best val_auc=0.8739)
+  Extracting multi-stage features (with TTA)...
+    [train] 0/6816 features extracted
+    [train] 6400/6816 features extracted
+    [val] 0/1196 features extracted
+    [test] 0/2003 features extracted
+  Feature dimensionality: 1904
+  Computing SHAP feature ranking...
+    SHAP unavailable or failed (No module named 'shap'); falling back to XGBoost gain importance.
+    ranking method: xgb_gain
+  Extracting ISIC 2020 external features...
+    [isic] 0/32701 features extracted
+    [isic] 6400/32701 features extracted
+    [isic] 12800/32701 features extracted
+    [isic] 19200/32701 features extracted
+    [isic] 25600/32701 features extracted
+    [isic] 32000/32701 features extracted
+  --- k = 64 features ---
+    [HAM10000_test] SVM-RBF: bal_acc=0.7870 sens=0.8784 spec=0.6957 auroc=0.8688 auprc=0.5263
+    [ISIC2020_external] SVM-RBF: bal_acc=0.5633 sens=0.5232 spec=0.6035 auroc=0.5957 auprc=0.0334
+    [HAM10000_test] XGBoost: bal_acc=0.7963 sens=0.8919 spec=0.7007 auroc=0.8975 auprc=0.5705
+    [ISIC2020_external] XGBoost: bal_acc=0.6114 sens=0.4699 spec=0.7529 auroc=0.6472 auprc=0.0510
+    [HAM10000_test] RandomForest: bal_acc=0.8058 sens=0.8604 spec=0.7513 auroc=0.8904 auprc=0.5268
+    [ISIC2020_external] RandomForest: bal_acc=0.5882 sens=0.3563 spec=0.8202 auroc=0.6430 auprc=0.0475
+    [HAM10000_test] KNN: bal_acc=0.7844 sens=0.7973 spec=0.7715 auroc=0.8430 auprc=0.5036
+    [ISIC2020_external] KNN: bal_acc=0.5797 sens=0.3614 spec=0.7980 auroc=0.5967 auprc=0.0370
+    [HAM10000_test] Stacking: bal_acc=0.7923 sens=0.8694 spec=0.7153 auroc=0.8908 auprc=0.5392
+    [ISIC2020_external] Stacking: bal_acc=0.5961 sens=0.4165 spec=0.7756 auroc=0.6459 auprc=0.0492
+  --- k = 128 features ---
+    [HAM10000_test] SVM-RBF: bal_acc=0.7991 sens=0.8739 spec=0.7243 auroc=0.8797 auprc=0.5721
+    [ISIC2020_external] SVM-RBF: bal_acc=0.5590 sens=0.4527 spec=0.6653 auroc=0.5642 auprc=0.0362
+    [HAM10000_test] XGBoost: bal_acc=0.7952 sens=0.8784 spec=0.7120 auroc=0.8995 auprc=0.5930
+    [ISIC2020_external] XGBoost: bal_acc=0.5738 sens=0.4096 spec=0.7380 auroc=0.6171 auprc=0.0485
+    [HAM10000_test] RandomForest: bal_acc=0.7980 sens=0.9189 spec=0.6771 auroc=0.8967 auprc=0.5430
+    [ISIC2020_external] RandomForest: bal_acc=0.5959 sens=0.4682 spec=0.7236 auroc=0.6344 auprc=0.0465
+    [HAM10000_test] KNN: bal_acc=0.7921 sens=0.8784 spec=0.7058 auroc=0.8600 auprc=0.5324
+    [ISIC2020_external] KNN: bal_acc=0.5793 sens=0.4096 spec=0.7489 auroc=0.5912 auprc=0.0366
+    [HAM10000_test] Stacking: bal_acc=0.7905 sens=0.9414 spec=0.6395 auroc=0.9000 auprc=0.5571
+    [ISIC2020_external] Stacking: bal_acc=0.5942 sens=0.5146 spec=0.6737 auroc=0.6353 auprc=0.0465
+  --- k = 256 features ---
+    [HAM10000_test] SVM-RBF: bal_acc=0.8097 sens=0.8378 spec=0.7816 auroc=0.8835 auprc=0.5856
+    [ISIC2020_external] SVM-RBF: bal_acc=0.5831 sens=0.3941 spec=0.7721 auroc=0.6168 auprc=0.0473
+    [HAM10000_test] XGBoost: bal_acc=0.7977 sens=0.8919 spec=0.7035 auroc=0.9013 auprc=0.5837
+    [ISIC2020_external] XGBoost: bal_acc=0.5886 sens=0.4269 spec=0.7503 auroc=0.6399 auprc=0.0537
+    [HAM10000_test] RandomForest: bal_acc=0.8039 sens=0.9234 spec=0.6844 auroc=0.8974 auprc=0.5461
+    [ISIC2020_external] RandomForest: bal_acc=0.5946 sens=0.4406 spec=0.7485 auroc=0.6415 auprc=0.0515
+    [HAM10000_test] KNN: bal_acc=0.7960 sens=0.8829 spec=0.7092 auroc=0.8700 auprc=0.5252
+    [ISIC2020_external] KNN: bal_acc=0.5708 sens=0.4527 spec=0.6889 auroc=0.5929 auprc=0.0425
+    [HAM10000_test] Stacking: bal_acc=0.7916 sens=0.9414 spec=0.6418 auroc=0.9019 auprc=0.5612
+    [ISIC2020_external] Stacking: bal_acc=0.5948 sens=0.5043 spec=0.6854 auroc=0.6428 auprc=0.0534
+  --- k = 512 features ---
+    [HAM10000_test] SVM-RBF: bal_acc=0.8109 sens=0.8964 spec=0.7254 auroc=0.9003 auprc=0.6075
+    [ISIC2020_external] SVM-RBF: bal_acc=0.5933 sens=0.5112 spec=0.6753 auroc=0.6407 auprc=0.0515
+    [HAM10000_test] XGBoost: bal_acc=0.8023 sens=0.9595 spec=0.6451 auroc=0.9037 auprc=0.5922
+    [ISIC2020_external] XGBoost: bal_acc=0.5988 sens=0.5456 spec=0.6521 auroc=0.6529 auprc=0.0557
+    [HAM10000_test] RandomForest: bal_acc=0.8112 sens=0.9099 spec=0.7125 auroc=0.8985 auprc=0.5610
+    [ISIC2020_external] RandomForest: bal_acc=0.5919 sens=0.4182 spec=0.7655 auroc=0.6387 auprc=0.0534
+    [HAM10000_test] KNN: bal_acc=0.7983 sens=0.9009 spec=0.6957 auroc=0.8718 auprc=0.5276
+    [ISIC2020_external] KNN: bal_acc=0.5699 sens=0.4303 spec=0.7096 auroc=0.5873 auprc=0.0377
+    [HAM10000_test] Stacking: bal_acc=0.8084 sens=0.9234 spec=0.6934 auroc=0.9035 auprc=0.5800
+    [ISIC2020_external] Stacking: bal_acc=0.5996 sens=0.4664 spec=0.7328 auroc=0.6431 auprc=0.0568
+  --- k = all features ---
+    [HAM10000_test] SVM-RBF: bal_acc=0.8184 sens=0.8243 spec=0.8125 auroc=0.9059 auprc=0.6247
+    [ISIC2020_external] SVM-RBF: bal_acc=0.6033 sens=0.3563 spec=0.8502 auroc=0.6706 auprc=0.0623
+    [HAM10000_test] XGBoost: bal_acc=0.7961 sens=0.9189 spec=0.6732 auroc=0.9049 auprc=0.6045
+    [ISIC2020_external] XGBoost: bal_acc=0.6205 sens=0.5146 spec=0.7264 auroc=0.6661 auprc=0.0606
+    [HAM10000_test] RandomForest: bal_acc=0.7980 sens=0.9054 spec=0.6906 auroc=0.8952 auprc=0.5430
+    [ISIC2020_external] RandomForest: bal_acc=0.5964 sens=0.4148 spec=0.7779 auroc=0.6428 auprc=0.0556
+    [HAM10000_test] KNN: bal_acc=0.8184 sens=0.8559 spec=0.7810 auroc=0.8766 auprc=0.5192
+    [ISIC2020_external] KNN: bal_acc=0.5492 sens=0.3029 spec=0.7954 auroc=0.5731 auprc=0.0355
+    [HAM10000_test] Stacking: bal_acc=0.8064 sens=0.8964 spec=0.7165 auroc=0.8954 auprc=0.5796
+    [ISIC2020_external] Stacking: bal_acc=0.6101 sens=0.4234 spec=0.7969 auroc=0.6617 auprc=0.0633
+  [Checkpoint] fold 4 saved.
+
+=== FOLD 5/5 ===
+  train=6790  val=1222  test=2003  (melanoma in test: 223)
+  [Fold 5] Epoch 1/30  val_auc=0.8395
+  [Fold 5] Epoch 2/30  val_auc=0.8624
+  [Fold 5] Epoch 3/30  val_auc=0.8666
+  [Fold 5] Epoch 4/30  val_auc=0.8682
+  [Fold 5] Epoch 5/30  val_auc=0.8761
+  [Fold 5] Epoch 6/30  val_auc=0.8732
+  [Fold 5] Epoch 7/30  val_auc=0.8626
+  [Fold 5] Epoch 8/30  val_auc=0.8591
+  [Fold 5] Epoch 9/30  val_auc=0.8738
+  [Fold 5] Epoch 10/30  val_auc=0.8563
+  [Fold 5] Epoch 11/30  val_auc=0.8762
+  [Fold 5] Epoch 12/30  val_auc=0.8734
+  [Fold 5] Epoch 13/30  val_auc=0.8480
+  [Fold 5] Epoch 14/30  val_auc=0.8637
+  [Fold 5] Epoch 15/30  val_auc=0.8720
+  [Fold 5] Epoch 16/30  val_auc=0.8598
+  [Fold 5] Epoch 17/30  val_auc=0.8592
+  [Fold 5] Early stopping at epoch 17 (best val_auc=0.8762)
+  Extracting multi-stage features (with TTA)...
+    [train] 0/6790 features extracted
+    [train] 6400/6790 features extracted
+    [val] 0/1222 features extracted
+    [test] 0/2003 features extracted
+  Feature dimensionality: 1904
+  Computing SHAP feature ranking...
+    SHAP unavailable or failed (No module named 'shap'); falling back to XGBoost gain importance.
+    ranking method: xgb_gain
+  Extracting ISIC 2020 external features...
+    [isic] 0/32701 features extracted
+    [isic] 6400/32701 features extracted
+    [isic] 12800/32701 features extracted
+    [isic] 19200/32701 features extracted
+    [isic] 25600/32701 features extracted
+    [isic] 32000/32701 features extracted
+  --- k = 64 features ---
+    [HAM10000_test] SVM-RBF: bal_acc=0.8193 sens=0.8341 spec=0.8045 auroc=0.8807 auprc=0.5416
+    [ISIC2020_external] SVM-RBF: bal_acc=0.6253 sens=0.4269 spec=0.8237 auroc=0.6798 auprc=0.0631
+    [HAM10000_test] XGBoost: bal_acc=0.8459 sens=0.8789 spec=0.8129 auroc=0.9077 auprc=0.6271
+    [ISIC2020_external] XGBoost: bal_acc=0.6137 sens=0.3270 spec=0.9004 auroc=0.6784 auprc=0.0793
+    [HAM10000_test] RandomForest: bal_acc=0.8263 sens=0.8565 spec=0.7961 auroc=0.9026 auprc=0.6034
+    [ISIC2020_external] RandomForest: bal_acc=0.6199 sens=0.3477 spec=0.8920 auroc=0.6740 auprc=0.0748
+    [HAM10000_test] KNN: bal_acc=0.8031 sens=0.7265 spec=0.8798 auroc=0.8252 auprc=0.5515
+    [ISIC2020_external] KNN: bal_acc=0.5912 sens=0.2496 spec=0.9328 auroc=0.5958 auprc=0.0559
+    [HAM10000_test] Stacking: bal_acc=0.8327 sens=0.8610 spec=0.8045 auroc=0.9033 auprc=0.6061
+    [ISIC2020_external] Stacking: bal_acc=0.6267 sens=0.3632 spec=0.8903 auroc=0.6808 auprc=0.0774
+  --- k = 128 features ---
+    [HAM10000_test] SVM-RBF: bal_acc=0.8188 sens=0.7803 spec=0.8573 auroc=0.8885 auprc=0.5731
+    [ISIC2020_external] SVM-RBF: bal_acc=0.6154 sens=0.3460 spec=0.8848 auroc=0.6780 auprc=0.0624
+    [HAM10000_test] XGBoost: bal_acc=0.8237 sens=0.9058 spec=0.7416 auroc=0.9156 auprc=0.6257
+    [ISIC2020_external] XGBoost: bal_acc=0.6317 sens=0.4527 spec=0.8108 auroc=0.6748 auprc=0.0695
+    [HAM10000_test] RandomForest: bal_acc=0.8311 sens=0.8565 spec=0.8056 auroc=0.9103 auprc=0.6178
+    [ISIC2020_external] RandomForest: bal_acc=0.6241 sens=0.3511 spec=0.8970 auroc=0.6810 auprc=0.0737
+    [HAM10000_test] KNN: bal_acc=0.8118 sens=0.7354 spec=0.8882 auroc=0.8474 auprc=0.5680
+    [ISIC2020_external] KNN: bal_acc=0.5898 sens=0.2444 spec=0.9351 auroc=0.5953 auprc=0.0540
+    [HAM10000_test] Stacking: bal_acc=0.8328 sens=0.7937 spec=0.8719 auroc=0.9095 auprc=0.6196
+    [ISIC2020_external] Stacking: bal_acc=0.6021 sens=0.2599 spec=0.9443 auroc=0.6858 auprc=0.0748
+  --- k = 256 features ---
+    [HAM10000_test] SVM-RBF: bal_acc=0.8289 sens=0.8072 spec=0.8506 auroc=0.8952 auprc=0.5945
+    [ISIC2020_external] SVM-RBF: bal_acc=0.6159 sens=0.3597 spec=0.8721 auroc=0.6770 auprc=0.0690
+    [HAM10000_test] XGBoost: bal_acc=0.8307 sens=0.8834 spec=0.7781 auroc=0.9170 auprc=0.6349
+    [ISIC2020_external] XGBoost: bal_acc=0.6253 sens=0.3890 spec=0.8616 auroc=0.6769 auprc=0.0757
+    [HAM10000_test] RandomForest: bal_acc=0.8299 sens=0.8924 spec=0.7674 auroc=0.9156 auprc=0.6110
+    [ISIC2020_external] RandomForest: bal_acc=0.6519 sens=0.4406 spec=0.8632 auroc=0.7023 auprc=0.0847
+    [HAM10000_test] KNN: bal_acc=0.8084 sens=0.7578 spec=0.8590 auroc=0.8456 auprc=0.5837
+    [ISIC2020_external] KNN: bal_acc=0.5951 sens=0.2840 spec=0.9062 auroc=0.6017 auprc=0.0581
+    [HAM10000_test] Stacking: bal_acc=0.8443 sens=0.8430 spec=0.8455 auroc=0.9166 auprc=0.6096
+    [ISIC2020_external] Stacking: bal_acc=0.6215 sens=0.3219 spec=0.9210 auroc=0.7015 auprc=0.0847
+  --- k = 512 features ---
+    [HAM10000_test] SVM-RBF: bal_acc=0.8275 sens=0.7937 spec=0.8612 auroc=0.8922 auprc=0.5927
+    [ISIC2020_external] SVM-RBF: bal_acc=0.6277 sens=0.3787 spec=0.8767 auroc=0.6787 auprc=0.0657
+    [HAM10000_test] XGBoost: bal_acc=0.8373 sens=0.8430 spec=0.8315 auroc=0.9150 auprc=0.6325
+    [ISIC2020_external] XGBoost: bal_acc=0.6122 sens=0.3219 spec=0.9025 auroc=0.6768 auprc=0.0806
+    [HAM10000_test] RandomForest: bal_acc=0.8184 sens=0.9103 spec=0.7264 auroc=0.9162 auprc=0.6166
+    [ISIC2020_external] RandomForest: bal_acc=0.6487 sens=0.4905 spec=0.8068 auroc=0.6901 auprc=0.0801
+    [HAM10000_test] KNN: bal_acc=0.7986 sens=0.7399 spec=0.8573 auroc=0.8411 auprc=0.5686
+    [ISIC2020_external] KNN: bal_acc=0.6014 sens=0.3133 spec=0.8896 auroc=0.6085 auprc=0.0528
+    [HAM10000_test] Stacking: bal_acc=0.8407 sens=0.8072 spec=0.8742 auroc=0.9171 auprc=0.6168
+    [ISIC2020_external] Stacking: bal_acc=0.6086 sens=0.2788 spec=0.9384 auroc=0.6912 auprc=0.0808
+  --- k = all features ---
+    [HAM10000_test] SVM-RBF: bal_acc=0.8283 sens=0.8475 spec=0.8090 auroc=0.9016 auprc=0.6022
+    [ISIC2020_external] SVM-RBF: bal_acc=0.6338 sens=0.4785 spec=0.7891 auroc=0.6854 auprc=0.0739
+    [HAM10000_test] XGBoost: bal_acc=0.8293 sens=0.9058 spec=0.7528 auroc=0.9191 auprc=0.6406
+    [ISIC2020_external] XGBoost: bal_acc=0.6322 sens=0.4458 spec=0.8186 auroc=0.6797 auprc=0.0775
+    [HAM10000_test] RandomForest: bal_acc=0.8330 sens=0.8744 spec=0.7916 auroc=0.9149 auprc=0.6157
+    [ISIC2020_external] RandomForest: bal_acc=0.6326 sens=0.3804 spec=0.8848 auroc=0.7000 auprc=0.0818
+    [HAM10000_test] KNN: bal_acc=0.8154 sens=0.8251 spec=0.8056 auroc=0.8623 auprc=0.5837
+    [ISIC2020_external] KNN: bal_acc=0.6005 sens=0.3683 spec=0.8327 auroc=0.6095 auprc=0.0519
+    [HAM10000_test] Stacking: bal_acc=0.8348 sens=0.8206 spec=0.8489 auroc=0.9168 auprc=0.6088
+    [ISIC2020_external] Stacking: bal_acc=0.6211 sens=0.3201 spec=0.9220 auroc=0.7033 auprc=0.0829
+  [Checkpoint] fold 5 saved.
+
+=== SUMMARY (mean +/- std across folds) ===
+                                          balanced_accuracy           sensitivity           specificity               auroc               auprc            accuracy          
+                                                       mean       std        mean       std        mean       std      mean       std      mean       std      mean       std
+dataset           k_features classifier                                                                                                                                      
+HAM10000_test     128        KNN                   0.787925  0.023083    0.769272  0.097827    0.806577  0.074925  0.841617  0.030392  0.539702  0.049449  0.802396  0.057135
+                             RandomForest          0.812748  0.013518    0.832966  0.056853    0.792530  0.062272  0.901037  0.008051  0.577612  0.031692  0.797004  0.049761
+                             SVM-RBF               0.797481  0.012035    0.797039  0.048864    0.797923  0.050590  0.873368  0.016474  0.566243  0.037931  0.797803  0.040261
+                             Stacking              0.808443  0.016440    0.821319  0.067084    0.795568  0.085285  0.901947  0.008266  0.588655  0.032826  0.798402  0.068923
+                             XGBoost               0.807348  0.014492    0.855420  0.058632    0.759276  0.044592  0.902352  0.010823  0.602255  0.030274  0.769945  0.034080
+                  256        KNN                   0.794545  0.018962    0.755779  0.091411    0.833311  0.070055  0.852865  0.024819  0.544682  0.047400  0.824663  0.053038
+                             RandomForest          0.812068  0.010720    0.838347  0.065273    0.785789  0.060881  0.903142  0.008139  0.578962  0.028698  0.791613  0.047343
+                             SVM-RBF               0.808898  0.011991    0.816737  0.017768    0.801059  0.028112  0.884897  0.011791  0.588625  0.038317  0.802796  0.023994
+                             Stacking              0.810955  0.018953    0.844653  0.056978    0.777256  0.076497  0.905450  0.007505  0.587546  0.028806  0.784723  0.062537
+                             XGBoost               0.813643  0.011507    0.846439  0.056110    0.780848  0.057869  0.905456  0.007306  0.607180  0.024490  0.788118  0.045789
+                  512        KNN                   0.797988  0.010822    0.784462  0.072053    0.811513  0.063910  0.854219  0.022769  0.552819  0.041764  0.808487  0.049224
+                             RandomForest          0.816919  0.003370    0.871535  0.034540    0.762303  0.038146  0.906352  0.007249  0.589137  0.026908  0.774438  0.030131
+                             SVM-RBF               0.806626  0.012571    0.819489  0.054398    0.793764  0.054817  0.887720  0.010027  0.596629  0.030004  0.796605  0.043410
+                             Stacking              0.821303  0.012792    0.852717  0.045837    0.789888  0.062096  0.908412  0.006209  0.602194  0.027415  0.796855  0.050502
+                             XGBoost               0.814230  0.012806    0.842888  0.071586    0.785573  0.082001  0.904977  0.006319  0.605608  0.020303  0.791912  0.065382
+                  64         KNN                   0.783547  0.015277    0.767378  0.064235    0.799716  0.060839  0.828421  0.026065  0.522564  0.050187  0.796106  0.047883
+                             RandomForest          0.807278  0.011422    0.845510  0.033176    0.769047  0.033802  0.896973  0.006543  0.566963  0.035706  0.777534  0.027330
+                             SVM-RBF               0.789206  0.016335    0.795209  0.060689    0.783204  0.051571  0.866083  0.016220  0.532117  0.052083  0.784523  0.040334
+                             Stacking              0.810919  0.017221    0.844593  0.032149    0.777245  0.045805  0.897582  0.007318  0.576332  0.036220  0.784723  0.038456
+                             XGBoost               0.811877  0.020516    0.848192  0.034157    0.775562  0.041855  0.898377  0.009432  0.589808  0.033953  0.783625  0.035752
+                  all        KNN                   0.804485  0.016510    0.794316  0.062630    0.814653  0.030102  0.863452  0.016372  0.542395  0.046908  0.812381  0.019868
+                             RandomForest          0.813021  0.014006    0.843736  0.064713    0.782306  0.061610  0.904224  0.008143  0.583514  0.037025  0.789116  0.048382
+                             SVM-RBF               0.814879  0.012182    0.825775  0.057017    0.803984  0.042553  0.895277  0.012420  0.607211  0.030237  0.806390  0.032100
+                             Stacking              0.812797  0.016942    0.825767  0.056839    0.799827  0.054940  0.902667  0.012854  0.596895  0.032910  0.802696  0.043837
+                             XGBoost               0.813713  0.014059    0.845566  0.076757    0.781860  0.073244  0.906967  0.007585  0.611454  0.024557  0.788917  0.057264
+ISIC2020_external 128        KNN                   0.576766  0.020490    0.323924  0.067421    0.829608  0.069909  0.590136  0.013046  0.044918  0.007591  0.820623  0.067685
+                             RandomForest          0.602436  0.020506    0.331497  0.095339    0.873375  0.083085  0.655594  0.026767  0.062603  0.011536  0.863747  0.080082
+                             SVM-RBF               0.582136  0.024369    0.384509  0.056080    0.779763  0.075933  0.611835  0.044242  0.049310  0.010799  0.772741  0.073822
+                             Stacking              0.596829  0.020298    0.326678  0.114993    0.866980  0.105760  0.652351  0.031776  0.062957  0.012013  0.857381  0.101971
+                             XGBoost               0.604237  0.030466    0.383133  0.066923    0.825342  0.050490  0.653680  0.036869  0.061625  0.010825  0.817486  0.049021
+                  256        KNN                   0.570947  0.019647    0.281239  0.102146    0.860654  0.092584  0.585443  0.014486  0.047847  0.005843  0.850359  0.089267
+                             RandomForest          0.607535  0.025602    0.338382  0.096335    0.876687  0.075245  0.666757  0.025858  0.066209  0.012731  0.867123  0.072459
+                             SVM-RBF               0.592825  0.015631    0.384854  0.051323    0.800797  0.051475  0.637256  0.028522  0.058070  0.009498  0.793407  0.049820
+                             Stacking              0.605263  0.017607    0.352151  0.091951    0.858375  0.094016  0.661052  0.029987  0.067549  0.011845  0.849381  0.090831
+                             XGBoost               0.602736  0.019431    0.341480  0.071157    0.863991  0.063185  0.659483  0.017822  0.064850  0.008902  0.854708  0.061005
+                  512        KNN                   0.571108  0.027212    0.299139  0.080554    0.843076  0.072700  0.584663  0.023751  0.046666  0.006834  0.833412  0.070338
+                             RandomForest          0.615069  0.023523    0.375904  0.089395    0.854234  0.066995  0.668105  0.020062  0.066898  0.010553  0.845736  0.064448
+                             SVM-RBF               0.605170  0.017033    0.417556  0.056384    0.792783  0.075610  0.654838  0.027985  0.061356  0.006948  0.786117  0.073359
+                             Stacking              0.607556  0.015386    0.344234  0.085352    0.870878  0.079403  0.664733  0.022481  0.068775  0.009957  0.861521  0.076579
+                             XGBoost               0.604766  0.015964    0.348709  0.116100    0.860822  0.111975  0.674100  0.018709  0.068223  0.009501  0.851723  0.108004
+                  64         KNN                   0.580874  0.018862    0.340103  0.060854    0.821644  0.085993  0.591118  0.019286  0.046928  0.007535  0.813088  0.083467
+                             RandomForest          0.606382  0.019703    0.352496  0.038493    0.860268  0.026166  0.650866  0.027504  0.059427  0.011370  0.851246  0.025502
+                             SVM-RBF               0.584940  0.026488    0.396213  0.077903    0.773667  0.094086  0.615877  0.038128  0.044994  0.012005  0.766961  0.091274
+                             Stacking              0.601775  0.021531    0.345611  0.055759    0.857939  0.055806  0.650672  0.035075  0.061836  0.012532  0.848836  0.054124
+                             XGBoost               0.603353  0.019371    0.352840  0.085020    0.853867  0.065124  0.659748  0.024669  0.062865  0.012010  0.844965  0.062611
+                  all        KNN                   0.563854  0.026340    0.282272  0.051737    0.845436  0.040341  0.585421  0.019392  0.044945  0.007895  0.835430  0.039297
+                             RandomForest          0.601560  0.016710    0.310499  0.076023    0.892621  0.063678  0.675337  0.024182  0.067896  0.011075  0.882279  0.061333
+                             SVM-RBF               0.613292  0.021464    0.411360  0.079935    0.815224  0.055219  0.667360  0.029662  0.066020  0.007355  0.808049  0.053021
+                             Stacking              0.607950  0.013856    0.318417  0.067133    0.897484  0.054549  0.683941  0.019250  0.071331  0.009058  0.887196  0.052488
+                             XGBoost               0.612442  0.020797    0.360413  0.116524    0.864471  0.086658  0.681043  0.024034  0.069081  0.008188  0.855515  0.083136
+
+Saved to $MELANOMA_ROOT/results_v2

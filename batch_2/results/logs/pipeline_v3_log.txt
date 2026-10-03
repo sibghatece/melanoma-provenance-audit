@@ -1,0 +1,293 @@
+[Device] mps  [Input] 320px
+HAM10000: 10015 imgs, 1113 melanoma, 7470 lesions
+ISIC2020: 32701 imgs, 581 melanoma (1.78% prevalence)
+
+=== FOLD 1/5 ===
+  train=6795 val=1217 test=2003 (melanoma in test=223)
+  [Fold 1] Epoch 1/30  val_auc=0.8635  (156s)
+  [Fold 1] Epoch 2/30  val_auc=0.8661  (164s)
+  [Fold 1] Epoch 3/30  val_auc=0.8803  (179s)
+  [Fold 1] Epoch 4/30  val_auc=0.8845  (194s)
+  [Fold 1] Epoch 5/30  val_auc=0.8949  (204s)
+  [Fold 1] Epoch 6/30  val_auc=0.9030  (210s)
+  [Fold 1] Epoch 7/30  val_auc=0.9101  (212s)
+  [Fold 1] Epoch 8/30  val_auc=0.8972  (212s)
+  [Fold 1] Epoch 9/30  val_auc=0.9087  (213s)
+  [Fold 1] Epoch 10/30  val_auc=0.9078  (213s)
+  [Fold 1] Epoch 11/30  val_auc=0.9167  (214s)
+  [Fold 1] Epoch 12/30  val_auc=0.9071  (215s)
+  [Fold 1] Epoch 13/30  val_auc=0.9116  (202s)
+  [Fold 1] Epoch 14/30  val_auc=0.8980  (197s)
+  [Fold 1] Epoch 15/30  val_auc=0.8921  (195s)
+  [Fold 1] Epoch 16/30  val_auc=0.8846  (193s)
+  [Fold 1] Epoch 17/30  val_auc=0.9007  (193s)
+  [Fold 1] Early stop @ 17 (best=0.9167)
+  Extracting features...
+    [train] 0/6795
+    [train] 6400/6795
+    [val] 0/1217
+    [test] 0/2003
+    [isic] 0/32701
+    [isic] 6400/32701
+    [isic] 12800/32701
+    [isic] 19200/32701
+    [isic] 25600/32701
+    [isic] 32000/32701
+  Feature dim: 1904
+  SHAP ranking...
+    SHAP failed (No module named 'shap'); using XGBoost gain importance.
+    method=xgb_gain
+  --- k=256 ---
+    SVM-RBF: HAM auroc=0.8595 | ISIC auroc=0.6529 sens@spec90=0.2909
+    XGBoost: HAM auroc=0.8994 | ISIC auroc=0.6799 sens@spec90=0.3305
+    RandomForest: HAM auroc=0.8921 | ISIC auroc=0.6788 sens@spec90=0.3391
+    KNN: HAM auroc=0.7805 | ISIC auroc=0.5830 sens@spec90=0.2203
+    Stacking: HAM auroc=0.8930 | ISIC auroc=0.6781 sens@spec90=0.3391
+  --- k=512 ---
+    SVM-RBF: HAM auroc=0.8674 | ISIC auroc=0.6399 sens@spec90=0.2702
+    XGBoost: HAM auroc=0.9044 | ISIC auroc=0.6840 sens@spec90=0.3425
+    RandomForest: HAM auroc=0.9046 | ISIC auroc=0.6937 sens@spec90=0.3546
+    KNN: HAM auroc=0.7711 | ISIC auroc=0.5765 sens@spec90=0.2324
+    Stacking: HAM auroc=0.9044 | ISIC auroc=0.6890 sens@spec90=0.3597
+  --- k=all ---
+    SVM-RBF: HAM auroc=0.8797 | ISIC auroc=0.6546 sens@spec90=0.2926
+    XGBoost: HAM auroc=0.9068 | ISIC auroc=0.6835 sens@spec90=0.3511
+    RandomForest: HAM auroc=0.8993 | ISIC auroc=0.6939 sens@spec90=0.3460
+    KNN: HAM auroc=0.7856 | ISIC auroc=0.5664 sens@spec90=0.2220
+    Stacking: HAM auroc=0.9022 | ISIC auroc=0.6980 sens@spec90=0.3546
+  [Checkpoint] fold 1 saved.
+
+=== FOLD 2/5 ===
+  train=6807 val=1205 test=2003 (melanoma in test=222)
+  [Fold 2] Epoch 1/30  val_auc=0.8888  (192s)
+  [Fold 2] Epoch 2/30  val_auc=0.9026  (196s)
+  [Fold 2] Epoch 3/30  val_auc=0.9012  (206s)
+  [Fold 2] Epoch 4/30  val_auc=0.9108  (214s)
+  [Fold 2] Epoch 5/30  val_auc=0.8801  (218s)
+  [Fold 2] Epoch 6/30  val_auc=0.9187  (220s)
+  [Fold 2] Epoch 7/30  val_auc=0.9202  (221s)
+  [Fold 2] Epoch 8/30  val_auc=0.8961  (218s)
+  [Fold 2] Epoch 9/30  val_auc=0.9203  (201s)
+  [Fold 2] Epoch 10/30  val_auc=0.9117  (198s)
+  [Fold 2] Epoch 11/30  val_auc=0.9235  (198s)
+  [Fold 2] Epoch 12/30  val_auc=0.9137  (198s)
+  [Fold 2] Epoch 13/30  val_auc=0.9080  (198s)
+  [Fold 2] Epoch 14/30  val_auc=0.9105  (197s)
+  [Fold 2] Epoch 15/30  val_auc=0.9101  (196s)
+  [Fold 2] Epoch 16/30  val_auc=0.9106  (195s)
+  [Fold 2] Epoch 17/30  val_auc=0.9178  (196s)
+  [Fold 2] Early stop @ 17 (best=0.9235)
+  Extracting features...
+    [train] 0/6807
+    [train] 6400/6807
+    [val] 0/1205
+    [test] 0/2003
+    [isic] 0/32701
+    [isic] 6400/32701
+    [isic] 12800/32701
+    [isic] 19200/32701
+    [isic] 25600/32701
+    [isic] 32000/32701
+  Feature dim: 1904
+  SHAP ranking...
+    SHAP failed (No module named 'shap'); using XGBoost gain importance.
+    method=xgb_gain
+  --- k=256 ---
+    SVM-RBF: HAM auroc=0.9116 | ISIC auroc=0.6080 sens@spec90=0.2978
+    XGBoost: HAM auroc=0.9288 | ISIC auroc=0.6827 sens@spec90=0.3391
+    RandomForest: HAM auroc=0.9194 | ISIC auroc=0.6644 sens@spec90=0.3477
+    KNN: HAM auroc=0.8541 | ISIC auroc=0.5823 sens@spec90=0.2255
+    Stacking: HAM auroc=0.9235 | ISIC auroc=0.6617 sens@spec90=0.3528
+  --- k=512 ---
+    SVM-RBF: HAM auroc=0.9090 | ISIC auroc=0.6394 sens@spec90=0.3012
+    XGBoost: HAM auroc=0.9247 | ISIC auroc=0.6835 sens@spec90=0.3494
+    RandomForest: HAM auroc=0.9173 | ISIC auroc=0.6783 sens@spec90=0.3425
+    KNN: HAM auroc=0.8552 | ISIC auroc=0.5973 sens@spec90=0.2547
+    Stacking: HAM auroc=0.9219 | ISIC auroc=0.6762 sens@spec90=0.3442
+  --- k=all ---
+    SVM-RBF: HAM auroc=0.9164 | ISIC auroc=0.6821 sens@spec90=0.3442
+    XGBoost: HAM auroc=0.9266 | ISIC auroc=0.6870 sens@spec90=0.3322
+    RandomForest: HAM auroc=0.9230 | ISIC auroc=0.6801 sens@spec90=0.3425
+    KNN: HAM auroc=0.8538 | ISIC auroc=0.5917 sens@spec90=0.2719
+    Stacking: HAM auroc=0.9256 | ISIC auroc=0.6849 sens@spec90=0.3511
+  [Checkpoint] fold 2 saved.
+
+=== FOLD 3/5 ===
+  train=6793 val=1219 test=2003 (melanoma in test=223)
+  [Fold 3] Epoch 1/30  val_auc=0.8949  (220s)
+  [Fold 3] Epoch 2/30  val_auc=0.8962  (222s)
+  [Fold 3] Epoch 3/30  val_auc=0.9108  (223s)
+  [Fold 3] Epoch 4/30  val_auc=0.9246  (223s)
+  [Fold 3] Epoch 5/30  val_auc=0.9110  (224s)
+  [Fold 3] Epoch 6/30  val_auc=0.9185  (224s)
+  [Fold 3] Epoch 7/30  val_auc=0.9141  (224s)
+  [Fold 3] Epoch 8/30  val_auc=0.9326  (224s)
+  [Fold 3] Epoch 9/30  val_auc=0.9287  (224s)
+  [Fold 3] Epoch 10/30  val_auc=0.9325  (225s)
+  [Fold 3] Epoch 11/30  val_auc=0.9308  (227s)
+  [Fold 3] Epoch 12/30  val_auc=0.9241  (227s)
+  [Fold 3] Epoch 13/30  val_auc=0.9140  (226s)
+  [Fold 3] Epoch 14/30  val_auc=0.9232  (224s)
+  [Fold 3] Early stop @ 14 (best=0.9326)
+  Extracting features...
+    [train] 0/6793
+    [train] 6400/6793
+    [val] 0/1219
+    [test] 0/2003
+    [isic] 0/32701
+    [isic] 6400/32701
+    [isic] 12800/32701
+    [isic] 19200/32701
+    [isic] 25600/32701
+    [isic] 32000/32701
+  Feature dim: 1904
+  SHAP ranking...
+    SHAP failed (No module named 'shap'); using XGBoost gain importance.
+    method=xgb_gain
+  --- k=256 ---
+    SVM-RBF: HAM auroc=0.9058 | ISIC auroc=0.6120 sens@spec90=0.2943
+    XGBoost: HAM auroc=0.9236 | ISIC auroc=0.6726 sens@spec90=0.3184
+    RandomForest: HAM auroc=0.9295 | ISIC auroc=0.6938 sens@spec90=0.3511
+    KNN: HAM auroc=0.8652 | ISIC auroc=0.6151 sens@spec90=0.2995
+    Stacking: HAM auroc=0.9309 | ISIC auroc=0.6904 sens@spec90=0.3546
+  --- k=512 ---
+    SVM-RBF: HAM auroc=0.9158 | ISIC auroc=0.6558 sens@spec90=0.3081
+    XGBoost: HAM auroc=0.9305 | ISIC auroc=0.6788 sens@spec90=0.3167
+    RandomForest: HAM auroc=0.9305 | ISIC auroc=0.7033 sens@spec90=0.3460
+    KNN: HAM auroc=0.8700 | ISIC auroc=0.6109 sens@spec90=0.3029
+    Stacking: HAM auroc=0.9311 | ISIC auroc=0.7031 sens@spec90=0.3477
+  --- k=all ---
+    SVM-RBF: HAM auroc=0.9207 | ISIC auroc=0.6598 sens@spec90=0.3115
+    XGBoost: HAM auroc=0.9287 | ISIC auroc=0.6968 sens@spec90=0.3287
+    RandomForest: HAM auroc=0.9307 | ISIC auroc=0.6980 sens@spec90=0.3356
+    KNN: HAM auroc=0.8911 | ISIC auroc=0.5924 sens@spec90=0.2496
+    Stacking: HAM auroc=0.9289 | ISIC auroc=0.7002 sens@spec90=0.3460
+  [Checkpoint] fold 3 saved.
+
+=== FOLD 4/5 ===
+  train=6816 val=1196 test=2003 (melanoma in test=222)
+  [Fold 4] Epoch 1/30  val_auc=0.8612  (234s)
+  [Fold 4] Epoch 2/30  val_auc=0.8888  (227s)
+  [Fold 4] Epoch 3/30  val_auc=0.8903  (229s)
+  [Fold 4] Epoch 4/30  val_auc=0.8922  (230s)
+  [Fold 4] Epoch 5/30  val_auc=0.8858  (228s)
+  [Fold 4] Epoch 6/30  val_auc=0.8980  (222s)
+  [Fold 4] Epoch 7/30  val_auc=0.8810  (206s)
+  [Fold 4] Epoch 8/30  val_auc=0.8979  (198s)
+  [Fold 4] Epoch 9/30  val_auc=0.8820  (198s)
+  [Fold 4] Epoch 10/30  val_auc=0.8939  (196s)
+  [Fold 4] Epoch 11/30  val_auc=0.8940  (192s)
+  [Fold 4] Epoch 12/30  val_auc=0.9001  (193s)
+  [Fold 4] Epoch 13/30  val_auc=0.9069  (192s)
+  [Fold 4] Epoch 14/30  val_auc=0.8870  (193s)
+  [Fold 4] Epoch 15/30  val_auc=0.8969  (191s)
+  [Fold 4] Epoch 16/30  val_auc=0.8973  (192s)
+  [Fold 4] Epoch 17/30  val_auc=0.8941  (194s)
+  [Fold 4] Epoch 18/30  val_auc=0.8968  (194s)
+  [Fold 4] Epoch 19/30  val_auc=0.8947  (195s)
+  [Fold 4] Early stop @ 19 (best=0.9069)
+  Extracting features...
+    [train] 0/6816
+    [train] 6400/6816
+    [val] 0/1196
+    [test] 0/2003
+    [isic] 0/32701
+    [isic] 6400/32701
+    [isic] 12800/32701
+    [isic] 19200/32701
+    [isic] 25600/32701
+    [isic] 32000/32701
+  Feature dim: 1904
+  SHAP ranking...
+    SHAP failed (No module named 'shap'); using XGBoost gain importance.
+    method=xgb_gain
+  --- k=256 ---
+    SVM-RBF: HAM auroc=0.8882 | ISIC auroc=0.6267 sens@spec90=0.2978
+    XGBoost: HAM auroc=0.9137 | ISIC auroc=0.7123 sens@spec90=0.3924
+    RandomForest: HAM auroc=0.9113 | ISIC auroc=0.7036 sens@spec90=0.4062
+    KNN: HAM auroc=0.8330 | ISIC auroc=0.5855 sens@spec90=0.2065
+    Stacking: HAM auroc=0.9124 | ISIC auroc=0.6984 sens@spec90=0.3959
+  --- k=512 ---
+    SVM-RBF: HAM auroc=0.8963 | ISIC auroc=0.6726 sens@spec90=0.3236
+    XGBoost: HAM auroc=0.9183 | ISIC auroc=0.7185 sens@spec90=0.3941
+    RandomForest: HAM auroc=0.9105 | ISIC auroc=0.7080 sens@spec90=0.3993
+    KNN: HAM auroc=0.8324 | ISIC auroc=0.5820 sens@spec90=0.2065
+    Stacking: HAM auroc=0.9131 | ISIC auroc=0.7073 sens@spec90=0.3959
+  --- k=all ---
+    SVM-RBF: HAM auroc=0.9019 | ISIC auroc=0.6837 sens@spec90=0.3546
+    XGBoost: HAM auroc=0.9195 | ISIC auroc=0.7118 sens@spec90=0.3907
+    RandomForest: HAM auroc=0.9094 | ISIC auroc=0.7091 sens@spec90=0.3907
+    KNN: HAM auroc=0.8485 | ISIC auroc=0.5715 sens@spec90=0.2306
+    Stacking: HAM auroc=0.9108 | ISIC auroc=0.7116 sens@spec90=0.3959
+  [Checkpoint] fold 4 saved.
+
+=== FOLD 5/5 ===
+  train=6790 val=1222 test=2003 (melanoma in test=223)
+  [Fold 5] Epoch 1/30  val_auc=0.8613  (203s)
+  [Fold 5] Epoch 2/30  val_auc=0.8574  (203s)
+  [Fold 5] Epoch 3/30  val_auc=0.8801  (195s)
+  [Fold 5] Epoch 4/30  val_auc=0.8695  (192s)
+  [Fold 5] Epoch 5/30  val_auc=0.8460  (189s)
+  [Fold 5] Epoch 6/30  val_auc=0.8828  (184s)
+  [Fold 5] Epoch 7/30  val_auc=0.8901  (180s)
+  [Fold 5] Epoch 8/30  val_auc=0.8832  (178s)
+  [Fold 5] Epoch 9/30  val_auc=0.8864  (176s)
+  [Fold 5] Epoch 10/30  val_auc=0.8730  (174s)
+  [Fold 5] Epoch 11/30  val_auc=0.8761  (174s)
+  [Fold 5] Epoch 12/30  val_auc=0.8818  (173s)
+  [Fold 5] Epoch 13/30  val_auc=0.8653  (174s)
+  [Fold 5] Early stop @ 13 (best=0.8901)
+  Extracting features...
+    [train] 0/6790
+    [train] 6400/6790
+    [val] 0/1222
+    [test] 0/2003
+    [isic] 0/32701
+    [isic] 6400/32701
+    [isic] 12800/32701
+    [isic] 19200/32701
+    [isic] 25600/32701
+    [isic] 32000/32701
+  Feature dim: 1904
+  SHAP ranking...
+    SHAP failed (No module named 'shap'); using XGBoost gain importance.
+    method=xgb_gain
+  --- k=256 ---
+    SVM-RBF: HAM auroc=0.9047 | ISIC auroc=0.6555 sens@spec90=0.2909
+    XGBoost: HAM auroc=0.9142 | ISIC auroc=0.6800 sens@spec90=0.2978
+    RandomForest: HAM auroc=0.9190 | ISIC auroc=0.6515 sens@spec90=0.2582
+    KNN: HAM auroc=0.8722 | ISIC auroc=0.5803 sens@spec90=0.2427
+    Stacking: HAM auroc=0.9212 | ISIC auroc=0.6583 sens@spec90=0.2685
+  --- k=512 ---
+    SVM-RBF: HAM auroc=0.9085 | ISIC auroc=0.6424 sens@spec90=0.2771
+    XGBoost: HAM auroc=0.9177 | ISIC auroc=0.6877 sens@spec90=0.3081
+    RandomForest: HAM auroc=0.9233 | ISIC auroc=0.6563 sens@spec90=0.2771
+    KNN: HAM auroc=0.8760 | ISIC auroc=0.5738 sens@spec90=0.2289
+    Stacking: HAM auroc=0.9247 | ISIC auroc=0.6608 sens@spec90=0.2857
+  --- k=all ---
+    SVM-RBF: HAM auroc=0.9109 | ISIC auroc=0.6729 sens@spec90=0.2926
+    XGBoost: HAM auroc=0.9218 | ISIC auroc=0.6830 sens@spec90=0.2857
+    RandomForest: HAM auroc=0.9230 | ISIC auroc=0.6513 sens@spec90=0.2599
+    KNN: HAM auroc=0.8742 | ISIC auroc=0.5698 sens@spec90=0.2169
+    Stacking: HAM auroc=0.9226 | ISIC auroc=0.6699 sens@spec90=0.2771
+  [Checkpoint] fold 5 saved.
+
+=== FOLD ENSEMBLING ===
+  k=256 SVM-RBF: HAM-OOF auroc=0.8873 | ISIC-ens auroc=0.6697 auprc=0.0806 sens@spec90=0.3563
+  k=256 XGBoost: HAM-OOF auroc=0.9124 | ISIC-ens auroc=0.7150 auprc=0.0892 sens@spec90=0.3735
+  k=256 RandomForest: HAM-OOF auroc=0.9131 | ISIC-ens auroc=0.7114 auprc=0.0884 sens@spec90=0.3718
+  k=256 KNN: HAM-OOF auroc=0.8403 | ISIC-ens auroc=0.6321 auprc=0.0727 sens@spec90=0.3270
+  k=256 Stacking: HAM-OOF auroc=0.8878 | ISIC-ens auroc=0.7074 auprc=0.0866 sens@spec90=0.3855
+  k=512 SVM-RBF: HAM-OOF auroc=0.8924 | ISIC-ens auroc=0.6778 auprc=0.0845 sens@spec90=0.3597
+  k=512 XGBoost: HAM-OOF auroc=0.9153 | ISIC-ens auroc=0.7192 auprc=0.0880 sens@spec90=0.3821
+  k=512 RandomForest: HAM-OOF auroc=0.9158 | ISIC-ens auroc=0.7200 auprc=0.0900 sens@spec90=0.3821
+  k=512 KNN: HAM-OOF auroc=0.8400 | ISIC-ens auroc=0.6268 auprc=0.0703 sens@spec90=0.3184
+  k=512 Stacking: HAM-OOF auroc=0.8888 | ISIC-ens auroc=0.7176 auprc=0.0892 sens@spec90=0.3855
+  k=all SVM-RBF: HAM-OOF auroc=0.8998 | ISIC-ens auroc=0.6947 auprc=0.0853 sens@spec90=0.3494
+  k=all XGBoost: HAM-OOF auroc=0.9177 | ISIC-ens auroc=0.7199 auprc=0.0887 sens@spec90=0.3735
+  k=all RandomForest: HAM-OOF auroc=0.9158 | ISIC-ens auroc=0.7145 auprc=0.0872 sens@spec90=0.3804
+  k=all KNN: HAM-OOF auroc=0.8492 | ISIC-ens auroc=0.6069 auprc=0.0655 sens@spec90=0.2719
+  k=all Stacking: HAM-OOF auroc=0.8912 | ISIC-ens auroc=0.7189 auprc=0.0872 sens@spec90=0.3959
+
+Saved: $MELANOMA_ROOT/results_v3/summary_v3.csv and ensemble_results.csv
+NOTE: the ISIC ensemble threshold is fitted on ISIC itself and is therefore optimistic -- quote AUROC/AUPRC and sens@fixed-spec as the external headline numbers, not that row's sensitivity/specificity.

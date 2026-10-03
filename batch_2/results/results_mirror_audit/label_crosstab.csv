@@ -1,0 +1,19 @@
+mirror,mirror_class,mel,nv,akiec,bcc,bkl,df,vasc
+Fanconi_3297,benign,0.0,1800.0,0.0,0.0,0.0,0.0,0.0
+Fanconi_3297,malignant,688.0,0.0,0.0,0.0,0.0,0.0,0.0
+Javid_10605,malignant,1113.0,0.0,0.0,0.0,0.0,0.0,0.0
+SkinCancerISIC_2357,actinic keratosis,0.0,0.0,128.0,0.0,0.0,0.0,0.0
+SkinCancerISIC_2357,basal cell carcinoma,0.0,0.0,0.0,392.0,0.0,0.0,0.0
+SkinCancerISIC_2357,dermatofibroma,0.0,0.0,0.0,0.0,0.0,104.0,0.0
+SkinCancerISIC_2357,nevus,0.0,0.0,76.0,0.0,0.0,0.0,0.0
+SkinCancerISIC_2357,pigmented benign keratosis,0.0,0.0,0.0,0.0,478.0,0.0,0.0
+SkinCancerISIC_2357,squamous cell carcinoma,0.0,0.0,192.0,0.0,0.0,0.0,0.0
+SkinCancerISIC_2357,vascular lesion,0.0,0.0,0.0,0.0,0.0,0.0,142.0
+ISIC19_20_malig_benign_11400,malignant,1103.0,0.0,0.0,0.0,0.0,0.0,0.0
+HAM_augmented_balanced,akiec,0.0,0.0,327.0,0.0,0.0,0.0,0.0
+HAM_augmented_balanced,bcc,0.0,0.0,0.0,514.0,0.0,0.0,0.0
+HAM_augmented_balanced,bkl,0.0,0.0,0.0,0.0,1099.0,0.0,0.0
+HAM_augmented_balanced,df,0.0,0.0,0.0,0.0,0.0,115.0,0.0
+HAM_augmented_balanced,mel,1113.0,0.0,0.0,0.0,0.0,0.0,0.0
+HAM_augmented_balanced,nv,0.0,6705.0,0.0,0.0,0.0,0.0,0.0
+HAM_augmented_balanced,vasc,0.0,0.0,0.0,0.0,0.0,0.0,142.0

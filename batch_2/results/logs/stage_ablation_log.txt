@@ -1,0 +1,76 @@
+
+=== FOLD 1 === train=(6795, 1904) test=(2003, 1904)
+  stage8_only        (1280 dims)  best auroc=0.9060
+  stage7_8           (1600 dims)  best auroc=0.9069
+  stage6_7_8         (1792 dims)  best auroc=0.9041
+  all_four_stages    (1904 dims)  best auroc=0.9051
+  stage7_only        ( 320 dims)  best auroc=0.9055
+  early_only_5_6     ( 304 dims)  best auroc=0.9034
+
+=== FOLD 2 === train=(6807, 1904) test=(2003, 1904)
+  stage8_only        (1280 dims)  best auroc=0.9240
+  stage7_8           (1600 dims)  best auroc=0.9250
+  stage6_7_8         (1792 dims)  best auroc=0.9238
+  all_four_stages    (1904 dims)  best auroc=0.9256
+  stage7_only        ( 320 dims)  best auroc=0.9239
+  early_only_5_6     ( 304 dims)  best auroc=0.9220
+
+=== FOLD 3 === train=(6793, 1904) test=(2003, 1904)
+  stage8_only        (1280 dims)  best auroc=0.9289
+  stage7_8           (1600 dims)  best auroc=0.9309
+  stage6_7_8         (1792 dims)  best auroc=0.9307
+  all_four_stages    (1904 dims)  best auroc=0.9286
+  stage7_only        ( 320 dims)  best auroc=0.9273
+  early_only_5_6     ( 304 dims)  best auroc=0.9239
+
+=== FOLD 4 === train=(6816, 1904) test=(2003, 1904)
+  stage8_only        (1280 dims)  best auroc=0.9182
+  stage7_8           (1600 dims)  best auroc=0.9186
+  stage6_7_8         (1792 dims)  best auroc=0.9151
+  all_four_stages    (1904 dims)  best auroc=0.9175
+  stage7_only        ( 320 dims)  best auroc=0.9157
+  early_only_5_6     ( 304 dims)  best auroc=0.9201
+
+=== FOLD 5 === train=(6790, 1904) test=(2003, 1904)
+  stage8_only        (1280 dims)  best auroc=0.9259
+  stage7_8           (1600 dims)  best auroc=0.9236
+  stage6_7_8         (1792 dims)  best auroc=0.9242
+  all_four_stages    (1904 dims)  best auroc=0.9254
+  stage7_only        ( 320 dims)  best auroc=0.9186
+  early_only_5_6     ( 304 dims)  best auroc=0.9073
+
+=== MEAN AUROC ACROSS FOLDS (HAM10000 internal test) ===
+         config  n_dims    KNN  RandomForest  SVM-RBF  XGBoost
+ early_only_5_6     304 0.8884        0.9081   0.9076   0.9143
+    stage7_only     320 0.8672        0.9154   0.9029   0.9169
+    stage8_only    1280 0.8381        0.9166   0.9065   0.9193
+       stage7_8    1600 0.8470        0.9172   0.9069   0.9205
+     stage6_7_8    1792 0.8495        0.9176   0.9058   0.9192
+all_four_stages    1904 0.8506        0.9169   0.9059   0.9204
+
+=== EACH CONFIG vs all_four_stages (paired across folds) ===
+        config   classifier  n_dims  delta_vs_full  delta_std  p_ttest
+   stage8_only      XGBoost    1280        -0.0011     0.0028   0.4293
+   stage8_only RandomForest    1280        -0.0003     0.0026   0.8309
+   stage8_only      SVM-RBF    1280         0.0006     0.0015   0.3933
+   stage8_only          KNN    1280        -0.0125     0.0079   0.0236
+      stage7_8      XGBoost    1600         0.0001     0.0026   0.9298
+      stage7_8 RandomForest    1600         0.0004     0.0014   0.5931
+      stage7_8      SVM-RBF    1600         0.0010     0.0013   0.1665
+      stage7_8          KNN    1600        -0.0036     0.0049   0.1775
+    stage6_7_8      XGBoost    1792        -0.0012     0.0013   0.1206
+    stage6_7_8 RandomForest    1792         0.0008     0.0022   0.4856
+    stage6_7_8      SVM-RBF    1792        -0.0001     0.0003   0.5953
+    stage6_7_8          KNN    1792        -0.0011     0.0047   0.6383
+   stage7_only      XGBoost     320        -0.0034     0.0025   0.0383
+   stage7_only RandomForest     320        -0.0015     0.0076   0.6805
+   stage7_only      SVM-RBF     320        -0.0030     0.0068   0.3765
+   stage7_only          KNN     320         0.0166     0.0096   0.0177
+early_only_5_6      XGBoost     304        -0.0061     0.0068   0.1183
+early_only_5_6 RandomForest     304        -0.0088     0.0088   0.0881
+early_only_5_6      SVM-RBF     304         0.0017     0.0113   0.7503
+early_only_5_6          KNN     304         0.0378     0.0239   0.0240
+
+How to read this: if stage7_8 or stage8_only matches all_four_stages within noise, the four-stage design is not earning its extra dimensions and should either be simplified or dropped as a claimed contribution. Report whichever way it lands.
+
+Saved to $MELANOMA_ROOT/results_shap

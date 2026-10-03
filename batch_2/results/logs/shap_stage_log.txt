@@ -1,0 +1,234 @@
+[Device] mps  [Input] 320px
+
+=== FOLD 1/5 ===
+  Extracting features (cached for reuse)...
+    [train] 0/6795
+    [train] 6400/6795
+    [val] 0/1217
+    [test] 0/2003
+    [isic] 0/32701
+    [isic] 6400/32701
+    [isic] 12800/32701
+    [isic] 19200/32701
+    [isic] 25600/32701
+    [isic] 32000/32701
+  Fitting surrogate and computing SHAP...
+    top-256 overlap between SHAP and gain rankings: 0.277
+    [shap k=256] SVM-RBF: HAM=0.8589 ISIC=0.6608
+    [shap k=256] XGBoost: HAM=0.9074 ISIC=0.6836
+    [shap k=256] RandomForest: HAM=0.8992 ISIC=0.6891
+    [shap k=256] KNN: HAM=0.7833 ISIC=0.5770
+    [shap k=256] Stacking: HAM=0.9005 ISIC=0.6862
+    [shap k=512] SVM-RBF: HAM=0.8700 ISIC=0.6686
+    [shap k=512] XGBoost: HAM=0.9084 ISIC=0.6948
+    [shap k=512] RandomForest: HAM=0.8997 ISIC=0.6975
+    [shap k=512] KNN: HAM=0.7797 ISIC=0.5764
+    [shap k=512] Stacking: HAM=0.9013 ISIC=0.6960
+    [shap k=all] SVM-RBF: HAM=0.8797 ISIC=0.6546
+    [shap k=all] XGBoost: HAM=0.9084 ISIC=0.6862
+    [shap k=all] RandomForest: HAM=0.9002 ISIC=0.6969
+    [shap k=all] KNN: HAM=0.7856 ISIC=0.5664
+    [shap k=all] Stacking: HAM=0.9034 ISIC=0.7029
+    [gain k=256] SVM-RBF: HAM=0.8595 ISIC=0.6529
+    [gain k=256] XGBoost: HAM=0.8994 ISIC=0.6799
+    [gain k=256] RandomForest: HAM=0.8921 ISIC=0.6788
+    [gain k=256] KNN: HAM=0.7805 ISIC=0.5830
+    [gain k=256] Stacking: HAM=0.8930 ISIC=0.6781
+    [gain k=512] SVM-RBF: HAM=0.8674 ISIC=0.6399
+    [gain k=512] XGBoost: HAM=0.9044 ISIC=0.6840
+    [gain k=512] RandomForest: HAM=0.9046 ISIC=0.6937
+    [gain k=512] KNN: HAM=0.7711 ISIC=0.5765
+    [gain k=512] Stacking: HAM=0.9044 ISIC=0.6890
+  [Checkpoint] fold 1 done.
+
+=== FOLD 2/5 ===
+  Extracting features (cached for reuse)...
+    [train] 0/6807
+    [train] 6400/6807
+    [val] 0/1205
+    [test] 0/2003
+    [isic] 0/32701
+    [isic] 6400/32701
+    [isic] 12800/32701
+    [isic] 19200/32701
+    [isic] 25600/32701
+    [isic] 32000/32701
+  Fitting surrogate and computing SHAP...
+    top-256 overlap between SHAP and gain rankings: 0.301
+    [shap k=256] SVM-RBF: HAM=0.9192 ISIC=0.6555
+    [shap k=256] XGBoost: HAM=0.9211 ISIC=0.6928
+    [shap k=256] RandomForest: HAM=0.9196 ISIC=0.6744
+    [shap k=256] KNN: HAM=0.8565 ISIC=0.5916
+    [shap k=256] Stacking: HAM=0.9232 ISIC=0.6745
+    [shap k=512] SVM-RBF: HAM=0.9137 ISIC=0.6365
+    [shap k=512] XGBoost: HAM=0.9235 ISIC=0.6887
+    [shap k=512] RandomForest: HAM=0.9213 ISIC=0.6719
+    [shap k=512] KNN: HAM=0.8585 ISIC=0.5935
+    [shap k=512] Stacking: HAM=0.9235 ISIC=0.6715
+    [shap k=all] SVM-RBF: HAM=0.9164 ISIC=0.6821
+    [shap k=all] XGBoost: HAM=0.9253 ISIC=0.6893
+    [shap k=all] RandomForest: HAM=0.9244 ISIC=0.6815
+    [shap k=all] KNN: HAM=0.8538 ISIC=0.5917
+    [shap k=all] Stacking: HAM=0.9264 ISIC=0.6861
+    [gain k=256] SVM-RBF: HAM=0.9116 ISIC=0.6080
+    [gain k=256] XGBoost: HAM=0.9288 ISIC=0.6827
+    [gain k=256] RandomForest: HAM=0.9194 ISIC=0.6644
+    [gain k=256] KNN: HAM=0.8541 ISIC=0.5823
+    [gain k=256] Stacking: HAM=0.9235 ISIC=0.6617
+    [gain k=512] SVM-RBF: HAM=0.9090 ISIC=0.6394
+    [gain k=512] XGBoost: HAM=0.9247 ISIC=0.6835
+    [gain k=512] RandomForest: HAM=0.9173 ISIC=0.6783
+    [gain k=512] KNN: HAM=0.8552 ISIC=0.5973
+    [gain k=512] Stacking: HAM=0.9219 ISIC=0.6762
+  [Checkpoint] fold 2 done.
+
+=== FOLD 3/5 ===
+  Extracting features (cached for reuse)...
+    [train] 0/6793
+    [train] 6400/6793
+    [val] 0/1219
+    [test] 0/2003
+    [isic] 0/32701
+    [isic] 6400/32701
+    [isic] 12800/32701
+    [isic] 19200/32701
+    [isic] 25600/32701
+    [isic] 32000/32701
+  Fitting surrogate and computing SHAP...
+    top-256 overlap between SHAP and gain rankings: 0.305
+    [shap k=256] SVM-RBF: HAM=0.9068 ISIC=0.6487
+    [shap k=256] XGBoost: HAM=0.9278 ISIC=0.6859
+    [shap k=256] RandomForest: HAM=0.9278 ISIC=0.7059
+    [shap k=256] KNN: HAM=0.8480 ISIC=0.5968
+    [shap k=256] Stacking: HAM=0.9289 ISIC=0.7015
+    [shap k=512] SVM-RBF: HAM=0.9108 ISIC=0.6562
+    [shap k=512] XGBoost: HAM=0.9299 ISIC=0.6826
+    [shap k=512] RandomForest: HAM=0.9272 ISIC=0.7117
+    [shap k=512] KNN: HAM=0.8572 ISIC=0.5929
+    [shap k=512] Stacking: HAM=0.9283 ISIC=0.7113
+    [shap k=all] SVM-RBF: HAM=0.9207 ISIC=0.6598
+    [shap k=all] XGBoost: HAM=0.9306 ISIC=0.6988
+    [shap k=all] RandomForest: HAM=0.9304 ISIC=0.6990
+    [shap k=all] KNN: HAM=0.8911 ISIC=0.5924
+    [shap k=all] Stacking: HAM=0.9283 ISIC=0.7009
+    [gain k=256] SVM-RBF: HAM=0.9058 ISIC=0.6120
+    [gain k=256] XGBoost: HAM=0.9236 ISIC=0.6726
+    [gain k=256] RandomForest: HAM=0.9295 ISIC=0.6938
+    [gain k=256] KNN: HAM=0.8652 ISIC=0.6151
+    [gain k=256] Stacking: HAM=0.9309 ISIC=0.6904
+    [gain k=512] SVM-RBF: HAM=0.9158 ISIC=0.6558
+    [gain k=512] XGBoost: HAM=0.9305 ISIC=0.6788
+    [gain k=512] RandomForest: HAM=0.9305 ISIC=0.7033
+    [gain k=512] KNN: HAM=0.8700 ISIC=0.6109
+    [gain k=512] Stacking: HAM=0.9311 ISIC=0.7031
+  [Checkpoint] fold 3 done.
+
+=== FOLD 4/5 ===
+  Extracting features (cached for reuse)...
+    [train] 0/6816
+    [train] 6400/6816
+    [val] 0/1196
+    [test] 0/2003
+    [isic] 0/32701
+    [isic] 6400/32701
+    [isic] 12800/32701
+    [isic] 19200/32701
+    [isic] 25600/32701
+    [isic] 32000/32701
+  Fitting surrogate and computing SHAP...
+    top-256 overlap between SHAP and gain rankings: 0.332
+    [shap k=256] SVM-RBF: HAM=0.8962 ISIC=0.6845
+    [shap k=256] XGBoost: HAM=0.9187 ISIC=0.7172
+    [shap k=256] RandomForest: HAM=0.9143 ISIC=0.7148
+    [shap k=256] KNN: HAM=0.8291 ISIC=0.6001
+    [shap k=256] Stacking: HAM=0.9169 ISIC=0.7113
+    [shap k=512] SVM-RBF: HAM=0.9028 ISIC=0.6874
+    [shap k=512] XGBoost: HAM=0.9220 ISIC=0.7244
+    [shap k=512] RandomForest: HAM=0.9112 ISIC=0.7186
+    [shap k=512] KNN: HAM=0.8395 ISIC=0.5870
+    [shap k=512] Stacking: HAM=0.9134 ISIC=0.7159
+    [shap k=all] SVM-RBF: HAM=0.9019 ISIC=0.6837
+    [shap k=all] XGBoost: HAM=0.9196 ISIC=0.7130
+    [shap k=all] RandomForest: HAM=0.9103 ISIC=0.7117
+    [shap k=all] KNN: HAM=0.8485 ISIC=0.5715
+    [shap k=all] Stacking: HAM=0.9123 ISIC=0.7133
+    [gain k=256] SVM-RBF: HAM=0.8882 ISIC=0.6267
+    [gain k=256] XGBoost: HAM=0.9137 ISIC=0.7123
+    [gain k=256] RandomForest: HAM=0.9113 ISIC=0.7036
+    [gain k=256] KNN: HAM=0.8330 ISIC=0.5855
+    [gain k=256] Stacking: HAM=0.9124 ISIC=0.6984
+    [gain k=512] SVM-RBF: HAM=0.8963 ISIC=0.6726
+    [gain k=512] XGBoost: HAM=0.9183 ISIC=0.7185
+    [gain k=512] RandomForest: HAM=0.9105 ISIC=0.7080
+    [gain k=512] KNN: HAM=0.8324 ISIC=0.5820
+    [gain k=512] Stacking: HAM=0.9131 ISIC=0.7073
+  [Checkpoint] fold 4 done.
+
+=== FOLD 5/5 ===
+  Extracting features (cached for reuse)...
+    [train] 0/6790
+    [train] 6400/6790
+    [val] 0/1222
+    [test] 0/2003
+    [isic] 0/32701
+    [isic] 6400/32701
+    [isic] 12800/32701
+    [isic] 19200/32701
+    [isic] 25600/32701
+    [isic] 32000/32701
+  Fitting surrogate and computing SHAP...
+    top-256 overlap between SHAP and gain rankings: 0.309
+    [shap k=256] SVM-RBF: HAM=0.9018 ISIC=0.6553
+    [shap k=256] XGBoost: HAM=0.9169 ISIC=0.6977
+    [shap k=256] RandomForest: HAM=0.9203 ISIC=0.6511
+    [shap k=256] KNN: HAM=0.8814 ISIC=0.5884
+    [shap k=256] Stacking: HAM=0.9212 ISIC=0.6590
+    [shap k=512] SVM-RBF: HAM=0.9068 ISIC=0.6566
+    [shap k=512] XGBoost: HAM=0.9222 ISIC=0.6928
+    [shap k=512] RandomForest: HAM=0.9255 ISIC=0.6492
+    [shap k=512] KNN: HAM=0.8838 ISIC=0.5866
+    [shap k=512] Stacking: HAM=0.9256 ISIC=0.6569
+    [shap k=all] SVM-RBF: HAM=0.9109 ISIC=0.6729
+    [shap k=all] XGBoost: HAM=0.9222 ISIC=0.6850
+    [shap k=all] RandomForest: HAM=0.9228 ISIC=0.6584
+    [shap k=all] KNN: HAM=0.8742 ISIC=0.5698
+    [shap k=all] Stacking: HAM=0.9221 ISIC=0.6757
+    [gain k=256] SVM-RBF: HAM=0.9047 ISIC=0.6555
+    [gain k=256] XGBoost: HAM=0.9142 ISIC=0.6800
+    [gain k=256] RandomForest: HAM=0.9190 ISIC=0.6515
+    [gain k=256] KNN: HAM=0.8722 ISIC=0.5803
+    [gain k=256] Stacking: HAM=0.9212 ISIC=0.6583
+    [gain k=512] SVM-RBF: HAM=0.9085 ISIC=0.6424
+    [gain k=512] XGBoost: HAM=0.9177 ISIC=0.6877
+    [gain k=512] RandomForest: HAM=0.9233 ISIC=0.6563
+    [gain k=512] KNN: HAM=0.8760 ISIC=0.5738
+    [gain k=512] Stacking: HAM=0.9247 ISIC=0.6608
+  [Checkpoint] fold 5 done.
+
+=== SHAP vs GAIN, mean AUROC across folds ===
+ranking                                      gain    shap  shap_minus_gain
+dataset           classifier   k_features                                 
+HAM10000_test     KNN          256         0.8410  0.8396          -0.0014
+                               512         0.8409  0.8438           0.0028
+                  RandomForest 256         0.9143  0.9163           0.0020
+                               512         0.9173  0.9170          -0.0003
+                  SVM-RBF      256         0.8940  0.8966           0.0026
+                               512         0.8994  0.9008           0.0014
+                  Stacking     256         0.9162  0.9181           0.0019
+                               512         0.9191  0.9184          -0.0006
+                  XGBoost      256         0.9159  0.9184           0.0024
+                               512         0.9191  0.9212           0.0021
+ISIC2020_external KNN          256         0.5892  0.5908           0.0016
+                               512         0.5881  0.5873          -0.0008
+                  RandomForest 256         0.6784  0.6871           0.0087
+                               512         0.6879  0.6898           0.0018
+                  SVM-RBF      256         0.6310  0.6610           0.0299
+                               512         0.6500  0.6611           0.0110
+                  Stacking     256         0.6774  0.6865           0.0092
+                               512         0.6873  0.6903           0.0030
+                  XGBoost      256         0.6855  0.6954           0.0099
+                               512         0.6905  0.6967           0.0062
+
+If shap_minus_gain is near zero, SHAP-guided selection is not a performance contribution -- report SHAP as the explainability mechanism instead, and say so plainly.
+
+Saved to $MELANOMA_ROOT/results_shap

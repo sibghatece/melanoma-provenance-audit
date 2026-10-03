@@ -1,0 +1,54 @@
+
+=== Javid_10605 ===
+source           HAM10000  ISIC2020  unmatched
+split class                                   
+test  benign            0       498          2
+      malignant         0        84        416
+train benign            0      4974         26
+      malignant      1113       507       2985
+
+Most common image sizes by source and class:
+source     class    
+HAM10000   malignant    {'300x300': 1113}
+ISIC2020   benign       {'300x300': 5472}
+           malignant     {'300x300': 591}
+unmatched  benign         {'300x300': 28}
+           malignant    {'300x300': 3401}
+    features 0/10605
+    features 3200/10605
+    features 6400/10605
+    features 9600/10605
+
+     mirror                                          evaluation    n  n_positive  auroc  auroc_ci_lo  auroc_ci_hi  accuracy  balanced_accuracy
+Javid_10605                                         A_full_test 1000         500 0.9758       0.9681       0.9828    0.9210             0.9210
+Javid_10605                   B_same_model_ISIC2020_source_only  582          84 0.8604       0.8259       0.8931    0.8660             0.6495
+Javid_10605               C_source_classifier_(ISIC2020_vs_not) 1000         582 0.9976       0.9953       0.9994    0.9770             0.9789
+Javid_10605 D_control_trained_and_tested_within_ISIC2020_source  582          84 0.8880       0.8544       0.9170    0.8814             0.6487
+
+=== ISIC19_20_malig_benign_11400 ===
+source           HAM10000  ISIC2020  unmatched
+split class                                   
+test  benign            0       550          0
+      malignant         0         7        543
+train benign            0      5198          2
+      malignant       559       584       2857
+
+Most common image sizes by source and class:
+source     class    
+HAM10000   malignant                                     {'640x480': 559}
+ISIC2020   benign       {'640x360': 2026, '640x427': 1949, '640x480': ...
+           malignant     {'640x480': 199, '640x360': 130, '640x427': 105}
+unmatched  benign                                          {'640x360': 2}
+           malignant    {'480x480': 2858, '640x425': 222, '640x480': 180}
+    features 0/10300
+    features 3200/10300
+    features 6400/10300
+    features 9600/10300
+
+                      mirror                                          evaluation    n  n_positive  auroc  auroc_ci_lo  auroc_ci_hi  accuracy  balanced_accuracy
+ISIC19_20_malig_benign_11400                                         A_full_test 1100         550 0.9310       0.9161       0.9443    0.7273             0.7273
+ISIC19_20_malig_benign_11400                   B_same_model_ISIC2020_source_only  557           7 0.9943       0.9870       1.0000    0.9605             0.9800
+ISIC19_20_malig_benign_11400               C_source_classifier_(ISIC2020_vs_not) 1100         557 0.8563       0.8340       0.8771    0.6745             0.6704
+ISIC19_20_malig_benign_11400 D_control_trained_and_tested_within_ISIC2020_source  557           7 0.9992       0.9964       1.0000    0.9569             0.9782
+
+All outputs in $MELANOMA_ROOT/results_shortcut

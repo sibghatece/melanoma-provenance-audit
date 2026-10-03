@@ -1,0 +1,99 @@
+Reference sets:
+  hashing 10015 images for ref_ham10000 (as-is, 9 workers)
+    5000/10015
+    10000/10015
+  hashing 32701 images for ref_isic2020 (as-is, 9 workers)
+    5000/32701
+    10000/32701
+    15000/32701
+    20000/32701
+    25000/32701
+    30000/32701
+
+Null calibration (ISIC 2020 vs HAM10000): 0.000% within d<=10, median NN distance 86
+
+=== Fanconi_3297 ===
+  hashing 3298 images for mirror_Fanconi_3297 (8 orientations, 9 workers)
+  3298 images | splits: {'train': 2637, 'test': 660, 'all': 1} | classes: 3
+  vs HAM10000: 2488/3298 (75.4%) within d<=10 (dihedral)
+  vs ISIC2020: 6/3298 (0.2%) within d<=10 (dihedral)
+
+=== Javid_10605 ===
+  hashing 10605 images for mirror_Javid_10605 (8 orientations, 9 workers)
+    5000/10605
+    10000/10605
+  10605 images | splits: {'train': 9605, 'test': 1000} | classes: 2
+  vs HAM10000: 1113/10605 (10.5%) within d<=10 (dihedral)
+  vs ISIC2020: 6063/10605 (57.2%) within d<=10 (dihedral)
+
+=== SkinCancerISIC_2357 ===
+  hashing 2357 images for mirror_SkinCancerISIC_2357 (8 orientations, 9 workers)
+  2357 images | splits: {'train': 2239, 'test': 118} | classes: 9
+  vs HAM10000: 1512/2357 (64.1%) within d<=10 (dihedral)
+  vs ISIC2020: 0/2357 (0.0%) within d<=10 (dihedral)
+
+=== ISIC19_20_malig_benign_11400 ===
+  hashing 11400 images for mirror_ISIC19_20_malig_benign_11400 (8 orientations, 9 workers)
+    5000/11400
+    10000/11400
+  11400 images | splits: {'all': 11400} | classes: 2
+  vs HAM10000: 1103/11400 (9.7%) within d<=10 (dihedral)
+  vs ISIC2020: 6889/11400 (60.4%) within d<=10 (dihedral)
+
+=== HAM_augmented_balanced ===
+  hashing 39507 images for mirror_HAM_augmented_balanced (8 orientations, 9 workers)
+    5000/39507
+    10000/39507
+    15000/39507
+    20000/39507
+    25000/39507
+    30000/39507
+    35000/39507
+  39507 images | splits: {'all': 39507} | classes: 7
+  vs HAM10000: 10015/39507 (25.3%) within d<=10 (dihedral)
+  vs ISIC2020: 0/39507 (0.0%) within d<=10 (dihedral)
+
+=== Overlap at d<=10, dihedral matching ===
+                      mirror split reference  n_images  n_d<=10  pct_d<=10
+                Fanconi_3297   all  HAM10000         1        0       0.00
+                Fanconi_3297  test  HAM10000       660      504      76.36
+                Fanconi_3297 train  HAM10000      2637     1984      75.24
+                Fanconi_3297   all  ISIC2020         1        0       0.00
+                Fanconi_3297  test  ISIC2020       660        2       0.30
+                Fanconi_3297 train  ISIC2020      2637        4       0.15
+                 Javid_10605  test  HAM10000      1000        0       0.00
+                 Javid_10605 train  HAM10000      9605     1113      11.59
+                 Javid_10605  test  ISIC2020      1000      582      58.20
+                 Javid_10605 train  ISIC2020      9605     5481      57.06
+         SkinCancerISIC_2357  test  HAM10000       118       69      58.47
+         SkinCancerISIC_2357 train  HAM10000      2239     1443      64.45
+         SkinCancerISIC_2357  test  ISIC2020       118        0       0.00
+         SkinCancerISIC_2357 train  ISIC2020      2239        0       0.00
+ISIC19_20_malig_benign_11400   all  HAM10000     11400     1103       9.68
+ISIC19_20_malig_benign_11400   all  ISIC2020     11400     6889      60.43
+      HAM_augmented_balanced   all  HAM10000     39507    10015      25.35
+      HAM_augmented_balanced   all  ISIC2020     39507        0       0.00
+
+=== Internal leakage (d<=10) ===
+                      mirror    comparison  n_eval  n_eval_with_train_duplicate   pct
+                Fanconi_3297 test_vs_train     660                            4  0.61
+                Fanconi_3297   within_test     660                            0  0.00
+                Fanconi_3297  within_train    2637                           12  0.46
+                 Javid_10605 test_vs_train    1000                            9  0.90
+                 Javid_10605   within_test    1000                            2  0.20
+                 Javid_10605  within_train    9605                           64  0.67
+         SkinCancerISIC_2357 test_vs_train     118                           18 15.25
+         SkinCancerISIC_2357   within_test     118                            0  0.00
+         SkinCancerISIC_2357  within_train    2239                          283 12.64
+ISIC19_20_malig_benign_11400    within_all   11400                          146  1.28
+      HAM_augmented_balanced    within_all   39507                           29  0.07
+
+=== Mirror vs mirror: % of row mirror found in column mirror ===
+                              Fanconi_3297  Javid_10605  SkinCancerISIC_2357  ISIC19_20_malig_benign_11400  HAM_augmented_balanced
+Fanconi_3297                           NaN         31.2                  5.2                          31.0                    75.4
+Javid_10605                            9.8          NaN                  2.0                          58.5                    10.5
+SkinCancerISIC_2357                   10.7         10.2                  NaN                          10.2                    64.1
+ISIC19_20_malig_benign_11400           9.0         54.6                  1.9                           NaN                     9.7
+HAM_augmented_balanced                 6.3          2.8                  3.6                           2.8                     NaN
+
+All outputs in $MELANOMA_ROOT/results_mirror_audit

@@ -1,0 +1,11 @@
+mirror,reference,mirror_images_matched,unique_reference_images,unique_reference_melanomas
+Fanconi_3297,HAM10000,2488,2488,688
+Fanconi_3297,ISIC2020,6,6,6
+Javid_10605,HAM10000,1113,1113,1113
+Javid_10605,ISIC2020,6063,6042,581
+SkinCancerISIC_2357,HAM10000,1512,1437,0
+SkinCancerISIC_2357,ISIC2020,0,0,0
+ISIC19_20_malig_benign_11400,HAM10000,1103,1103,1103
+ISIC19_20_malig_benign_11400,ISIC2020,6889,6842,581
+HAM_augmented_balanced,HAM10000,10015,10012,1113
+HAM_augmented_balanced,ISIC2020,0,0,0

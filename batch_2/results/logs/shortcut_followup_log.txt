@@ -1,0 +1,33 @@
+ISIC 2020 ground truth: ISIC_2020_Training_GroundTruth.csv | manifest images mapped to a patient: 100.00% | distinct patients: 2056
+
+=== Javid_10605 ===
+  ISIC 2020-source test images: 582 (84 malignant); patient also in train: 516 (88.7%)
+  patient-clean subset: 66 images, 15 malignant
+  B_full_mirror_model        all ISIC2020-source test   n= 582 mal= 84  AUROC=0.8604 [0.8240, 0.8938]
+  D_within_source_control    all ISIC2020-source test   n= 582 mal= 84  AUROC=0.8880 [0.8554, 0.9178]
+  B_full_mirror_model        patient-clean only         n=  66 mal= 15  AUROC=0.8418 [0.7299, 0.9322]
+  D_within_source_control    patient-clean only         n=  66 mal= 15  AUROC=0.8353 [0.7257, 0.9217]
+  B_full_mirror_model        patient seen in train      n= 516 mal= 69  AUROC=0.8600 [0.8201, 0.8957]
+  D_within_source_control    patient seen in train      n= 516 mal= 69  AUROC=0.8909 [0.8545, 0.9233]
+
+=== ISIC19_20_malig_benign_11400 ===
+  ISIC 2020-source test images: 557 (7 malignant); patient also in train: 557 (100.0%)
+  patient-clean subset: 0 images, 0 malignant
+  B_full_mirror_model        all ISIC2020-source test   n= 557 mal=  7  AUROC=0.9943 [0.9874, 0.9996]
+  D_within_source_control    all ISIC2020-source test   n= 557 mal=  7  AUROC=0.9992 [0.9966, 1.0000]
+  B_full_mirror_model        patient-clean only         n=   0 mal=  0  AUROC=nan [nan, nan]
+  D_within_source_control    patient-clean only         n=   0 mal=  0  AUROC=nan [nan, nan]
+  B_full_mirror_model        patient seen in train      n= 557 mal=  7  AUROC=0.9943 [0.9870, 0.9996]
+  D_within_source_control    patient seen in train      n= 557 mal=  7  AUROC=0.9992 [0.9969, 1.0000]
+
+=== Image-size rule (fitted on train, scored on test) ===
+  Javid_10605                    distinct sizes=   1  size-only accuracy=50.0%  balanced=50.0%  (majority class 50.0%)
+  ISIC19_20_malig_benign_11400   distinct sizes=  33  size-only accuracy=49.6%  balanced=49.6%  (majority class 50.0%)
+    most common sizes per split and class:
+      test  benign    640x360 (205), 640x427 (196), 640x480 (106), 640x478 (21)
+      test  malignant 640x425 (229), 640x480 (180), 640x426 (27), 640x428 (24)
+      train benign    640x360 (1823), 640x427 (1753), 640x480 (1303), 640x478 (148)
+      train malignant 480x480 (2886), 640x480 (758), 640x360 (130), 640x427 (105)
+  Fanconi_3297                   distinct sizes=   1  size-only accuracy=54.5%  balanced=50.0%  (majority class 54.5%)
+
+All outputs in $MELANOMA_ROOT/results_shortcut

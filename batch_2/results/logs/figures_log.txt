@@ -1,0 +1,33 @@
+Writing figures to $MELANOMA_ROOT/figures
+
+[Fig 02] dataset_composition
+  saved Fig02_dataset_composition (svg + 600dpi png)
+[Fig 03] lesion_level_structure
+  saved Fig03_lesion_level_structure (svg + 600dpi png)
+[Fig 04] cross_dataset_contamination
+  saved Fig04_cross_dataset_contamination (svg + 600dpi png)
+[Fig 05] representative_images
+  saved Fig05_representative_images (svg + 600dpi png)
+[Fig 06] finetuning_curves
+  saved Fig06_finetuning_curves (svg + 600dpi png)
+[Fig 07] roc_ham10000_oof
+  SKIPPED - AttributeError: module 'numpy' has no attribute 'trapz'
+[Fig 08] roc_isic2020_external
+  SKIPPED - AttributeError: module 'numpy' has no attribute 'trapz'
+[Fig 09] precision_recall_curves
+  SKIPPED - AttributeError: module 'numpy' has no attribute 'trapz'
+[Fig 10] confusion_matrices
+  SKIPPED - AttributeError: module 'numpy' has no attribute 'trapz'
+[Fig 11] per_fold_auroc
+  saved Fig11_per_fold_auroc (svg + 600dpi png)
+[Fig 12] feature_count_ablation
+  saved Fig12_feature_count_ablation (svg + 600dpi png)
+[Fig 13] shap_vs_gain_delta
+  saved Fig13_shap_vs_gain_delta (svg + 600dpi png)
+[Fig 14] stage_attribution_and_ablation
+  saved Fig14_stage_attribution_and_ablation (svg + 600dpi png)
+[Fig 15] gradcam_explainability
+  SKIPPED - AttributeError: 'numpy.ndarray' object has no attribute 'ptp'
+
+Done. Figure 1 (block diagram) is supplied separately as SVG.
+All outputs in $MELANOMA_ROOT/figures

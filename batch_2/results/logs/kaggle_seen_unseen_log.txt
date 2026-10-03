@@ -1,0 +1,46 @@
+v3 partitions rebuilt and verified against saved test indices.
+Kaggle images: 3297 (train 2637, test 660)
+Hashing (cached after first run)...
+    hashed 2500/3297 kaggle
+    hashed 2500/10015 ham
+    hashed 5000/10015 ham
+    hashed 7500/10015 ham
+    hashed 10000/10015 ham
+  Kaggle test: 504/660 matched at d<=10
+  Kaggle train: 1984/2637 matched at d<=10
+Matched images used: 2488 (688 melanoma by HAM label, 2175 HAM lesions)
+    [ham_train_fold1] 0/6795
+    [ham_train_fold1] 3200/6795
+    [ham_train_fold1] 6400/6795
+    [kaggle_matched_fold1] 0/2488
+  fold 1: twin-in-train AUROC=0.9920 (n=1689) | twin-in-test AUROC=0.9187 (n=496)  [100s]
+    [ham_train_fold2] 0/6807
+    [ham_train_fold2] 3200/6807
+    [ham_train_fold2] 6400/6807
+    [kaggle_matched_fold2] 0/2488
+  fold 2: twin-in-train AUROC=0.9853 (n=1696) | twin-in-test AUROC=0.9136 (n=484)  [104s]
+    [ham_train_fold3] 0/6793
+    [ham_train_fold3] 3200/6793
+    [ham_train_fold3] 6400/6793
+    [kaggle_matched_fold3] 0/2488
+  fold 3: twin-in-train AUROC=0.9875 (n=1691) | twin-in-test AUROC=0.9146 (n=506)  [118s]
+    [ham_train_fold4] 0/6816
+    [ham_train_fold4] 3200/6816
+    [ham_train_fold4] 6400/6816
+    [kaggle_matched_fold4] 0/2488
+  fold 4: twin-in-train AUROC=0.9933 (n=1699) | twin-in-test AUROC=0.9221 (n=497)  [120s]
+    [ham_train_fold5] 0/6790
+    [ham_train_fold5] 3200/6790
+    [ham_train_fold5] 6400/6790
+    [kaggle_matched_fold5] 0/2488
+  fold 5: twin-in-train AUROC=0.9762 (n=1685) | twin-in-test AUROC=0.8951 (n=505)  [123s]
+
+=== Paired comparison on identical Kaggle images (HAM melanoma labels) ===
+  images=2485  melanoma=686  lesions=2173
+  AUROC, twin seen in training : 0.9937
+  AUROC, twin never seen       : 0.9050
+  delta = +0.0888  95% CI [+0.0760, +0.1025]  p = 0.0005
+
+  Secondary (Kaggle malignant label, 5-fold ensemble, matched images): AUROC=0.9890  [label is any malignancy, not melanoma]
+
+All outputs in $MELANOMA_ROOT/results_kaggle_twins

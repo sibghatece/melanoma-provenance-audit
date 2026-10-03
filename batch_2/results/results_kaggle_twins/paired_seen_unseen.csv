@@ -1,0 +1,2 @@
+n_images,n_melanoma,n_lesions,auroc_twin_seen_in_training,auroc_twin_never_seen,delta,ci_lo,ci_hi,p_bootstrap
+2485,686,2173,0.9937493618903925,0.904996621057698,0.08875274083269458,0.07604099375679554,0.10254512086666602,0.0005

@@ -1,0 +1,11 @@
+Python 3.13.12 on Darwin arm64
+numpy==2.4.3
+pandas==3.0.2
+scikit-learn==1.8.0
+torch==2.10.0
+torchvision==0.25.0
+xgboost==3.2.0
+shap==0.52.0
+ImageHash==4.3.2
+Pillow==12.2.0
+matplotlib==3.10.8

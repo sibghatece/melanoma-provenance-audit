@@ -1,0 +1,35 @@
+[Data folder] $MELANOMA_ROOT
+  reference hashes loaded from ref_ham10000_d1.npz
+  transforming and hashing 1000 images x 23 transformations x 8 orientations (9 workers)
+
+=== Sensitivity of the audit by transformation (% of sampled images detected) ===
+                     group                          transformation  median_distance_to_source  p90_distance_to_source  sensitivity_d<=0  sensitivity_d<=5  sensitivity_d<=10  sensitivity_d<=15  wrong_nearest_within_10
+Resizing and recompression             Re-encoded, JPEG quality 95                        0.0                     2.0              53.2              99.5               99.9               99.9                        1
+Resizing and recompression                    Resized to 224 x 224                        2.0                     4.0              30.4              95.6               99.8               99.9                        1
+Resizing and recompression   Resized to 224 x 224, JPEG quality 75                        4.0                     6.0              10.7              80.3               99.3               99.8                        1
+Resizing and recompression                         JPEG quality 50                        4.0                     6.0               9.6              74.6               99.5               99.9                        1
+Resizing and recompression                    Resized to 128 x 128                        2.0                     4.0              25.0              93.4               99.9               99.9                        1
+               Orientation                      Rotated 90 degrees                        0.0                     0.0              99.9              99.9               99.9               99.9                        1
+               Orientation                     Rotated 180 degrees                        0.0                     0.0              99.9              99.9               99.9               99.9                        1
+               Orientation                         Horizontal flip                        0.0                     0.0              99.9              99.9               99.9               99.9                        1
+               Orientation                           Vertical flip                        0.0                     0.0              99.9              99.9               99.9               99.9                        1
+        Arbitrary rotation                      Rotated 10 degrees                       96.0                   110.0               0.0               0.0                0.0                0.0                        0
+        Arbitrary rotation                      Rotated 30 degrees                      112.0                   120.0               0.0               0.0                0.0                0.0                        0
+        Arbitrary rotation                      Rotated 45 degrees                      110.0                   120.0               0.0               0.0                0.0                0.0                        0
+                  Cropping                         Centre crop 95%                       38.0                    50.0               0.0               0.0                0.0                0.0                        0
+                  Cropping                         Centre crop 90%                       68.0                    86.0               0.0               0.0                0.0                0.0                        0
+                  Cropping                         Centre crop 80%                      108.0                   118.0               0.0               0.0                0.0                0.0                        1
+                  Cropping                         Centre crop 70%                      114.0                   122.0               0.0               0.0                0.0                0.0                        1
+           Colour and blur                         Brightness x1.2                        4.0                    10.0              13.1              60.2               90.7               97.2                        2
+           Colour and blur                           Contrast x1.2                        2.0                     6.0              18.4              84.2               97.6               99.2                        1
+           Colour and blur                         Saturation x1.3                        2.0                     6.0              14.6              86.4               99.3               99.8                        1
+           Colour and blur                 Gaussian blur, radius 1                        2.0                     4.0              26.6              95.3               99.8               99.9                        1
+           Colour and blur                 Gaussian blur, radius 2                        2.0                     4.0              24.2              94.6               99.9               99.9                        1
+                  Combined  Resize 224 + horizontal flip + JPEG 75                        4.0                     6.0              11.0              80.4               99.2               99.8                        1
+                  Combined Crop 90% + brightness x1.1 + resize 224                       68.0                    86.0               0.0               0.0                0.0                0.0                        0
+
+=== Timing ===
+ reference_images  reference_hash_seconds  query_hashes  query_hash_seconds  hashes_per_second  search_seconds_per_1000_queries  workers
+            10015                    0.01        184000                9.31           19770.85                             0.17        9
+
+All outputs in $MELANOMA_ROOT/results_tool_validation

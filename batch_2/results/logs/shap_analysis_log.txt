@@ -1,0 +1,85 @@
+=== FOLD-ENSEMBLED RESULTS (SHAP vs gain selection) ===
+
+--- HAM10000_OOF ---
+ranking k_features   classifier  auroc  auprc  balanced_accuracy  sens_at_spec90
+   shap        all      XGBoost 0.9181 0.6801             0.8402          0.7466
+   shap        512      XGBoost 0.9181 0.6809             0.8409          0.7448
+   shap        all RandomForest 0.9162 0.6564             0.8389          0.7367
+   gain        512 RandomForest 0.9158 0.6552             0.8381          0.7412
+   shap        256      XGBoost 0.9157 0.6793             0.8365          0.7520
+   shap        512 RandomForest 0.9156 0.6581             0.8374          0.7394
+   gain        512      XGBoost 0.9153 0.6776             0.8382          0.7475
+   shap        256 RandomForest 0.9149 0.6604             0.8367          0.7484
+   gain        256 RandomForest 0.9131 0.6508             0.8374          0.7412
+   gain        256      XGBoost 0.9124 0.6716             0.8356          0.7457
+   shap        all      SVM-RBF 0.8998 0.6727             0.8309          0.7412
+   shap        512      SVM-RBF 0.8954 0.6547             0.8285          0.7305
+   shap        all     Stacking 0.8935 0.6582             0.8344          0.7502
+   gain        512      SVM-RBF 0.8924 0.6530             0.8291          0.7358
+   shap        512     Stacking 0.8907 0.6565             0.8314          0.7511
+   shap        256      SVM-RBF 0.8905 0.6466             0.8260          0.7332
+   gain        512     Stacking 0.8888 0.6522             0.8341          0.7574
+   gain        256     Stacking 0.8878 0.6510             0.8331          0.7493
+   gain        256      SVM-RBF 0.8873 0.6426             0.8251          0.7350
+   shap        256     Stacking 0.8846 0.6567             0.8301          0.7538
+   shap        all          KNN 0.8492 0.6032             0.8160          0.6990
+   shap        512          KNN 0.8431 0.6076             0.8162          0.7152
+   gain        256          KNN 0.8403 0.6005             0.8157          0.7116
+   gain        512          KNN 0.8400 0.5982             0.8122          0.7071
+   shap        256          KNN 0.8392 0.6036             0.8154          0.7161
+
+--- ISIC2020_ENSEMBLE ---
+ranking k_features   classifier  auroc  auprc  balanced_accuracy  sens_at_spec90
+   shap        256      XGBoost 0.7251 0.0911             0.6736          0.3821
+   shap        512      XGBoost 0.7244 0.0895             0.6708          0.3701
+   shap        all      XGBoost 0.7222 0.0901             0.6685          0.3787
+   shap        all     Stacking 0.7206 0.0886             0.6699          0.3873
+   gain        512 RandomForest 0.7200 0.0900             0.6674          0.3821
+   shap        512 RandomForest 0.7197 0.0913             0.6652          0.3890
+   gain        512      XGBoost 0.7192 0.0880             0.6683          0.3821
+   shap        256 RandomForest 0.7181 0.0912             0.6688          0.3838
+   gain        512     Stacking 0.7176 0.0892             0.6661          0.3855
+   shap        all RandomForest 0.7170 0.0889             0.6625          0.3804
+   gain        256      XGBoost 0.7150 0.0892             0.6632          0.3735
+   shap        512     Stacking 0.7149 0.0902             0.6637          0.3769
+   shap        256     Stacking 0.7115 0.0903             0.6681          0.3752
+   gain        256 RandomForest 0.7114 0.0884             0.6644          0.3718
+   gain        256     Stacking 0.7074 0.0866             0.6640          0.3855
+   shap        all      SVM-RBF 0.6947 0.0853             0.6497          0.3494
+   shap        256      SVM-RBF 0.6857 0.0808             0.6378          0.3477
+   shap        512      SVM-RBF 0.6835 0.0815             0.6387          0.3546
+   gain        512      SVM-RBF 0.6778 0.0845             0.6396          0.3597
+   gain        256      SVM-RBF 0.6697 0.0806             0.6336          0.3563
+   shap        256          KNN 0.6357 0.0748             0.6191          0.3253
+   gain        256          KNN 0.6321 0.0727             0.6148          0.3270
+   gain        512          KNN 0.6268 0.0703             0.6120          0.3184
+   shap        512          KNN 0.6262 0.0727             0.6097          0.3133
+   shap        all          KNN 0.6069 0.0655             0.5958          0.2719
+
+
+=== SHAP vs GAIN: PAIRED TESTS ACROSS FOLDS ===
+          dataset   classifier k_features  delta_mean folds_favouring_shap  p_ttest  p_ttest_holm  p_sign
+    HAM10000_test      SVM-RBF        256      0.0026                  3/5   0.3014        1.0000  1.0000
+    HAM10000_test      SVM-RBF        512      0.0014                  3/5   0.5325        1.0000  1.0000
+    HAM10000_test      XGBoost        256      0.0024                  4/5   0.4167        1.0000  0.3750
+    HAM10000_test      XGBoost        512      0.0021                  3/5   0.1663        1.0000  1.0000
+    HAM10000_test RandomForest        256      0.0020                  4/5   0.2578        1.0000  0.3750
+    HAM10000_test RandomForest        512     -0.0003                  3/5   0.8768        1.0000  1.0000
+    HAM10000_test          KNN        256     -0.0014                  3/5   0.7761        1.0000  1.0000
+    HAM10000_test          KNN        512      0.0028                  4/5   0.5215        1.0000  0.3750
+    HAM10000_test     Stacking        256      0.0019                  3/5   0.3375        1.0000  1.0000
+    HAM10000_test     Stacking        512     -0.0006                  3/5   0.5536        1.0000  1.0000
+ISIC2020_external      SVM-RBF        256      0.0299                  4/5   0.0561        0.3364  0.3750
+ISIC2020_external      SVM-RBF        512      0.0110                  4/5   0.1230        0.6149  0.3750
+ISIC2020_external      XGBoost        256      0.0099                  5/5   0.0188        0.1507  0.0625
+ISIC2020_external      XGBoost        512      0.0062                  5/5   0.0073        0.0735  0.0625
+ISIC2020_external RandomForest        256      0.0087                  4/5   0.0191        0.1507  0.3750
+ISIC2020_external RandomForest        512      0.0018                  3/5   0.6423        1.0000  1.0000
+ISIC2020_external          KNN        256      0.0016                  3/5   0.8056        1.0000  1.0000
+ISIC2020_external          KNN        512     -0.0008                  2/5   0.8807        1.0000  1.0000
+ISIC2020_external     Stacking        256      0.0092                  5/5   0.0159        0.1431  0.0625
+ISIC2020_external     Stacking        512      0.0030                  3/5   0.3735        1.0000  1.0000
+
+Read this honestly: with only 5 folds, a paired test has very low power, so a non-significant p does NOT mean 'no effect' and a significant one on a +0.002 delta is not practically meaningful. Report the effect size and the fold-consistency alongside the p-value, not the p-value alone.
+
+Saved to $MELANOMA_ROOT/results_shap

@@ -1,0 +1,10 @@
+NumPy 2.4.3 - using sklearn AUC rather than np.trapz
+
+  loaded 5 classifiers (shap, k=256)
+  saved Fig07_roc_ham10000_oof
+  saved Fig08_roc_isic2020_external
+  saved Fig09_precision_recall_curves
+  saved Fig10_confusion_matrices
+  saved Fig15_gradcam_explainability
+
+Done. Figures written to $MELANOMA_ROOT/figures

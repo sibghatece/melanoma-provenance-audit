@@ -1,0 +1,311 @@
+[Device] mps  [Input] 320px  [Split] image
+[Root] $MELANOMA_ROOT
+HAM10000: 10015 imgs, 1113 melanoma, 7470 lesions
+ISIC2020: 32701 imgs, 581 melanoma
+
+=== FOLD 1/5 (image-wise) ===
+  train=6810 val=1202 test=2003 | test images whose lesion is in train: 685 (34.2%)
+  [Fold 1] Epoch 1/30  val_auc=0.8711  (147s)
+  [Fold 1] Epoch 2/30  val_auc=0.9011  (160s)
+  [Fold 1] Epoch 3/30  val_auc=0.9077  (185s)
+  [Fold 1] Epoch 4/30  val_auc=0.9096  (192s)
+  [Fold 1] Epoch 5/30  val_auc=0.9258  (197s)
+  [Fold 1] Epoch 6/30  val_auc=0.9262  (201s)
+  [Fold 1] Epoch 7/30  val_auc=0.9223  (204s)
+  [Fold 1] Epoch 8/30  val_auc=0.9260  (209s)
+  [Fold 1] Epoch 9/30  val_auc=0.9203  (211s)
+  [Fold 1] Epoch 10/30  val_auc=0.9301  (209s)
+  [Fold 1] Epoch 11/30  val_auc=0.9268  (209s)
+  [Fold 1] Epoch 12/30  val_auc=0.9232  (209s)
+  [Fold 1] Epoch 13/30  val_auc=0.9185  (209s)
+  [Fold 1] Epoch 14/30  val_auc=0.9321  (209s)
+  [Fold 1] Epoch 15/30  val_auc=0.9330  (209s)
+  [Fold 1] Epoch 16/30  val_auc=0.9229  (210s)
+  [Fold 1] Epoch 17/30  val_auc=0.9175  (209s)
+  [Fold 1] Epoch 18/30  val_auc=0.8860  (210s)
+  [Fold 1] Epoch 19/30  val_auc=0.9084  (202s)
+  [Fold 1] Epoch 20/30  val_auc=0.8891  (199s)
+  [Fold 1] Epoch 21/30  val_auc=0.8900  (196s)
+  [Fold 1] Early stop @ 21 (best=0.9330)
+  Extracting features...
+    [train] 0/6810
+    [train] 6400/6810
+    [val] 0/1202
+    [test] 0/2003
+    [isic] 0/32701
+    [isic] 6400/32701
+    [isic] 12800/32701
+    [isic] 19200/32701
+    [isic] 25600/32701
+    [isic] 32000/32701
+  SHAP ranking...
+  --- k=256 ---
+    SVM-RBF: HAM auroc=0.9350 | ISIC auroc=0.6462
+    XGBoost: HAM auroc=0.9504 | ISIC auroc=0.6826
+    RandomForest: HAM auroc=0.9389 | ISIC auroc=0.6875
+    KNN: HAM auroc=0.8790 | ISIC auroc=0.5610
+    Stacking: HAM auroc=0.9444 | ISIC auroc=0.6831
+  --- k=512 ---
+    SVM-RBF: HAM auroc=0.9351 | ISIC auroc=0.6490
+    XGBoost: HAM auroc=0.9481 | ISIC auroc=0.6872
+    RandomForest: HAM auroc=0.9447 | ISIC auroc=0.6966
+    KNN: HAM auroc=0.8853 | ISIC auroc=0.5609
+    Stacking: HAM auroc=0.9486 | ISIC auroc=0.6913
+  --- k=all ---
+    SVM-RBF: HAM auroc=0.9391 | ISIC auroc=0.6673
+    XGBoost: HAM auroc=0.9463 | ISIC auroc=0.6821
+    RandomForest: HAM auroc=0.9418 | ISIC auroc=0.6911
+    KNN: HAM auroc=0.8933 | ISIC auroc=0.5609
+    Stacking: HAM auroc=0.9468 | ISIC auroc=0.6888
+  [Checkpoint] fold 1 saved.
+
+=== FOLD 2/5 (image-wise) ===
+  train=6810 val=1202 test=2003 | test images whose lesion is in train: 670 (33.4%)
+  [Fold 2] Epoch 1/30  val_auc=0.9010  (188s)
+  [Fold 2] Epoch 2/30  val_auc=0.9030  (191s)
+  [Fold 2] Epoch 3/30  val_auc=0.9149  (189s)
+  [Fold 2] Epoch 4/30  val_auc=0.9313  (190s)
+  [Fold 2] Epoch 5/30  val_auc=0.9466  (190s)
+  [Fold 2] Epoch 6/30  val_auc=0.9320  (191s)
+  [Fold 2] Epoch 7/30  val_auc=0.9506  (191s)
+  [Fold 2] Epoch 8/30  val_auc=0.9461  (190s)
+  [Fold 2] Epoch 9/30  val_auc=0.9500  (189s)
+  [Fold 2] Epoch 10/30  val_auc=0.9313  (188s)
+  [Fold 2] Epoch 11/30  val_auc=0.9552  (189s)
+  [Fold 2] Epoch 12/30  val_auc=0.9531  (190s)
+  [Fold 2] Epoch 13/30  val_auc=0.9598  (192s)
+  [Fold 2] Epoch 14/30  val_auc=0.9624  (182s)
+  [Fold 2] Epoch 15/30  val_auc=0.9569  (185s)
+  [Fold 2] Epoch 16/30  val_auc=0.9592  (188s)
+  [Fold 2] Epoch 17/30  val_auc=0.9559  (187s)
+  [Fold 2] Epoch 18/30  val_auc=0.9540  (189s)
+  [Fold 2] Epoch 19/30  val_auc=0.9544  (194s)
+  [Fold 2] Epoch 20/30  val_auc=0.9594  (198s)
+  [Fold 2] Early stop @ 20 (best=0.9624)
+  Extracting features...
+    [train] 0/6810
+    [train] 6400/6810
+    [val] 0/1202
+    [test] 0/2003
+    [isic] 0/32701
+    [isic] 6400/32701
+    [isic] 12800/32701
+    [isic] 19200/32701
+    [isic] 25600/32701
+    [isic] 32000/32701
+  SHAP ranking...
+  --- k=256 ---
+    SVM-RBF: HAM auroc=0.9452 | ISIC auroc=0.6842
+    XGBoost: HAM auroc=0.9549 | ISIC auroc=0.7272
+    RandomForest: HAM auroc=0.9483 | ISIC auroc=0.7340
+    KNN: HAM auroc=0.9155 | ISIC auroc=0.6102
+    Stacking: HAM auroc=0.9553 | ISIC auroc=0.7298
+  --- k=512 ---
+    SVM-RBF: HAM auroc=0.9408 | ISIC auroc=0.6910
+    XGBoost: HAM auroc=0.9523 | ISIC auroc=0.7259
+    RandomForest: HAM auroc=0.9493 | ISIC auroc=0.7381
+    KNN: HAM auroc=0.9133 | ISIC auroc=0.6023
+    Stacking: HAM auroc=0.9562 | ISIC auroc=0.7312
+  --- k=all ---
+    SVM-RBF: HAM auroc=0.9504 | ISIC auroc=0.7074
+    XGBoost: HAM auroc=0.9542 | ISIC auroc=0.7295
+    RandomForest: HAM auroc=0.9502 | ISIC auroc=0.7356
+    KNN: HAM auroc=0.9298 | ISIC auroc=0.5948
+    Stacking: HAM auroc=0.9584 | ISIC auroc=0.7314
+  [Checkpoint] fold 2 saved.
+
+=== FOLD 3/5 (image-wise) ===
+  train=6810 val=1202 test=2003 | test images whose lesion is in train: 695 (34.7%)
+  [Fold 3] Epoch 1/30  val_auc=0.8772  (232s)
+  [Fold 3] Epoch 2/30  val_auc=0.8943  (225s)
+  [Fold 3] Epoch 3/30  val_auc=0.8944  (219s)
+  [Fold 3] Epoch 4/30  val_auc=0.9165  (222s)
+  [Fold 3] Epoch 5/30  val_auc=0.9177  (219s)
+  [Fold 3] Epoch 6/30  val_auc=0.9054  (210s)
+  [Fold 3] Epoch 7/30  val_auc=0.9182  (206s)
+  [Fold 3] Epoch 8/30  val_auc=0.9065  (223s)
+  [Fold 3] Epoch 9/30  val_auc=0.9144  (203s)
+  [Fold 3] Epoch 10/30  val_auc=0.9182  (207s)
+  [Fold 3] Epoch 11/30  val_auc=0.9205  (203s)
+  [Fold 3] Epoch 12/30  val_auc=0.9219  (205s)
+  [Fold 3] Epoch 13/30  val_auc=0.9198  (207s)
+  [Fold 3] Epoch 14/30  val_auc=0.9241  (212s)
+  [Fold 3] Epoch 15/30  val_auc=0.9268  (216s)
+  [Fold 3] Epoch 16/30  val_auc=0.9315  (211s)
+  [Fold 3] Epoch 17/30  val_auc=0.9344  (210s)
+  [Fold 3] Epoch 18/30  val_auc=0.9306  (210s)
+  [Fold 3] Epoch 19/30  val_auc=0.9300  (212s)
+  [Fold 3] Epoch 20/30  val_auc=0.9301  (211s)
+  [Fold 3] Epoch 21/30  val_auc=0.9362  (211s)
+  [Fold 3] Epoch 22/30  val_auc=0.9307  (212s)
+  [Fold 3] Epoch 23/30  val_auc=0.9301  (212s)
+  [Fold 3] Epoch 24/30  val_auc=0.9309  (212s)
+  [Fold 3] Epoch 25/30  val_auc=0.9322  (214s)
+  [Fold 3] Epoch 26/30  val_auc=0.9316  (209s)
+  [Fold 3] Epoch 27/30  val_auc=0.9370  (206s)
+  [Fold 3] Epoch 28/30  val_auc=0.9240  (203s)
+  [Fold 3] Epoch 29/30  val_auc=0.9328  (202s)
+  [Fold 3] Epoch 30/30  val_auc=0.9325  (200s)
+  Extracting features...
+    [train] 0/6810
+    [train] 6400/6810
+    [val] 0/1202
+    [test] 0/2003
+    [isic] 0/32701
+    [isic] 6400/32701
+    [isic] 12800/32701
+    [isic] 19200/32701
+    [isic] 25600/32701
+    [isic] 32000/32701
+  SHAP ranking...
+  --- k=256 ---
+    SVM-RBF: HAM auroc=0.9415 | ISIC auroc=0.5993
+    XGBoost: HAM auroc=0.9514 | ISIC auroc=0.6502
+    RandomForest: HAM auroc=0.9478 | ISIC auroc=0.6827
+    KNN: HAM auroc=0.8533 | ISIC auroc=0.5687
+    Stacking: HAM auroc=0.9543 | ISIC auroc=0.6754
+  --- k=512 ---
+    SVM-RBF: HAM auroc=0.9448 | ISIC auroc=0.6372
+    XGBoost: HAM auroc=0.9520 | ISIC auroc=0.6570
+    RandomForest: HAM auroc=0.9496 | ISIC auroc=0.6937
+    KNN: HAM auroc=0.8548 | ISIC auroc=0.5664
+    Stacking: HAM auroc=0.9540 | ISIC auroc=0.6910
+  --- k=all ---
+    SVM-RBF: HAM auroc=0.9545 | ISIC auroc=0.6387
+    XGBoost: HAM auroc=0.9553 | ISIC auroc=0.6684
+    RandomForest: HAM auroc=0.9519 | ISIC auroc=0.6998
+    KNN: HAM auroc=0.8867 | ISIC auroc=0.5629
+    Stacking: HAM auroc=0.9577 | ISIC auroc=0.6943
+  [Checkpoint] fold 3 saved.
+
+=== FOLD 4/5 (image-wise) ===
+  train=6810 val=1202 test=2003 | test images whose lesion is in train: 704 (35.1%)
+  [Fold 4] Epoch 1/30  val_auc=0.8582  (188s)
+  [Fold 4] Epoch 2/30  val_auc=0.8783  (192s)
+  [Fold 4] Epoch 3/30  val_auc=0.8891  (191s)
+  [Fold 4] Epoch 4/30  val_auc=0.9072  (192s)
+  [Fold 4] Epoch 5/30  val_auc=0.9080  (191s)
+  [Fold 4] Epoch 6/30  val_auc=0.9135  (190s)
+  [Fold 4] Epoch 7/30  val_auc=0.9198  (188s)
+  [Fold 4] Epoch 8/30  val_auc=0.9215  (188s)
+  [Fold 4] Epoch 9/30  val_auc=0.9225  (196s)
+  [Fold 4] Epoch 10/30  val_auc=0.9254  (200s)
+  [Fold 4] Epoch 11/30  val_auc=0.9176  (200s)
+  [Fold 4] Epoch 12/30  val_auc=0.9330  (202s)
+  [Fold 4] Epoch 13/30  val_auc=0.9377  (203s)
+  [Fold 4] Epoch 14/30  val_auc=0.9324  (200s)
+  [Fold 4] Epoch 15/30  val_auc=0.9266  (197s)
+  [Fold 4] Epoch 16/30  val_auc=0.9289  (198s)
+  [Fold 4] Epoch 17/30  val_auc=0.9110  (200s)
+  [Fold 4] Epoch 18/30  val_auc=0.9261  (201s)
+  [Fold 4] Epoch 19/30  val_auc=0.9268  (200s)
+  [Fold 4] Early stop @ 19 (best=0.9377)
+  Extracting features...
+    [train] 0/6810
+    [train] 6400/6810
+    [val] 0/1202
+    [test] 0/2003
+    [isic] 0/32701
+    [isic] 6400/32701
+    [isic] 12800/32701
+    [isic] 19200/32701
+    [isic] 25600/32701
+    [isic] 32000/32701
+  SHAP ranking...
+  --- k=256 ---
+    SVM-RBF: HAM auroc=0.9361 | ISIC auroc=0.6172
+    XGBoost: HAM auroc=0.9529 | ISIC auroc=0.6944
+    RandomForest: HAM auroc=0.9488 | ISIC auroc=0.6911
+    KNN: HAM auroc=0.8768 | ISIC auroc=0.5829
+    Stacking: HAM auroc=0.9495 | ISIC auroc=0.6819
+  --- k=512 ---
+    SVM-RBF: HAM auroc=0.9380 | ISIC auroc=0.6328
+    XGBoost: HAM auroc=0.9548 | ISIC auroc=0.6857
+    RandomForest: HAM auroc=0.9509 | ISIC auroc=0.6966
+    KNN: HAM auroc=0.8857 | ISIC auroc=0.5758
+    Stacking: HAM auroc=0.9527 | ISIC auroc=0.6910
+  --- k=all ---
+    SVM-RBF: HAM auroc=0.9457 | ISIC auroc=0.6585
+    XGBoost: HAM auroc=0.9541 | ISIC auroc=0.6880
+    RandomForest: HAM auroc=0.9493 | ISIC auroc=0.6986
+    KNN: HAM auroc=0.9103 | ISIC auroc=0.5766
+    Stacking: HAM auroc=0.9538 | ISIC auroc=0.6938
+  [Checkpoint] fold 4 saved.
+
+=== FOLD 5/5 (image-wise) ===
+  train=6810 val=1202 test=2003 | test images whose lesion is in train: 708 (35.3%)
+  [Fold 5] Epoch 1/30  val_auc=0.8511  (194s)
+  [Fold 5] Epoch 2/30  val_auc=0.8824  (195s)
+  [Fold 5] Epoch 3/30  val_auc=0.8931  (193s)
+  [Fold 5] Epoch 4/30  val_auc=0.8952  (194s)
+  [Fold 5] Epoch 5/30  val_auc=0.9050  (194s)
+  [Fold 5] Epoch 6/30  val_auc=0.9078  (194s)
+  [Fold 5] Epoch 7/30  val_auc=0.9161  (194s)
+  [Fold 5] Epoch 8/30  val_auc=0.9222  (193s)
+  [Fold 5] Epoch 9/30  val_auc=0.9268  (193s)
+  [Fold 5] Epoch 10/30  val_auc=0.9303  (193s)
+  [Fold 5] Epoch 11/30  val_auc=0.9259  (192s)
+  [Fold 5] Epoch 12/30  val_auc=0.9132  (192s)
+  [Fold 5] Epoch 13/30  val_auc=0.9252  (192s)
+  [Fold 5] Epoch 14/30  val_auc=0.9331  (191s)
+  [Fold 5] Epoch 15/30  val_auc=0.9163  (191s)
+  [Fold 5] Epoch 16/30  val_auc=0.9200  (191s)
+  [Fold 5] Epoch 17/30  val_auc=0.9298  (194s)
+  [Fold 5] Epoch 18/30  val_auc=0.9363  (193s)
+  [Fold 5] Epoch 19/30  val_auc=0.9325  (192s)
+  [Fold 5] Epoch 20/30  val_auc=0.9255  (192s)
+  [Fold 5] Epoch 21/30  val_auc=0.9270  (191s)
+  [Fold 5] Epoch 22/30  val_auc=0.9302  (192s)
+  [Fold 5] Epoch 23/30  val_auc=0.9301  (190s)
+  [Fold 5] Epoch 24/30  val_auc=0.9264  (189s)
+  [Fold 5] Early stop @ 24 (best=0.9363)
+  Extracting features...
+    [train] 0/6810
+    [train] 6400/6810
+    [val] 0/1202
+    [test] 0/2003
+    [isic] 0/32701
+    [isic] 6400/32701
+    [isic] 12800/32701
+    [isic] 19200/32701
+    [isic] 25600/32701
+    [isic] 32000/32701
+  SHAP ranking...
+  --- k=256 ---
+    SVM-RBF: HAM auroc=0.9302 | ISIC auroc=0.6450
+    XGBoost: HAM auroc=0.9457 | ISIC auroc=0.6896
+    RandomForest: HAM auroc=0.9465 | ISIC auroc=0.6951
+    KNN: HAM auroc=0.8822 | ISIC auroc=0.5851
+    Stacking: HAM auroc=0.9469 | ISIC auroc=0.6893
+  --- k=512 ---
+    SVM-RBF: HAM auroc=0.9357 | ISIC auroc=0.6796
+    XGBoost: HAM auroc=0.9468 | ISIC auroc=0.6875
+    RandomForest: HAM auroc=0.9505 | ISIC auroc=0.7062
+    KNN: HAM auroc=0.9001 | ISIC auroc=0.5848
+    Stacking: HAM auroc=0.9525 | ISIC auroc=0.7047
+  --- k=all ---
+    SVM-RBF: HAM auroc=0.9483 | ISIC auroc=0.6833
+    XGBoost: HAM auroc=0.9498 | ISIC auroc=0.7003
+    RandomForest: HAM auroc=0.9533 | ISIC auroc=0.7103
+    KNN: HAM auroc=0.9035 | ISIC auroc=0.5918
+    Stacking: HAM auroc=0.9555 | ISIC auroc=0.7113
+  [Checkpoint] fold 5 saved.
+
+=== AGGREGATION ===
+  k=256 SVM-RBF: HAM-OOF auroc=0.9347 | ISIC-ens auroc=0.6885
+  k=256 XGBoost: HAM-OOF auroc=0.9506 | ISIC-ens auroc=0.7289
+  k=256 RandomForest: HAM-OOF auroc=0.9460 | ISIC-ens auroc=0.7317
+  k=256 KNN: HAM-OOF auroc=0.8813 | ISIC-ens auroc=0.6362
+  k=256 Stacking: HAM-OOF auroc=0.9267 | ISIC-ens auroc=0.7283
+  k=512 SVM-RBF: HAM-OOF auroc=0.9364 | ISIC-ens auroc=0.6927
+  k=512 XGBoost: HAM-OOF auroc=0.9502 | ISIC-ens auroc=0.7263
+  k=512 RandomForest: HAM-OOF auroc=0.9488 | ISIC-ens auroc=0.7377
+  k=512 KNN: HAM-OOF auroc=0.8877 | ISIC-ens auroc=0.6370
+  k=512 Stacking: HAM-OOF auroc=0.9305 | ISIC-ens auroc=0.7348
+  k=all SVM-RBF: HAM-OOF auroc=0.9449 | ISIC-ens auroc=0.7043
+  k=all XGBoost: HAM-OOF auroc=0.9509 | ISIC-ens auroc=0.7297
+  k=all RandomForest: HAM-OOF auroc=0.9490 | ISIC-ens auroc=0.7333
+  k=all KNN: HAM-OOF auroc=0.9045 | ISIC-ens auroc=0.6275
+  k=all Stacking: HAM-OOF auroc=0.9335 | ISIC-ens auroc=0.7336
+
+Saved: $MELANOMA_ROOT/results_split_image/oof_results.csv, isic_ensemble_results.csv, leakage_accounting.csv
