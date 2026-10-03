@@ -1,0 +1,6 @@
+{
+  "backbone_ms_per_image": 23.280351161956787,
+  "backbone_params": 4010110,
+  "full_feature_dim": 1904,
+  "distilled_feature_dim": 256
+}

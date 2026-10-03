@@ -1,0 +1,13 @@
+mirror,subset,model,n,n_malignant,auroc,ci_lo,ci_hi
+Javid_10605,all ISIC2020-source test,B_full_mirror_model,582,84,0.8604417670682731,0.8239801978951752,0.8938242864894814
+Javid_10605,all ISIC2020-source test,D_within_source_control,582,84,0.887956588257793,0.8554370666359233,0.9177754277651302
+Javid_10605,patient-clean only,B_full_mirror_model,66,15,0.8418300653594772,0.7299470884658454,0.9321565934065933
+Javid_10605,patient-clean only,D_within_source_control,66,15,0.8352941176470589,0.7256882672357328,0.9217032967032966
+Javid_10605,patient seen in train,B_full_mirror_model,516,69,0.8599682261777389,0.8200633011552461,0.8957215652459555
+Javid_10605,patient seen in train,D_within_source_control,516,69,0.8909314917485329,0.8545133034057697,0.9232849010998072
+ISIC19_20_malig_benign_11400,all ISIC2020-source test,B_full_mirror_model,557,7,0.9942857142857142,0.9874100719424461,0.9995944849959449
+ISIC19_20_malig_benign_11400,all ISIC2020-source test,D_within_source_control,557,7,0.9992207792207792,0.9965846994535519,1.0
+ISIC19_20_malig_benign_11400,patient-clean only,B_full_mirror_model,0,0,,,
+ISIC19_20_malig_benign_11400,patient-clean only,D_within_source_control,0,0,,,
+ISIC19_20_malig_benign_11400,patient seen in train,B_full_mirror_model,557,7,0.9942857142857142,0.9869548510102996,0.999577256290999
+ISIC19_20_malig_benign_11400,patient seen in train,D_within_source_control,557,7,0.9992207792207792,0.9968831168831168,1.0

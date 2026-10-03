@@ -1,0 +1,4 @@
+mirror,n_test,distinct_sizes,test_accuracy_from_size_only,test_balanced_accuracy_from_size_only,test_majority_class_accuracy
+Javid_10605,1000,1,0.5,0.5,0.5
+ISIC19_20_malig_benign_11400,1100,33,0.49636363636363634,0.4963636363636364,0.5
+Fanconi_3297,660,1,0.5454545454545454,0.5,0.5454545454545454

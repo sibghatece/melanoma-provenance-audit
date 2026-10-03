@@ -1,0 +1,24 @@
+group,transformation,n,median_distance_to_source,p90_distance_to_source,sensitivity_d<=0,sensitivity_d<=5,sensitivity_d<=10,sensitivity_d<=15,wrong_nearest_within_10
+Resizing and recompression,"Re-encoded, JPEG quality 95",1000,0.0,2.0,53.2,99.5,99.9,99.9,1
+Resizing and recompression,Resized to 224 x 224,1000,2.0,4.0,30.4,95.6,99.8,99.9,1
+Resizing and recompression,"Resized to 224 x 224, JPEG quality 75",1000,4.0,6.0,10.7,80.30000000000001,99.3,99.8,1
+Resizing and recompression,JPEG quality 50,1000,4.0,6.0,9.6,74.6,99.5,99.9,1
+Resizing and recompression,Resized to 128 x 128,1000,2.0,4.0,25.0,93.4,99.9,99.9,1
+Orientation,Rotated 90 degrees,1000,0.0,0.0,99.9,99.9,99.9,99.9,1
+Orientation,Rotated 180 degrees,1000,0.0,0.0,99.9,99.9,99.9,99.9,1
+Orientation,Horizontal flip,1000,0.0,0.0,99.9,99.9,99.9,99.9,1
+Orientation,Vertical flip,1000,0.0,0.0,99.9,99.9,99.9,99.9,1
+Arbitrary rotation,Rotated 10 degrees,1000,96.0,110.0,0.0,0.0,0.0,0.0,0
+Arbitrary rotation,Rotated 30 degrees,1000,112.0,120.0,0.0,0.0,0.0,0.0,0
+Arbitrary rotation,Rotated 45 degrees,1000,110.0,120.0,0.0,0.0,0.0,0.0,0
+Cropping,Centre crop 95%,1000,38.0,50.0,0.0,0.0,0.0,0.0,0
+Cropping,Centre crop 90%,1000,68.0,86.0,0.0,0.0,0.0,0.0,0
+Cropping,Centre crop 80%,1000,108.0,118.0,0.0,0.0,0.0,0.0,1
+Cropping,Centre crop 70%,1000,114.0,122.0,0.0,0.0,0.0,0.0,1
+Colour and blur,Brightness x1.2,1000,4.0,10.0,13.100000000000001,60.199999999999996,90.7,97.2,2
+Colour and blur,Contrast x1.2,1000,2.0,6.0,18.4,84.2,97.6,99.2,1
+Colour and blur,Saturation x1.3,1000,2.0,6.0,14.6,86.4,99.3,99.8,1
+Colour and blur,"Gaussian blur, radius 1",1000,2.0,4.0,26.6,95.3,99.8,99.9,1
+Colour and blur,"Gaussian blur, radius 2",1000,2.0,4.0,24.2,94.6,99.9,99.9,1
+Combined,Resize 224 + horizontal flip + JPEG 75,1000,4.0,6.0,11.0,80.4,99.2,99.8,1
+Combined,Crop 90% + brightness x1.1 + resize 224,1000,68.0,86.0,0.0,0.0,0.0,0.0,0

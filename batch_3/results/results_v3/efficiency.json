@@ -1,0 +1,20 @@
+{
+  "device": "mps",
+  "input_resolution": "320x320",
+  "total_params": 4010110,
+  "backbone_params": 4007548,
+  "backbone_params_millions": 4.01,
+  "ms_forward_pass": 4.926,
+  "ms_multistage_features": 4.985,
+  "ms_multistage_features_2view_tta": 10.199,
+  "backbone_ms_per_image": 10.199,
+  "full_feature_dim": 1904,
+  "distilled_feature_dim_k256": 256,
+  "feature_reduction_pct": 86.6,
+  "n_models_in_ensemble": 5,
+  "note": "Latency is per image at batch size 1, the deployment-relevant case. Ensemble inference multiplies the backbone cost by 5.",
+  "svm_fit_seconds_full_1904": 18.56,
+  "svm_predict_ms_per_image_full_1904": 1.3008,
+  "svm_fit_seconds_k256": 1.33,
+  "svm_predict_ms_per_image_k256": 0.0594
+}

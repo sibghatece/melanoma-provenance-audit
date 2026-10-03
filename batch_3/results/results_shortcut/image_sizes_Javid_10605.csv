@@ -1,0 +1,5 @@
+split,class,size,n
+test,benign,300x300,500
+test,malignant,300x300,500
+train,benign,300x300,5000
+train,malignant,300x300,4605
